@@ -24,6 +24,20 @@
             font-size: small;
         }
 
+        #login td {
+            padding-right: 10px;
+        }
+
+        a:link {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: darkgray;
+            text-decoration: none;
+        }
+
         #menubar {
             background: rgb(163, 213, 201);
         }
@@ -57,7 +71,10 @@
             margin-right: auto;
         }
 
-        #introduction {margin-left: 100px;}
+        #introduction {
+            margin-left: 100px;
+        }
+
         #intro_text {
             font-family: 'Do Hyeon', sans-serif;
             font-size: 125%;
@@ -69,7 +86,10 @@
             border-bottom-style: solid;
         }
 
-        #operation_method {margin-left: 700px;}
+        #operation_method {
+            margin-left: 700px;
+        }
+
         #operate_text {
             font-family: 'Do Hyeon', sans-serif;
             font-size: 125%;
@@ -81,7 +101,10 @@
             border-bottom-style: solid;
         }
 
-        #use_method {margin-left: 100px; }
+        #use_method {
+            margin-left: 100px;
+        }
+
         #use_text {
             font-family: 'Do Hyeon', sans-serif;
             padding-left: 20px;
@@ -91,12 +114,19 @@
             border-bottom-color: rgb(242, 146, 72);
             border-bottom-style: solid;
         }
+
         #alpha_info {
             list-style-type: none;
         }
 
-        #support { float: right; margin-right: 50px; }
-        #support tbody tr td { padding-left: 30px; }
+        #support {
+            float: right;
+            margin-right: 50px;
+        }
+
+        #support tbody tr td {
+            padding-left: 30px;
+        }
     </style>
 </head>
 
@@ -109,11 +139,13 @@
                 <tbody>
                     <tr>
                         <!-- 로그인 버튼 -->
-                        <td><img src="img/user_login.png" href="#" width="40" height="40"></td>
-                        <td>로그인&nbsp;&nbsp;</td>
+                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
+                        <td><a href="user_login.html">로그인</a></td>
+
+
                         <!-- 변호사 로그인 버튼 -->
-                        <td><img src="img/lawyer_login.png" href="#" width="40" height="40"></td>
-                        <td>변호사 로그인&nbsp;&nbsp;</td>
+                        <td><a href="#"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
+                        <td><a href="#">변호사 로그인</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -176,17 +208,20 @@
             <tbody>
                 <tr>
                     <td><img src="img/use_method.png" width="250" height="150"></td>
-                    <td id="use_text"><ul>
-                        <li><a>변호사 검색 메뉴에서 지역 검색으로 마을 변호사 확인</a></li>
-                        <li><a>변호사 선택 후, 상담 신청 글 작성</a></li>
-                        <li><a>변호사가 상담 글 확인 후, 개별 연락</a></li>
-                        <li id="alpha_info"><a>(간단한 법률 고민 상담은 사이버법률상담 메뉴를 통해 이루어지며 상담 내용은 변호사에게만 공개됩니다.)</a></li>
-                    </ul></td>
+                    <td id="use_text">
+                        <ul>
+                            <li><a>변호사 검색 메뉴에서 지역 검색으로 마을 변호사 확인</a></li>
+                            <li><a>변호사 선택 후, 상담 신청 글 작성</a></li>
+                            <li><a>변호사가 상담 글 확인 후, 개별 연락</a></li>
+                            <li id="alpha_info"><a>(간단한 법률 고민 상담은 사이버법률상담 메뉴를 통해 이루어지며 상담 내용은 변호사에게만 공개됩니다.)</a></li>
+                        </ul>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </section>
-    <br><br><br><hr><br>
+    <br><br><br>
+    <hr><br>
 
     <footer>
         <table id="support">
