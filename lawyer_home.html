@@ -137,10 +137,19 @@
         }
         #waitlist{
             font-family: 'Black Han Sans', sans-serif;
-            font-size: 25px;
+            font-size: 20px;
             text-align: right;
             background-color: azure;
             margin-left: 80%;
+        }
+        #logout{
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 20px;
+            text-align: right;
+             margin-left: 80%;
+             margin-bottom: 20px;
+            background-color: whitesmoke;
+            
         }
     </style>
     
@@ -152,7 +161,9 @@
         <div>
             <a id="logo" href="home.html"><img src="img/main_logo.png" width="600" height="200"></a>
             <p id="lawyer">떙떙떙   </p>
+            <button id="logout" onclick="alert('로그아웃!');location.href='home.html'">로그아웃 </button>
             <button id="waitlist" onclick="location.href='reservation_list.html'">상담신청 게시판 </button>
+            
         </div>
         <br><br><br>
 
