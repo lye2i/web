@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+
+<body>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            console.log('val : ' + getParameter('index'));
+        });
+    </script>
+</body>
+
+</html>
