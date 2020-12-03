@@ -236,6 +236,27 @@
         </table>
     </footer>
     <br><br><br><br><br><br>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            var name= getParameter('index');
+            console.log('val : ' + name);
+            if(name != undefined)
+               alert(name+"님 환영합니다");
+        });
+    </script>
 </body>
 
 </html>
