@@ -235,9 +235,10 @@
     <script type="text/javascript">
     
          function change_name(name) {
+            
             var lawyer = document.getElementById("lawyer");
-            lawyer.innerText(name);
-            alert(lawyer.innerText);
+            lawyer.innerText =name+"   변호사";
+            
         }
         var getParameter = function (param) {
             var returnValue;
@@ -253,7 +254,7 @@
         };
         $(document).ready(function () {
             var name= getParameter('index');
-            name2 = name;
+            
             console.log('val : ' + name);
 
             if(name != undefined)
