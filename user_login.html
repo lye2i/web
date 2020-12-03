@@ -103,7 +103,7 @@
     </style>
 
     <script>
-        function check() {
+        function sign_check() {
             var ID = document.getElementById("user_id").value;
             var pass = document.getElementById("user_password").value;
             var paramid = getParameter('id');
@@ -117,7 +117,34 @@
                 document.location.href = "./home.html";
             }
             else {
-                alert("로그인 실패!");
+                user_check();
+            }
+        }
+
+        function user_check(){
+            var ID = document.getElementById("user_id").value;
+            var pass = document.getElementById("user_password").value;
+
+            if(ID === "yoona" && pass ==="2222"){
+                user = "이윤아";
+                alert(user + "님 환영합니다!");
+                document.location.href = "./home.html";
+            }
+
+            else if(ID === "yeeun" && pass ==="3333"){
+                user = "이예은";
+                alert(user + "님 환영합니다!");
+                document.location.href = "./home.html";
+            }
+
+            else if(ID === "yekun" && pass ==="4444"){
+                user = "이예건";
+                alert(user + "님 환영합니다!");
+                document.location.href = "./home.html";
+            }
+
+            else{
+                alert("회원가입을 해주세요");
             }
         }
     </script>
@@ -182,7 +209,7 @@
             <table id="login_form">
                 <tr>
                     <td colspan="1">사용자ID : <input type="text" size="25" value="" id="user_id"></td>
-                    <td rowspan="2"><input type="button" value="로그인" name="submit" onclick="check();"
+                    <td rowspan="2"><input type="button" value="로그인" name="submit" onclick="sign_check();"
                             style="width:100px; height:70px; padding:5px; background-color: azure;"></td>
                 </tr>
                 <tr>
