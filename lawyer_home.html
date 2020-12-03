@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    
 
     <style>
         #logo {
@@ -128,7 +129,14 @@
         #support tbody tr td {
             padding-left: 30px;
         }
+        #lawyer{
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 30px;
+            text-align: right;
+
+        }
     </style>
+    
 </head>
 
 
@@ -136,20 +144,7 @@
     <header>
         <div>
             <img id="logo" src="img/main_logo.png" width="600" height="200">
-            <table id="login">
-                <tbody>
-                    <tr>
-                        <!-- 로그인 버튼 -->
-                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
-                        <td><a href="user_login.html">로그인</a></td>
-
-
-                        <!-- 변호사 로그인 버튼 -->
-                        <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
-                        <td><a href="lawyer_login.html">변호사 로그인</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <p id="lawyer">떙떙떙   </p>
         </div>
         <br><br><br>
 
@@ -239,6 +234,11 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
     
+         function change_name(name) {
+            var lawyer = document.getElementById("lawyer");
+            lawyer.innerText(name);
+            alert(lawyer.innerText);
+        }
         var getParameter = function (param) {
             var returnValue;
             var url = location.href;
@@ -255,8 +255,12 @@
             var name= getParameter('index');
             name2 = name;
             console.log('val : ' + name);
+
             if(name != undefined)
-               alert(name+"님 환영합니다");
+               {
+                   alert(name+"님 환영합니다");
+                   change_name(name);
+                }
         });
         
 
