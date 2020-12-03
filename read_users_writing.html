@@ -97,12 +97,14 @@
                 var title_writed = getParameter('title');
                 var phone_writed = getParameter('phone');
                 var msg_writed = getParameter('msg');
+                var date_writed = getParameter('date');
                 console.log(title_writed);
                 console.log(phone_writed);
                 console.log(msg_writed);
                 document.getElementById('title_').innerText = title_writed;
                 document.getElementById('phone_').innerText = phone_writed;
                 document.getElementById('msg_').innerText = msg_writed;
+                document.getElementById('date_').innerText = date_writed;
 
             }
     </script>
@@ -168,6 +170,10 @@
     
     </b>
     <br>
+    <h3>date</h3>
+    <b id="date_">
+    
+    </b><br>
     <h3>msg</h3>
     <b id="msg_">
     
