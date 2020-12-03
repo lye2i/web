@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-    
 
     <style>
         #logo {
             display: block;
-            margin-left: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #login {
@@ -128,31 +128,85 @@
         #support tbody tr td {
             padding-left: 30px;
         }
-        #lawyer{
+        #user{
             font-family: 'Black Han Sans', sans-serif;
             font-size: 30px;
             text-align: right;
             margin-right:5%;
 
         }
-        #waitlist{
-            font-family: 'Black Han Sans', sans-serif;
-            font-size: 25px;
-            text-align: right;
-            background-color: azure;
-            margin-left: 80%;
+        #writing{
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+
         }
-    </style>
+        #waitbtn{
+            background-color: azure;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 20px;
+        }
+form {
+    /* Just to center the form on the page */
+    margin: 0 auto;
+    width: 100%;
+    height : 30%;
+    /* To see the outline of the form */
+    padding: 1em;
     
+}
+form div + div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+label {
+    /* To make sure that all label have the same size and are properly align */
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+input[type="text"], input[type="phone"]{
+    height: 100%; /* 높이 초기화 */ line-height: normal; /* line-height 초기화 */
+    width: 20%;
+    font-size: 20px;
+}
+
+
+textarea{
+    width: 50%;
+    height:300px;
+   line-height: normal; /* line-height 초기화 */ padding: .8em .5em; /* 여백 설정 */
+   
+}
+h3{
+    font-size: 30px;
+
+}
+    </style>
 </head>
 
 
 <body>
     <header>
         <div>
-            <a id="logo" href="home.html"><img src="img/main_logo.png" width="600" height="200"></a>
-            <p id="lawyer">떙떙떙   </p>
-            <button id="waitlist">상담신청 게시판 </button>
+            <img id="logo" src="img/main_logo.png" width="600" height="200">
+            <p id="user">떙떙떙 </p>
+            <table id="login">
+                <tbody>
+                    <tr>
+                        <!-- 로그인 버튼 
+                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
+                        <td><a href="user_login.html">로그인</a></td>
+
+                                
+                         넘어오는 페이지에서 받은 로그인정보, 선택한 변호사 정보 가져옴 
+                         변호사 로그인 버튼 
+                        <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
+                        <td><a href="lawyer_login.html">변호사 로그인</a></td>
+                        -->
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <br><br><br>
 
@@ -169,85 +223,38 @@
             </ul>
         </nav>
         <br>
+        </header>
+        <section id="writing">
+            <form name="user_writing" method="get" action="./read_users_writing.html">
+                <div>
+                    <label for="title">제목:  </label>
+                    <input type="text" id="title" name="title" autofocus />
+                </div>
+                <div>
+                    <label for="phone">연락 가능한 <br>전화번호:  </label>
+                    <input type="phone" id="phone"name="phone" />
+                </div>
+                <div>
+                    <h3 id="lawyer_name"></h3>
+                    <h3>[ 상담 신청 글 작성 ]</h3>
+                    <textarea id="msg" name="msg"></textarea>
+                </div>
+                <div >
+                    <input type="submit" id="waitbtn"value="상담 신청 하기" >
+                </div>
+            </form>
+        </section>
 
-        <!-- 소개 영상 -->
-        <div>
-            <video id="intro_video" width="500" height="400" controls autoplay>
-                <source src="intro_30sec.mp4" type="video/mp4">
-            </video>
-        </div>
-    </header>
-
-
-    <!-- 소개 글 -->
-    <section id="introduction">
-        <table>
-            <tbody>
-                <tr>
-                    <td><img src="img/introduction.png" width="400" height="150"></td>
-                    <td id="intro_text">시민들이 집이나 생활 속에서 접하는 법률문제를 쉽고 편리하게 상의하고,<br>법률적 조언을 받을 수 있도록 마을(洞)마다 연결된 우리 동네
-                        주치의 같은 변호사입니다.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br><br><br><br>
-
-    <!-- 운영방법 -->
-    <section id="operation_method">
-        <table>
-            <tbody>
-                <tr>
-                    <td id="operate_text">공익활동에 관심 있는 변호사와 마을(洞)을 1:1로 연결합니다.</td>
-                    <td><img src="img/operation_method.png" width="250" height="150"></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br>
-
-    <!-- 이용방법 -->
-    <section id="use_method">
-        <table>
-            <tbody>
-                <tr>
-                    <td><img src="img/use_method.png" width="250" height="150"></td>
-                    <td id="use_text">
-                        <ul>
-                            <li><a>변호사 검색 메뉴에서 지역 검색으로 마을 변호사 확인</a></li>
-                            <li><a>변호사 선택 후, 상담 신청 글 작성</a></li>
-                            <li><a>변호사가 상담 글 확인 후, 개별 연락</a></li>
-                            <li id="alpha_info"><a>(간단한 법률 고민 상담은 사이버법률상담 메뉴를 통해 이루어지며 상담 내용은 변호사에게만 공개됩니다.)</a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br><br><br>
-    <hr><br>
-
-    <footer>
-        <table id="support">
-            <tbody>
-                <tr>
-                    <td><img src="img/support_institution1.jpg" width="110" height="60"></td>
-                    <td><img src="img/support_institution2.png" width="60" height="60"></td>
-                    <td><img src="img/support_institution3.png" width="55" height="55"></td>
-                </tr>
-            </tbody>
-        </table>
-    </footer>
+        
     <br><br><br><br><br><br>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-    
-         function change_name(name) {
-            
-            var lawyer = document.getElementById("lawyer");
-            lawyer.innerText =name+"   변호사";
-            
-        }
+
+    function change_name(name) {
+        
+        var user = document.getElementById("user");
+        user.innerText = name+"   ";
+    }
         var getParameter = function (param) {
             var returnValue;
             var url = location.href;
@@ -261,17 +268,25 @@
             }
         };
         $(document).ready(function () {
-            var name= getParameter('index');
+            var name = getParameter('index');
+            var namecp = name;
             
+            var username ;
+            var lawyername ;
+            //이전 페이지로부터 "사용자이름&변호사이름" 받음
             console.log('val : ' + name);
+            if (name != undefined)
+               var Names = name.split('_')[0];
+                username = Names;
+                lawyername = namecp.split('_').reverse()[0];
+                change_name(username);
+                alert("user:"+username);
+                alert("lawyer:"+lawyername);
 
-            if(name != undefined)
-               {
-                   alert(name+"님 환영합니다");
-                   change_name(name);
-                }
+                document.getElementById("lawyer_name").innerText= lawyername+"  변호사님 에게";
+                
         });
-        
+
 
     </script>
 </body>
