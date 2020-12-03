@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="#">
+    <title>우리 마을 변호사</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+
+    <style>
+        #logo {
+            display: block;
+            margin-left: 700px;
+        }
+
+        #login {
+            float: right;
+            color: darkgray;
+            font-family: 'Jua', sans-serif;
+            font-size: small;
+        }
+
+        #login td {
+            padding-right: 10px;
+        }
+
+        a:link {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        #menubar {
+            background: rgb(163, 213, 201);
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 3;
+            width: 95%;
+        }
+
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 6px 20px;
+        }
+
+        #menubar ul li a {
+            color: rgb(68, 68, 68);
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 125%;
+        }
+
+        #menubar ul li a:hover {
+            color: rgb(242, 146, 72)
+        }
+
+        #intro_video {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #introduction {
+            margin-left: 100px;
+        }
+
+        #intro_text {
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 125%;
+            padding-left: 40px;
+            padding-right: 20px;
+            padding-top: 100px;
+            border-bottom-width: 8px;
+            border-bottom-color: rgb(242, 146, 72);
+            border-bottom-style: solid;
+        }
+
+        #operation_method {
+            margin-left: 700px;
+        }
+
+        #operate_text {
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 125%;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 100px;
+            border-bottom-width: 8px;
+            border-bottom-color: rgb(242, 146, 72);
+            border-bottom-style: solid;
+        }
+
+        #use_method {
+            margin-left: 100px;
+        }
+
+        #use_text {
+            font-family: 'Do Hyeon', sans-serif;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 100px;
+            border-bottom-width: 8px;
+            border-bottom-color: rgb(242, 146, 72);
+            border-bottom-style: solid;
+        }
+
+        #alpha_info {
+            list-style-type: none;
+        }
+
+        #support {
+            float: right;
+            margin-right: 50px;
+        }
+
+        #support tbody tr td {
+            padding-left: 30px;
+        }
+
+        #menubar li.user{
+            float:right;
+            margin-left:-1px; z-index:1;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    <header>
+        <div>
+            <a id="logo" href="home.html"><img src="img/main_logo.png" width="600" height="200"></a>
+        </div>
+        <br><br><br>
+
+        <nav id="menubar">
+            <ul>
+                <!-- 변호사 검색 버튼 -->
+                <li><a href="#">변호사 검색</a></li>
+                <!-- 상담 예약 신청 버튼 -->
+                <li><a href="#">상담 예약 신청</a></li>
+                <!-- 사이버법률상담 버튼 -->
+                <li><a href="#">사이버법률상담</a></li>
+                <!-- 이용 안내 버튼 -->
+                <li><a href="#">이용 안내</a></li>
+                <li class="user"><a href="./home.html">로그아웃</a></li>
+                <li class="user"><a id="user">땡땡땡</a></li>
+            </ul>
+        </nav>
+        <br>
+
+        <!-- 소개 영상 -->
+        <div>
+            <video id="intro_video" width="500" height="400" controls autoplay>
+                <source src="intro_30sec.mp4" type="video/mp4">
+            </video>
+        </div>
+    </header>
+
+
+    <!-- 소개 글 -->
+    <section id="introduction">
+        <table>
+            <tbody>
+                <tr>
+                    <td><img src="img/introduction.png" width="400" height="150"></td>
+                    <td id="intro_text">시민들이 집이나 생활 속에서 접하는 법률문제를 쉽고 편리하게 상의하고,<br>법률적 조언을 받을 수 있도록 마을(洞)마다 연결된 우리 동네
+                        주치의 같은 변호사입니다.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br><br><br><br>
+
+    <!-- 운영방법 -->
+    <section id="operation_method">
+        <table>
+            <tbody>
+                <tr>
+                    <td id="operate_text">공익활동에 관심 있는 변호사와 마을(洞)을 1:1로 연결합니다.</td>
+                    <td><img src="img/operation_method.png" width="250" height="150"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+
+    <!-- 이용방법 -->
+    <section id="use_method">
+        <table>
+            <tbody>
+                <tr>
+                    <td><img src="img/use_method.png" width="250" height="150"></td>
+                    <td id="use_text">
+                        <ul>
+                            <li><a>변호사 검색 메뉴에서 지역 검색으로 마을 변호사 확인</a></li>
+                            <li><a>변호사 선택 후, 상담 신청 글 작성</a></li>
+                            <li><a>변호사가 상담 글 확인 후, 개별 연락</a></li>
+                            <li id="alpha_info"><a>(간단한 법률 고민 상담은 사이버법률상담 메뉴를 통해 이루어지며 상담 내용은 변호사에게만 공개됩니다.)</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br><br><br>
+    <hr><br>
+
+    <footer>
+        <table id="support">
+            <tbody>
+                <tr>
+                    <td><img src="img/support_institution1.jpg" width="110" height="60"></td>
+                    <td><img src="img/support_institution2.png" width="60" height="60"></td>
+                    <td><img src="img/support_institution3.png" width="55" height="55"></td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+    <br><br><br><br><br><br>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        function change_name(name) {
+
+            var user = document.getElementById("user");
+            user.innerText = name + " 님";
+
+        }
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            var name = getParameter('index');
+
+            console.log('val : ' + name);
+
+            if (name != undefined) {
+                alert(name + "님 환영합니다");
+                change_name(name);
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
