@@ -99,6 +99,7 @@
     </style>
 </head>
 
+
 <body>
     <header>
         <div>
@@ -134,8 +135,6 @@
         </nav>
         <br>
     </header>
-
-
     <section class="section">
         <h2>변호사 로그인</h2>
         <form name="login" >
@@ -152,6 +151,7 @@
         </form>
     </section>
     <script> //JS
+    var login_success=0;
         document.getElementById("submit").onclick = function () {
             var ID = document.getElementById("lawyer_id").value;
             var pass = document.getElementById("lawyer_password").value;
@@ -159,6 +159,7 @@
             if (ID === "lawyer_park" && pass === "1111") {
                 user = "박주민";
                 alert(user + " 로그인 성공!");
+                login_success = 1;
                 document.location.href="./home.html";
             }
             else {
