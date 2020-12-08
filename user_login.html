@@ -119,11 +119,16 @@
             var parampassword = getParameter('password');
             console.log(paramid);
             console.log(parampassword);
-            if (ID === paramid && pass === parampassword) {
+            
+            if(ID=="" || pass ==""){
+                alert("아이디와 비밀번호를 모두 입력해주세요");
+            }
+            else if (ID === paramid && pass === parampassword) {
                 var user = getParameter('name');
                 console.log(user);
                 setChildValue(user);
             }
+
             else {
                 user_check();
             }

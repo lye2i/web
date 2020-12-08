@@ -166,12 +166,18 @@
             var ID = document.getElementById("lawyer_id").value;
             var pass = document.getElementById("lawyer_password").value;
             var user;
-            if (ID === "lawyer_park" && pass === "1111") {
+
+            if(ID=="" || pass ==""){
+                alert("아이디와 비밀번호를 모두 입력해주세요");
+            }
+
+            else if (ID === "lawyer_park" && pass === "1111") {
                 user = "박주민";
                 alert(user + " 로그인 성공!");
                  //location.href = "home.html";  
                  setChildValue(user);    
             }
+            
             else if(ID === "lawyer_kim" && pass ==="2222"){
                 user = "김한비";
                 setChildValue(user);

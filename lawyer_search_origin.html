@@ -128,12 +128,6 @@
             padding-left: 30px;
         }
 
-        #menubar li.user {
-            float: right;
-            margin-left: -1px;
-            z-index: 1;
-        }
-
         #form_name {
             border: 5px;
             width: 100%;
@@ -197,8 +191,24 @@
     <header>
         <div>
             <a id="logo" href="home.html"><img src="img/main_logo.png" width="600" height="200"></a>
+            <table id="login">
+                <tbody>
+                    <tr>
+                        <!-- 로그인 버튼 -->
+                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
+                        <td><a href="user_login.html">로그인</a></td>
+
+                        
+                        <!-- 변호사 로그인 버튼 -->
+                        <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
+                        <td><a href="lawyer_login.html">변호사 로그인</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        
         <br><br><br>
+        
 
         <nav id="menubar">
             <ul>
@@ -208,8 +218,6 @@
                 <li><a href="cyber_qa.html">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
-                <li class="user"><a href="./home.html">로그아웃</a></li>
-                <li class="user"><a id="user_name">땡땡땡</a></li>
             </ul>
         </nav>
         <br>
@@ -268,7 +276,6 @@
     </section>
 
     <script>
-        
         var list = [
             { td_do: "서울특별시", td_si: "강남구", td_name: "김강남", td_number: "02-904-1437", td_email: "kkkki5@gmail.com" },
             { td_do: "서울특별시", td_si: "강남구", td_name: "김강북", td_number: "02-999-2883", td_email: "k778@naver.com" },
@@ -410,44 +417,7 @@
         }
 
         function lawyer_select() {
-            var obj = document.getElementsByName("lawyer_checkbox");
-            var n = 0;
-            for (var i = 0; i < obj.length; i++) {
-                if (obj[i].checked == true) {
-                    n++;
-                }
-            }
-
-            if (n != 1) {
-                alert("상담을 원하는 변호사를 한명 선택해주세요");
-            }
-
-            else {
-                var checkbox = $("input[name=lawyer_checkbox]:checked");
-
-                // 체크된 체크박스 값을 가져온다
-                checkbox.each(function (i) {
-
-                    // checkbox.parent() : checkbox의 부모는 <td>이다.
-                    // checkbox.parent().parent() : <td>의 부모이므로 <tr>이다.
-                    var tr = checkbox.parent().parent().eq(i);
-                    var td = tr.children();
-
-                    var sido = td.eq(0).text();
-                    var sigungu = td.eq(1).text();
-                    var name = td.eq(2).text();
-                    var number = td.eq(3).text();
-                    var email = td.eq(4).text();
-
-                    console.log("sido : " + sido);
-                    console.log("sigungu : " + sigungu);
-                    console.log("name : " + name);
-                    console.log("number : " + number);
-                    console.log("email : " + email);
-
-                    move_reservation(sido, sigungu, name, number, email);
-                });
-            }
+            alert("로그인이 필요한 서비스입니다.")
         }
     </script>
 
@@ -481,6 +451,7 @@
             var name = getParameter('index');
             console.log('val : ' + name);
             if (name != undefined) {
+                alert(name + "님 환영합니다");
                 change_name(name);
             }
         });
