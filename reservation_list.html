@@ -121,9 +121,10 @@
             background-color: azure;
         }
 
-        #menubar li.menu_lawyer{
-            float:right;
-            margin-left:-1px; z-index:1;
+        #menubar li.menu_lawyer {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
         }
     </style>
 </head>
@@ -202,28 +203,60 @@
         };
         $(document).ready(function () {
             var name = getParameter('index');
-            //이전 페이지로부터 "변호사이름" 받음
+            //이전 페이지로부터 "사용자이름&변호사이름" 받음
             console.log('val : ' + name);
 
-            window.onload = function () {
-                if (name === "박주민")
-                    init_park();
+        //     window.onload = function () {
+        //         if (name === "박주민")
+        //             init_park();
 
-                if (name === "김한비")
-                    init_kim();
-            }
-        });
+        //         if (name === "김한비")
+        //             init_kim();
+        //     }
+        // });
 
-        // window.onload = function () {
-        //     init_park();
-        //     // movePage(day, writer, title);
-        // }
+        window.onload = function () {
+            init_park();
+
+
+            $("#data tr").click(function () {
+                var str = ""
+                var tdArr = new Array();	// 배열 선언
+
+                // 현재 클릭된 Row(<tr>)
+                var tr = $(this);
+                var td = tr.children();
+
+                // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
+                // console.log("클릭한 Row의 모든 데이터 : " + tr.text());
+
+                // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+                td.each(function (i) {
+                    tdArr.push(td.eq(i).text());
+                });
+
+                // console.log("배열에 담긴 값 : " + tdArr);
+
+                // td.eq(index)를 통해 값을 가져올 수도 있다.
+                var day = td.eq(0).text();
+                var writer = td.eq(1).text();
+                var title = td.eq(2).text();
+
+
+                str += " * 클릭된 Row의 td값 = day : <font color='red'>" + day + "</font>" +
+                    ", writer : <font color='red'>" + writer + "</font>" +
+                    ", title : <font color='red'>" + title + "</font>";
+
+
+                movePage(day, writer, title);
+            });
+        }
 
 
         /* 테이블 구성 */
         function init_park() {
             var list = [
-                { day: "2020-12-08", writer: "김한별", title: "부동상 배액배상건으로 여쭈어봅니다." },
+                { day: "2020-12-08", writer: "김한별", title: "부동산 배액배상건으로 여쭈어봅니다." },
                 { day: "2020-12-08", writer: "이예은", title: "상해죄 기소 너무너무 억울합니다" },
                 { day: "2020-12-08", writer: "이윤아", title: "배상명령신청 집행 관련 문의 드립니다." },
                 { day: "2020-12-06", writer: "홍길동", title: "비법인 사단의 총회 소집시 하자 없는 소집통지 방법" },
@@ -236,18 +269,6 @@
             ];
 
             tagParsing(list, true);
-
-            //click Evt
-            $(".title").click(function () {
-                var titleName = this.id;
-                if (titleName === "day") {
-                    tagParsing(list, false);
-                } else if (titleName === "writer") {
-                    tagParsing(list, false);
-                } else if (titleName === "title") {
-                    tagParsing(list, false);
-                }
-            })
         }
 
         function init_kim() {
@@ -265,34 +286,22 @@
             ];
 
             tagParsing(list, true);
-
-            //click Evt
-            $(".title").click(function () {
-                var titleName = this.id;
-                if (titleName === "day") {
-                    tagParsing(list, false);
-                } else if (titleName === "writer") {
-                    tagParsing(list, false);
-                } else if (titleName === "title") {
-                    tagParsing(list, false);
-                }
-            })
         }
 
         function tagParsing(obj, init) {
             var len = obj.length;
             var tag = '';
+
+
             for (i = 0; i < obj.length; i++) {
-                tag += "<tr><td class='day'>" + obj[i].day + "</td>"
+                tag += "<tr > <td class='day'>" + obj[i].day + "</td>"
                     + "<td class='writer'>" + obj[i].writer + "</td>"
                     + "<td class='title'>" + obj[i].title + "</td></tr>"
-
-                console.log('day : ' + obj[i].day);
-                console.log('writer : ' + obj[i].writer);
-                console.log('title : ' + obj[i].title);
             }
             document.getElementById("data").innerHTML = tag;
+            // console.log(document.getElementById("data").innerHTML);
         }
+
 
         function movePage(day, writer, title) {
             window.location.href = "check_user_reservation.html?day=" + day + "&writer=" + writer + "&title=" + title;

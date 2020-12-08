@@ -65,7 +65,7 @@
             color: rgb(242, 146, 72)
         }
 
-        #title {
+        #title_ {
             border: 5px;
             width: 100%;
             height: 100%;
@@ -154,7 +154,7 @@
         <table id="data" class="report data" border="1">
         </table>
 
-        <h3 id = "title">[ 부동상 배액배상건으로 여쭈어봅니다. ]</h3>
+        <h3 id = "title_"></h3>
 
         <div class="msg">
             저 버스 표지판에 적힌 지명들은 이 세상에 존재하지 않는 곳이거나 누구도 갈 수 없는 곳인 양 여겨지고 있다. 저 약재상과 이불 가게의 진열창을 침수시킨 어둠은 내가 항시 보던 어둠과 전혀 달라 어떤 탐미적 이질감마저 느껴지고 있다.
@@ -166,29 +166,59 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-        window.onload = function () {
-            init_user_info();
-        }
+     
+        /* 로그인 정보 가져오기 */
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            var day = getParameter('day');
+            var name = getParameter('writer');
+            var title = getParameter('title');
+            //이전 페이지로부터 "day, name, title" 받음
+            console.log('day : ' + day);
+            console.log('name : ' + name);
+            console.log('title : ' + title);
+
+            window.onload = function () {
+                init_user_info(day, name, title);
+                document.getElementById('title_').innerText = '[ ' + title + ' ]';
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         /* 테이블 구성 */
-        function init_user_info() {
+        function init_user_info(day, name, title) {
             var list = [
-                { user_name: "김한별", phone: "010-4332-5778", day: "2020-12-08" },
+                { user_name: name, phone: "010-4332-5778", day: day },
             ];
 
             tagParsing(list, true);
-
-            //click Evt
-            $(".title").click(function () {
-                var titleName = this.id;
-                if (titleName === "user_name") {
-                    tagParsing(list, false);
-                } else if (titleName === "phone") {
-                    tagParsing(list, false);
-                } else if (titleName === "day") {
-                    tagParsing(list, false);
-                }
-            })
         }
 
         function tagParsing(obj, init) {
