@@ -94,6 +94,7 @@
     </style>
     <script>
         function read_form() {
+                var writer_name_writed = getParameter('writer_name');
                 var title_writed = getParameter('title');
                 var phone_writed = getParameter('phone');
                 var msg_writed = getParameter('msg');
@@ -101,6 +102,7 @@
                 console.log(title_writed);
                 console.log(phone_writed);
                 console.log(msg_writed);
+                document.getElementById('writer_name_').innerText = writer_name_writed;
                 document.getElementById('title_').innerText = title_writed;
                 document.getElementById('phone_').innerText = phone_writed;
                 document.getElementById('msg_').innerText = msg_writed;
@@ -159,6 +161,10 @@
             </nav>
             <br>
         </header>
+
+        <h3>writer_name</h3>
+        <b id="writer_name_">
+        </b>
 
         <h3>title</h3>
        <b id="title_">
