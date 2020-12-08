@@ -145,7 +145,7 @@
                 <li><a href="howtouse.html">이용 안내</a></li>
                 
                 <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
-                <li class="menu_lawyer"><a href="./reservation_list">상담신청 게시판</a></li>
+                <li class="menu_lawyer"><a onclick="location.reload()">상담신청 게시판</a></li>
                 
             </ul>
         </nav>
@@ -201,7 +201,7 @@
         };
         $(document).ready(function () {
             var name = getParameter('index');
-            //이전 페이지로부터 "사용자이름&변호사이름" 받음
+            //이전 페이지로부터 "변호사이름" 받음
             console.log('val : ' + name);
 
             window.onload = function () {

@@ -9,9 +9,10 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
         function setChildValue(index) {
-            // window.location.href = "lawyer_home.html?index=" + index;
-            window.location.href = "reservation_list.html?index=" + index;
+             window.location.href = "lawyer_home.html?index=" + index;
+           // window.location.href = "reservation_list.html?index=" + index;
         }
+        
     </script>
 
     <title>우리 마을 변호사</title>
@@ -167,7 +168,7 @@
             var user;
             if (ID === "lawyer_park" && pass === "1111") {
                 user = "박주민";
-                //alert(user + " 로그인 성공!");
+                alert(user + " 로그인 성공!");
                  //location.href = "home.html";  
                  setChildValue(user);    
             }
