@@ -44,7 +44,7 @@
         #menubar ul {
             margin: 0;
             padding: 3;
-            width: 567px;   
+            width: 567px;
         }
 
         #menubar ul li {
@@ -134,7 +134,7 @@
 
     <section class="section">
         <h2>회원가입</h2>
-        <form name="infor" method="get" action="./user_login.html">
+        <form name="infor" method="get" action="./user_login.html" onsubmit="return check()">
             <table id="sign_up">
                 <tr>
                     <td>아이디</td>
@@ -165,6 +165,20 @@
             <input type="submit" value="회원가입" style="padding:5px; width:150px">
         </form>
     </section>
+
+    <script>
+
+        function check() {
+            if (infor.id.value == "" || infor.password.value=="" || infor.name.value==""||infor.gender.value==""|| infor.phone.value==""||infor.emil.value=="") {
+                alert("모든 항목을 입력해주세요.");
+                return false;
+            }
+
+            else 
+            return true;
+        }
+
+    </script>
 </body>
 
 </html>
