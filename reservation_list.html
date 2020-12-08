@@ -14,7 +14,7 @@
     <style>
         #logo {
             display: block;
-            
+
         }
 
         #login {
@@ -132,7 +132,9 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="move1()"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
+            <a id="logo" onclick="move1()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
         </div>
         <br><br><br>
 
@@ -145,10 +147,10 @@
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
-                
+
                 <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
                 <li class="menu_lawyer"><a onclick="location.reload()">상담신청 게시판</a></li>
-                
+
             </ul>
         </nav>
         <br>
@@ -206,51 +208,115 @@
             //이전 페이지로부터 "사용자이름&변호사이름" 받음
             console.log('val : ' + name);
 
-        //     window.onload = function () {
-        //         if (name === "박주민")
-        //             init_park();
+            window.onload = function () {
+                if (name === "박주민")
+                    init_park();
 
-        //         if (name === "김한비")
-        //             init_kim();
-        //     }
-        // });
+                $("#data tr").click(function () {
+                    var str = ""
+                    var tdArr = new Array();	// 배열 선언
 
-        window.onload = function () {
-            init_park();
+                    // 현재 클릭된 Row(<tr>)
+                    var tr = $(this);
+                    var td = tr.children();
+
+                    // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
+                    // console.log("클릭한 Row의 모든 데이터 : " + tr.text());
+
+                    // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+                    td.each(function (i) {
+                        tdArr.push(td.eq(i).text());
+                    });
+
+                    // console.log("배열에 담긴 값 : " + tdArr);
+
+                    // td.eq(index)를 통해 값을 가져올 수도 있다.
+                    var day = td.eq(0).text();
+                    var writer = td.eq(1).text();
+                    var title = td.eq(2).text();
 
 
-            $("#data tr").click(function () {
-                var str = ""
-                var tdArr = new Array();	// 배열 선언
+                    str += " * 클릭된 Row의 td값 = day : <font color='red'>" + day + "</font>" +
+                        ", writer : <font color='red'>" + writer + "</font>" +
+                        ", title : <font color='red'>" + title + "</font>";
 
-                // 현재 클릭된 Row(<tr>)
-                var tr = $(this);
-                var td = tr.children();
 
-                // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
-                // console.log("클릭한 Row의 모든 데이터 : " + tr.text());
-
-                // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
-                td.each(function (i) {
-                    tdArr.push(td.eq(i).text());
+                    movePage(day, writer, title);
                 });
 
-                // console.log("배열에 담긴 값 : " + tdArr);
+                if (name === "김한비")
+                    init_kim();
 
-                // td.eq(index)를 통해 값을 가져올 수도 있다.
-                var day = td.eq(0).text();
-                var writer = td.eq(1).text();
-                var title = td.eq(2).text();
+                $("#data tr").click(function () {
+                    var str = ""
+                    var tdArr = new Array();	// 배열 선언
+
+                    // 현재 클릭된 Row(<tr>)
+                    var tr = $(this);
+                    var td = tr.children();
+
+                    // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
+                    // console.log("클릭한 Row의 모든 데이터 : " + tr.text());
+
+                    // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+                    td.each(function (i) {
+                        tdArr.push(td.eq(i).text());
+                    });
+
+                    // console.log("배열에 담긴 값 : " + tdArr);
+
+                    // td.eq(index)를 통해 값을 가져올 수도 있다.
+                    var day = td.eq(0).text();
+                    var writer = td.eq(1).text();
+                    var title = td.eq(2).text();
 
 
-                str += " * 클릭된 Row의 td값 = day : <font color='red'>" + day + "</font>" +
-                    ", writer : <font color='red'>" + writer + "</font>" +
-                    ", title : <font color='red'>" + title + "</font>";
+                    str += " * 클릭된 Row의 td값 = day : <font color='red'>" + day + "</font>" +
+                        ", writer : <font color='red'>" + writer + "</font>" +
+                        ", title : <font color='red'>" + title + "</font>";
 
 
-                movePage(day, writer, title);
-            });
-        }
+                    movePage(day, writer, title);
+                });
+            }
+        });
+
+        // window.onload = function () {
+        //     init_park();
+
+
+        //     $("#data tr").click(function () {
+        //         var str = ""
+        //         var tdArr = new Array();	// 배열 선언
+
+        //         // 현재 클릭된 Row(<tr>)
+        //         var tr = $(this);
+        //         var td = tr.children();
+
+        //         // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
+        //         // console.log("클릭한 Row의 모든 데이터 : " + tr.text());
+
+        //         // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+        //         td.each(function (i) {
+        //             tdArr.push(td.eq(i).text());
+        //         });
+
+        //         // console.log("배열에 담긴 값 : " + tdArr);
+
+        //         // td.eq(index)를 통해 값을 가져올 수도 있다.
+        //         var day = td.eq(0).text();
+        //         var writer = td.eq(1).text();
+        //         var title = td.eq(2).text();
+
+
+        //         str += " * 클릭된 Row의 td값 = day : <font color='red'>" + day + "</font>" +
+        //             ", writer : <font color='red'>" + writer + "</font>" +
+        //             ", title : <font color='red'>" + title + "</font>";
+
+
+        //         movePage(day, writer, title);
+        //     });
+        // }
 
 
         /* 테이블 구성 */
@@ -307,13 +373,13 @@
             window.location.href = "check_user_reservation.html?day=" + day + "&writer=" + writer + "&title=" + title;
         }
         function move2() {
-                var name = getParameter('index');
-                window.location.href = "lawyer_search.html?index=" + name;
-            }
-             function move1() {
-                    var name = getParameter('index');
-                    window.location.href = "lawyer_home.html?index=" + name;
-                }
+            var name = getParameter('index');
+            window.location.href = "lawyer_search.html?index=" + name;
+        }
+        function move1() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_home.html?index=" + name;
+        }
     </script>
 </body>
 
