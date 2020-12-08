@@ -45,7 +45,7 @@
         #menubar ul {
             margin: 0;
             padding: 3;
-            width: 567px;
+            width: 95%;
         }
 
         #menubar ul li {
@@ -120,6 +120,11 @@
             font-family: 'Do Hyeon', sans-serif;
             background-color: azure;
         }
+
+        #menubar li.menu_lawyer{
+            float:right;
+            margin-left:-1px; z-index:1;
+        }
     </style>
 </head>
 
@@ -127,20 +132,6 @@
     <header>
         <div>
             <a id="logo" href="home.html"><img src="img/main_logo.png" width="600" height="200"></a>
-            <table id="login">
-                <tbody>
-                    <tr>
-                        <!-- 로그인 버튼 -->
-                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
-                        <td><a href="user_login.html">로그인</a></td>
-
-
-                        <!-- 변호사 로그인 버튼 -->
-                        <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
-                        <td><a href="lawyer_login.html">변호사 로그인</a></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
         <br><br><br>
 
@@ -154,6 +145,9 @@
                 <li><a href="#">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="#">이용 안내</a></li>
+                <li class="menu_lawyer"><a href="./reservation_list">상담신청 게시판</a></li>
+                <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
+                <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
             </ul>
         </nav>
         <br>
