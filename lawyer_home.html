@@ -178,7 +178,7 @@
                 <li><a href="#">이용 안내</a></li>
                 <li class="menu_lawyer"><a href="./reservation_list">상담신청 게시판</a></li>
                 <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
-                <li class="menu_lawyer"><a href="#">땡땡땡</a></li>
+                <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
             </ul>
         </nav>
         <br>
@@ -257,8 +257,8 @@
     
         function change_name(name) {
             
-            var lawyer = document.getElementById("lawyer");
-            lawyer.innerText =name+"   변호사";
+            var lawyer = document.getElementById("lawyer_name");
+            lawyer.innerText =name+" 변호사";
             
         }
         var getParameter = function (param) {
