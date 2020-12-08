@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="#">
+    <title>우리 마을 변호사</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <style>
+        #logo {
+            display: block;
+            margin-left: 400px;
+        }
+
+        #login {
+            float: right;
+            color: darkgray;
+            font-family: 'Jua', sans-serif;
+            font-size: small;
+        }
+
+        #login td {
+            padding-right: 10px;
+        }
+
+        a:link {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        #menubar {
+            background: rgb(163, 213, 201);
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 3;
+            width: 95%;
+        }
+
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 6px 20px;
+        }
+
+        #menubar ul li a {
+            color: rgb(68, 68, 68);
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 125%;
+        }
+
+        #menubar ul li a:hover {
+            color: rgb(242, 146, 72)
+        }
+
+        #intro_video {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #introduction {
+            margin-left: 100px;
+        }
+
+        #intro_text {
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 125%;
+            padding-left: 40px;
+            padding-right: 20px;
+            padding-top: 100px;
+            border-bottom-width: 8px;
+            border-bottom-color: rgb(242, 146, 72);
+            border-bottom-style: solid;
+        }
+
+        #operation_method {
+            margin-left: 700px;
+        }
+
+        #operate_text {
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 125%;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 100px;
+            border-bottom-width: 8px;
+            border-bottom-color: rgb(242, 146, 72);
+            border-bottom-style: solid;
+        }
+
+        #use_method {
+            margin-left: 100px;
+        }
+
+        #use_text {
+            font-family: 'Do Hyeon', sans-serif;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 100px;
+            border-bottom-width: 8px;
+            border-bottom-color: rgb(242, 146, 72);
+            border-bottom-style: solid;
+        }
+
+        #alpha_info {
+            list-style-type: none;
+        }
+
+        #support {
+            float: right;
+            margin-right: 50px;
+        }
+
+        #support tbody tr td {
+            padding-left: 30px;
+        }
+
+        #form_name {
+            border: 5px;
+            width: 100%;
+            height: 100%;
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        #location {
+            text-align: center;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        #name {
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+        }
+
+        #name thead {
+            background-color: azure;
+        }
+
+        #data {
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .section {
+            border: 5px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        #request {
+            display: block;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 125%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <a id="logo" href="home.html"><img src="img/main_logo.png" width="600" height="200"></a>
+            <table id="login">
+                <tbody>
+                    <tr>
+                        <!-- 로그인 버튼 -->
+                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
+                        <td><a href="user_login.html">로그인</a></td>
+
+                        
+                        <!-- 변호사 로그인 버튼 -->
+                        <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
+                        <td><a href="lawyer_login.html">변호사 로그인</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <br><br><br>
+        
+
+        <nav id="menubar">
+            <ul>
+                <!-- 변호사 검색 버튼 -->
+                <li><a href="lawyer_search.html">변호사 검색 & 상담 예약 신청</a></li>
+                <!-- 사이버법률상담 버튼 -->
+                <li><a href="cyber_qa.html">사이버법률상담</a></li>
+                <!-- 이용 안내 버튼 -->
+                <li><a href="howtouse.html">이용 안내</a></li>
+            </ul>
+        </nav>
+        <br>
+    </header>
+
+    <section>
+        <h3 id="form_name">
+            지역별 변호사 검색
+        </h3>
+    </section>
+
+    <!-- 예약 신청 목록 -->
+    <section>
+        <div  id="location">
+        시도:
+        <select id="sido" onchange="categoryChange(this)">
+            <option value="0">선택</option>
+            <option value="서울특별시">서울특별시</option>
+            <option value="인천광역시">인천광역시</option>
+            <option value="부산광역시">부산광역시</option>
+            <option value="울산광역시">울산광역시</option>
+            <option value="광주광역시">광주광역시</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+            <option value="경상북도">경상북도</option>
+            <option value="경상남도">경상남도</option>
+            <option value="충청남도">충청남도</option>
+            <option value="충청북도">충청북도</option>
+            <option value="전라남도">전라남도</option>
+            <option value="전라북도">전라북도</option>
+        </select>
+        시군구: <select id="sigungu">
+            <option value="선택">선택</option>;
+        </select>
+        <input type="button" id="search" onclick="search();" value="검색" style="padding:5px; width:100px">
+    </div>
+        
+        <table id="name" border="1">
+            <thead>
+                <tr>
+                    <th id="td_do" width="50px">시도</td>
+                    <th id="td_si" width="40px">시군구</td>
+                    <th id="td_name" width="30px">성명</td>
+                    <th id="td_number" width="100px">사무실 전화번호</td>
+                    <th id="td_email" width="100px">이메일주소</td>
+                    <th id="td_select" width="20px">선택</th>
+                </tr>
+            </thead>
+            <tbody id="data" class="report data">
+            </tbody>
+        </table>
+        <div>
+            <input type="button" id="request" onclick="lawyer_select();" value="상담 신청"
+                style="width:150px; height:50px; padding:5px; background-color: azure">
+        </div>
+    </section>
+
+    <script>
+        var list = [
+            { td_do: "서울특별시", td_si: "강남구", td_name: "김강남", td_number: "02-904-1437", td_email: "kkkki5@gmail.com" },
+            { td_do: "서울특별시", td_si: "강남구", td_name: "김강북", td_number: "02-999-2883", td_email: "k778@naver.com" },
+            { td_do: "서울특별시", td_si: "강남구", td_name: "김강중", td_number: "02-407-3247", td_email: "kkoo95@gmail.com" },
+            { td_do: "서울특별시", td_si: "마포구", td_name: "이홍대", td_number: "02-653-7726", td_email: "honghong@naver.com" },
+            { td_do: "서울특별시", td_si: "동작구", td_name: "김숭실", td_number: "02-820-6288", td_email: "soongs5@gmail.com" },
+            { td_do: "인천광역시", td_si: "서구", td_name: "이예지", td_number: "032-123-1456", td_email: "yezi@gmail.com" },
+            { td_do: "인천광역시", td_si: "남구", td_name: "이예진", td_number: "032-122-3356", td_email: "yezin@naver.com" },
+            { td_do: "인천광역시", td_si: "동구", td_name: "이예동", td_number: "032-596-1364", td_email: "ydong@naver.com" },
+            { td_do: "인천광역시", td_si: "중구", td_name: "이예중", td_number: "032-831-8729", td_email: "yjong@naver.com" },
+            { td_do: "경기도", td_si: "가평군", td_name: "김민우", td_number: "031-120-3064", td_email: "minwoo@gmail.com" },
+            { td_do: "경기도", td_si: "김포시", td_name: "이민정", td_number: "031-720-3864", td_email: "min1@naver.com" },
+            { td_do: "경기도", td_si: "김포시", td_name: "김국변", td_number: "031-143-5008", td_email: "koook@naver.com" },
+            { td_do: "경기도", td_si: "용인시", td_name: "잉융아", td_number: "031-120-3064", td_email: "lee2@gmail.com" },
+            { td_do: "강원도", td_si: "강릉시", td_name: "김건호", td_number: "033-150-3037", td_email: "ho1@naver.com" },
+            { td_do: "강원도", td_si: "원주시", td_name: "김구현", td_number: "033-120-3001", td_email: "kimk@gmail.com" },
+            { td_do: "강원도", td_si: "인제군", td_name: "김수현", td_number: "033-330-3091", td_email: "kimsu@gmail.com" },
+            { td_do: "강원도", td_si: "인제군", td_name: "김수현", td_number: "033-330-3091", td_email: "kimsu@naver.com" },
+            { td_do: "강원도", td_si: "동해시", td_name: "김지현", td_number: "033-777-3091", td_email: "jih@gmail.com" },
+            { td_do: "충청북도", td_si: "제천시", td_name: "윤대희", td_number: "043-776-3021", td_email: "daehee@naver.com" },
+            { td_do: "충청남도", td_si: "논산시", td_name: "이현주", td_number: "042-234-3581", td_email: "hhhhhj@gmail.com" },
+            { td_do: "충청남도", td_si: "보령시", td_name: "이원희", td_number: "042-886-3021", td_email: "wonh2@naver.com" },
+            { td_do: "울산광역시", td_si: "남구", td_name: "조은지", td_number: "052-756-3046", td_email: "eunjiji@gmail.com" },
+            { td_do: "전라북도", td_si: "군산시", td_name: "이영주", td_number: "063-756-9999", td_email: "zeroo@gmail.com" },
+            { td_do: "전라북도", td_si: "고창군", td_name: "이아람", td_number: "063-884-1580", td_email: "ararara@gmail.com" },
+            { td_do: "울산광역시", td_si: "동구", td_name: "조은지", td_number: "052-756-3046", td_email: "eunjiji@gmail.com" },
+            { td_do: "경상북도", td_si: "경주시", td_name: "김군주", td_number: "053-881-4509", td_email: "kkzoo@gmail.com" },
+            { td_do: "부산광역시", td_si: "해운대구", td_name: "김부산", td_number: "051-661-9783", td_email: "bbbs@gmail.com" },
+        ];
+
+        function categoryChange(e) {
+            var su = ["강남구", "마포구", "동작구", "관악구", "중구"];
+            var ic = ["서구", "중구", "남구", "동구", "강화군"];
+            var bs = ["강서구", "남구", "동구", "서구", "해운대구"];
+            var us = ["남구", "동구", "북구", "중구"]
+            var gj = ["서구", "동구", "북구", "남구"];
+            var gk = ["가평군", "김포시", "용인시", "남양주시", "구리시"];
+            var gw = ["인제군", "동해시", "강릉시", "원주시", "춘천시"];
+            var gb = ["문경시", "경주시", "안동시"];
+            var gn = ["거제시", "고성군", "김해시", "남해군"];
+            var cn = ["논산시", "보령시", "아산시"];
+            var cb = ["제천시", "옥천군", "청원군", "충주시"];
+            var jn = ["나주시", "여수시", "진도군"];
+            var jb = ["군산시", "고창군", "남원시"];
+            var no = ["선택"];
+            var target = document.getElementById("sigungu");
+
+            if (e.value == "서울특별시")
+                var list = su;
+            else if (e.value == "인천광역시")
+                var list = ic;
+            else if (e.value == "부산광역시")
+                var list = bs;
+            else if (e.value == "울산광역시")
+                var list = us;
+            else if (e.value == "광주광역시")
+                var list = gj;
+            else if (e.value == "경기도")
+                var list = gk;
+            else if (e.value == "강원도")
+                var list = gw;
+            else if (e.value == "경상북도")
+                var list = gb;
+            else if (e.value == "경상남도")
+                var list = gn;
+            else if (e.value == "충청남도")
+                var list = cn;
+            else if (e.value == "충청북도")
+                var list = cb;
+            else if (e.value == "전라남도")
+                var list = jn;
+            else if (e.value == "전라북도")
+                var list = jb;
+            else
+                var list = no;
+
+            target.options.length = 0;
+
+            for(x in list){
+                var opt = document.createElement("option");
+                opt.value = list[x];
+                opt.innerHTML = list[x];
+                target.appendChild(opt);
+            }
+
+        }
+
+        function search() {
+            tagParsing(list, true);
+
+            //click Evt
+            $(".lawyer_infor").click(function () {
+                var titleName = this.id;
+                if (titleName === "td_do") {
+                    tagParsing(list, false);
+                } else if (titleName === "td_si") {
+                    tagParsing(list, false);
+                } else if (titleName === "td_name") {
+                    tagParsing(list, false);
+                }
+                else if (titleName === "td_number") {
+                    tagParsing(list, false);
+                }
+                else if (titleName === "td_email") {
+                    tagParsing(list, false);
+                }
+            })
+        }
+
+        function tagParsing(obj, init) {
+            var sido = document.getElementById("sido").value;
+            console.log(sido);
+            var sigungu = document.getElementById("sigungu").value;
+            console.log(sigungu);
+            var len = obj.length;
+            var tag = '';
+            var num = 0;
+
+            if (sido == "선택" || sigungu == "선택") {
+                alert("선택하지 않은 항목이 있습니다.");
+                return;
+            }
+
+            for (i = 0; i < obj.length; i++) {
+                if (sido === obj[i].td_do && sigungu === obj[i].td_si) {
+                    tag += "<tr class='lawyer_infor'><td class='td_do'>" + obj[i].td_do + "</td>"
+                        + "<td class='td_si'>" + obj[i].td_si + "</td>"
+                        + "<td class='td_name'>" + obj[i].td_name + "</td>"
+                        + "<td class='td_number'>" + obj[i].td_number + "</td>"
+                        + "<td class='td_email'>" + obj[i].td_email + "</td>"
+                        + "<td class='td_select'>" + "<input type='checkbox' name='lawyer_checkbox' value='" + i + "'>" + "</td></tr>";
+                    num++;
+                }
+            }
+            if (num == 0) {
+                tag += "<td colspan='6' style='text-align:center;'>해당 지역에는 마을변호사가 존재하지 않습니다.</td>";
+            }
+            document.getElementById("data").innerHTML = tag;
+        }
+
+        function lawyer_select() {
+            alert("로그인이 필요한 서비스입니다.")
+        }
+    </script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>
+        function move_reservation(sido, sigungu, name, number, email) {
+            window.location.href = "user_reservation.html?sido=" + sido + "&sigungu=" + sigungu + "&name=" + name + "&number=" + number + "&email=" + email;
+        }
+    </script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        function change_name(name) {
+            var user = document.getElementById("user_name");
+            user.innerText = name + " 님";
+        }
+
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            var name = getParameter('index');
+            console.log('val : ' + name);
+            if (name != undefined) {
+                alert(name + "님 환영합니다");
+                change_name(name);
+            }
+        });
+    </script>
+</body>
+
+</html>
