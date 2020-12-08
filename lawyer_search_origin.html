@@ -190,7 +190,7 @@
 <body>
     <header>
         <div>
-            <a id="logo" href="#none"><img src="img/main_logo.png" width="600" height="200"></a>
+            <a id="logo" onclick="move1()"><img src="img/main_logo.png" width="600" height="200"></a>
             <table id="login">
                 <tbody>
                     <tr>
@@ -455,6 +455,12 @@
                 change_name(name);
             }
         });
+        function move1() {
+                var name = getParameter('index');
+                window.location.href = "lawyer_home.html?index=" + name;
+            }
+
+
     </script>
 </body>
 

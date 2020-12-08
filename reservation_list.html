@@ -131,7 +131,7 @@
 <body>
     <header>
         <div>
-            <a id="logo" href="#none"><img src="img/main_logo.png" width="600" height="200"></a>
+            <a id="logo" onclick="move1()"><img src="img/main_logo.png" width="600" height="200"></a>
         </div>
         <br><br><br>
 
@@ -300,6 +300,10 @@
                 var name = getParameter('index');
                 window.location.href = "lawyer_search.html?index=" + name;
             }
+             function move1() {
+                    var name = getParameter('index');
+                    window.location.href = "lawyer_home.html?index=" + name;
+                }
     </script>
 </body>
 

@@ -14,8 +14,7 @@
     <style>
         #logo {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 400px;
         }
 
         #login {
@@ -213,7 +212,7 @@
 <body>
     <header>
         <div>
-            <img id="logo" src="img/main_logo.png" width="600" height="200">
+            <a id="logo" onclick="move1()"><img src="img/main_logo.png" width="600" height="200"></a>
             
             <table id="login">
                 <tbody>
@@ -244,7 +243,7 @@
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li class="menu_lawyer"><a href="./reservation_list">상담신청 게시판</a></li>
                 <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
-                <li class="menu_lawyer"><a href="#">땡땡땡</a></li>
+                <li class="menu_lawyer"><a id="user_name">땡땡땡</a></li>
             </ul>
         </nav>
         <br>
@@ -320,6 +319,11 @@
             document.getElementById("lawyer_name").innerText = lawyername + "  변호사님 에게";
 
         });
+
+         function move1() {
+                var name = getParameter('index');
+                window.location.href = "user_home.html?index=" + name;
+            }
 
 
     </script>

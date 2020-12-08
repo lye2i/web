@@ -162,16 +162,16 @@
 <body>
     <header>
         <div>
-            <a id="logo" href="#none"><img src="img/main_logo.png" width="600" height="200"></a>
+            <a id="logo" onclick="location.reload()"><img src="img/main_logo.png" width="600" height="200"></a>
         </div>
         <br><br><br>
 
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="#none" onclick="move2()">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a  onclick="move2()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="#none" >사이버법률상담</a></li>
+                <li><a  >사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li class="menu_lawyer"><a onclick="move1()">상담신청 게시판</a></li>
@@ -298,9 +298,9 @@
         }
         function move2() {
                 var name = getParameter('index');
-                window.location.href = "lawyer_search.html?index=" + name;
+                window.location.href = "lawyer_search_lawyer.html?index=" + name;
             }
-        
+           
 
     </script>
 </body>
