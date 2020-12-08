@@ -114,16 +114,16 @@
         }
 
         #prev,
+        #one,
         #two,
         #three,
-        #four,
         #next {
             text-align: center;
             font-size: 30px;
             font-family: 'Do Hyeon', sans-serif;
         }
 
-        #one {
+        #four {
             text-align: center;
             font-size: 30px;
             font-family: 'Do Hyeon', sans-serif;
@@ -183,12 +183,12 @@
     </section>
 
     <section id="page">
-        <input id="prev" type="button" value="<" onclick="move_page_1()" ;>
+        <input id="prev" type="button" value="<" onclick="move_page_3()" ;>
         <input id="one" type="button" value="1" onclick="move_page_1()" ;>
         <input id="two" type="button" value="2" onclick="move_page_2()" ;>
         <input id="three" type="button" value="3" onclick="move_page_3()" ;>
         <input id="four" type="button" value="4" onclick="move_page_4()" ;>
-        <input id="next" type="button" value=">" onclick="move_page_2()" ;>
+        <input id="next" type="button" value=">" onclick="move_page_4()" ;>
     </section>
 
 
@@ -290,16 +290,16 @@
         /* 테이블 구성 */
         function init_park() {
             var list = [
-                { day: "2020-12-08", writer: "김한별", title: "부동산 배액배상건으로 여쭈어봅니다." },
-                { day: "2020-12-08", writer: "이예은", title: "상해죄 기소 너무너무 억울합니다" },
-                { day: "2020-12-08", writer: "이윤아", title: "배상명령신청 집행 관련 문의 드립니다." },
-                { day: "2020-12-06", writer: "홍길동", title: "비법인 사단의 총회 소집시 하자 없는 소집통지 방법" },
-                { day: "2020-12-05", writer: "김변호", title: "초상권 침해 범죄 유무 관련" }, //게시글 누르는거 이걸로 테스트
-                { day: "2020-12-03", writer: "이마을", title: "임대사업등록사로서 자진말소한 부동산의 효과적인 처리" },
-                { day: "2020-12-03", writer: "김선호", title: "주식 리딩사기" },
-                { day: "2020-12-01", writer: "김지영", title: "12대 중과실 교통사고 형사 합의금" },
-                { day: "2020-11-29", writer: "이두환", title: "주택임차등기의 효력 유무" },
-                { day: "2020-11-29", writer: "박재영", title: "전세집 변기누수" }
+                { day: "2020-11-11", writer: "이태세", title: "계약갱신청구권 행사시 기간 협의 관련 문의" },
+                { day: "2020-11-10", writer: "휘성", title: "집합건물(빌라) 개별옥상 방수비용 세대분담여부" },
+                { day: "2020-11-09", writer: "김하준", title: "월세 6개월 연장 시 계약 갱신 청구권" },
+                { day: "2020-11-09", writer: "서태웅", title: "화해권고결정문" },
+                { day: "2020-11-08", writer: "김태휘", title: "임차권 상속" },
+                { day: "2020-11-08", writer: "조서율", title: "임대사업자등록된 도시형생활주택 처리 관련" },
+                { day: "2020-11-07", writer: "이태의", title: "급여압류 관련하여 문의드립니다." },
+                { day: "2020-11-07", writer: "이현이;", title: "월세 임대에 보증금 관련해서 문의 드립니다." },
+                { day: "2020-11-06", writer: "김희준", title: "건축 감리사와 계약 연장과 추가 대금에 대한 문의" },
+                { day: "2020-11-05", writer: "박희찬", title: "활동지원서비스 대상신청자격" }
             ];
 
             tagParsing(list, true);
@@ -307,16 +307,16 @@
 
         function init_kim() {
             var list = [
-                { day: "2020-12-07", writer: "이서웅", title: "개인정보보호법 위반" },
-                { day: "2020-12-07", writer: "이예건", title: "피트니스 시설 중도해지 부분." },
-                { day: "2020-12-07", writer: "김아준", title: "해방공탁금취하방법" },
-                { day: "2020-12-06", writer: "이승헌", title: "종중 전/답/임야/주택 명의이전관련 문의드립니다." },
-                { day: "2020-12-05", writer: "김예오", title: "대리기사 차량손괴 보험처리건" },
-                { day: "2020-12-02", writer: "최신동", title: "형사 재판 기록을 민사재판부에 제공하는 행위" },
-                { day: "2020-12-02", writer: "이찬원", title: "월세 임대에 보증금 관련해서 문의 드립니다." },
-                { day: "2020-12-01", writer: "장민호", title: "소비자 분쟁조정위원회에 따른 결정에 대한 문의" },
-                { day: "2020-11-26", writer: "김성주", title: "판매자 분쟁" },
-                { day: "2020-11-25", writer: "박세라", title: "빌라 수리비용 허위청구시 대응방안" }
+                { day: "2020-11-08", writer: "안정환", title: "집주인이 의도적으로 집을 못 빼게 해요" },
+                { day: "2020-11-07", writer: "안리환", title: "아파트 매매 특약 관련 문의 건" },
+                { day: "2020-11-06", writer: "김성주", title: "상속 공동 명의 변경 건" },
+                { day: "2020-11-05", writer: "윤후", title: "위반건축물 빌라(원룸) 매매" },
+                { day: "2020-11-04", writer: "윤민수", title: "임대인과의 문제" },
+                { day: "2020-11-04", writer: "성동일", title: "땅 20년정도 등기 안되었다고 경매" },
+                { day: "2020-11-03", writer: "성빈", title: "전세금 반환소송 문의드립니다" },
+                { day: "2020-11-02", writer: "성준", title: "이사비용 관련 문의드립니다." },
+                { day: "2020-11-01", writer: "이희재", title: "소멸시효 문의" },
+                { day: "2020-11-01", writer: "장범준", title: "경찰의 허위수사" }
             ];
 
             tagParsing(list, true);

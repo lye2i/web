@@ -114,7 +114,7 @@
         }
 
         #prev,
-        #two,
+        #one,
         #three,
         #four,
         #next {
@@ -123,7 +123,7 @@
             font-family: 'Do Hyeon', sans-serif;
         }
 
-        #one {
+        #two {
             text-align: center;
             font-size: 30px;
             font-family: 'Do Hyeon', sans-serif;
@@ -188,7 +188,7 @@
         <input id="two" type="button" value="2" onclick="move_page_2()" ;>
         <input id="three" type="button" value="3" onclick="move_page_3()" ;>
         <input id="four" type="button" value="4" onclick="move_page_4()" ;>
-        <input id="next" type="button" value=">" onclick="move_page_2()" ;>
+        <input id="next" type="button" value=">" onclick="move_page_3()" ;>
     </section>
 
 
@@ -290,16 +290,16 @@
         /* 테이블 구성 */
         function init_park() {
             var list = [
-                { day: "2020-12-08", writer: "김한별", title: "부동산 배액배상건으로 여쭈어봅니다." },
-                { day: "2020-12-08", writer: "이예은", title: "상해죄 기소 너무너무 억울합니다" },
-                { day: "2020-12-08", writer: "이윤아", title: "배상명령신청 집행 관련 문의 드립니다." },
-                { day: "2020-12-06", writer: "홍길동", title: "비법인 사단의 총회 소집시 하자 없는 소집통지 방법" },
-                { day: "2020-12-05", writer: "김변호", title: "초상권 침해 범죄 유무 관련" }, //게시글 누르는거 이걸로 테스트
-                { day: "2020-12-03", writer: "이마을", title: "임대사업등록사로서 자진말소한 부동산의 효과적인 처리" },
-                { day: "2020-12-03", writer: "김선호", title: "주식 리딩사기" },
-                { day: "2020-12-01", writer: "김지영", title: "12대 중과실 교통사고 형사 합의금" },
-                { day: "2020-11-29", writer: "이두환", title: "주택임차등기의 효력 유무" },
-                { day: "2020-11-29", writer: "박재영", title: "전세집 변기누수" }
+                { day: "2020-11-28", writer: "김영주", title: "일방적인 부동산 구두계약 파기" },
+                { day: "2020-11-28", writer: "김지혜", title: "위법성 조각 사유와 무고" },
+                { day: "2020-11-27", writer: "한경은", title: "부동산 집행 관련 문의 드립니다." },
+                { day: "2020-11-27", writer: "송하경", title: "통신비밀보호법" },
+                { day: "2020-11-25", writer: "이예지", title: "호텔 객실 비품 무단 매각시 사기죄 성립여부" },
+                { day: "2020-11-25", writer: "이예건", title: "부모님 채무관련 문의" },
+                { day: "2020-11-23", writer: "이윤아", title: "이혼한 처에게 부동산을 상속할 수 있나요?" },
+                { day: "2020-11-22", writer: "박주은", title: "협박죄 성립여부 조언구합니다." },
+                { day: "2020-11-21", writer: "김한슬", title: "상속재산분할 문의드립니다." },
+                { day: "2020-11-20", writer: "유희주", title: "[부동산 임대료] 보증금 및 임대료 상한제 문의드립니다." }
             ];
 
             tagParsing(list, true);
@@ -307,16 +307,16 @@
 
         function init_kim() {
             var list = [
-                { day: "2020-12-07", writer: "이서웅", title: "개인정보보호법 위반" },
-                { day: "2020-12-07", writer: "이예건", title: "피트니스 시설 중도해지 부분." },
-                { day: "2020-12-07", writer: "김아준", title: "해방공탁금취하방법" },
-                { day: "2020-12-06", writer: "이승헌", title: "종중 전/답/임야/주택 명의이전관련 문의드립니다." },
-                { day: "2020-12-05", writer: "김예오", title: "대리기사 차량손괴 보험처리건" },
-                { day: "2020-12-02", writer: "최신동", title: "형사 재판 기록을 민사재판부에 제공하는 행위" },
-                { day: "2020-12-02", writer: "이찬원", title: "월세 임대에 보증금 관련해서 문의 드립니다." },
-                { day: "2020-12-01", writer: "장민호", title: "소비자 분쟁조정위원회에 따른 결정에 대한 문의" },
-                { day: "2020-11-26", writer: "김성주", title: "판매자 분쟁" },
-                { day: "2020-11-25", writer: "박세라", title: "빌라 수리비용 허위청구시 대응방안" }
+                { day: "2020-11-25", writer: "신인류", title: "실업급여 받을 수 있을까요?" },
+                { day: "2020-11-25", writer: "이유정", title: "아파트 전세 계약갱신청구권 사용 여부" },
+                { day: "2020-11-22", writer: "노경민", title: "대여금 내용증명" },
+                { day: "2020-11-21", writer: "강희선", title: "인터넷 글 고소 가능성" },
+                { day: "2020-11-20", writer: "김지우", title: "임대차 보증금 미반환에 따른 반환소송 및 등기설정" },
+                { day: "2020-11-19", writer: "채다연", title: "인터넷 고소" },
+                { day: "2020-11-19", writer: "이유나", title: "공동명의 토지" },
+                { day: "2020-11-19", writer: "송병우", title: "임대차 계약 잔금지연" },
+                { day: "2020-11-17", writer: "박체리", title: "계약해제" },
+                { day: "2020-11-16", writer: "이강현", title: "동일한 민사소송에 대한 대처방법 문의" }
             ];
 
             tagParsing(list, true);

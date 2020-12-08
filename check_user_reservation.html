@@ -14,7 +14,7 @@
     <style>
         #logo {
             display: block;
-           
+
         }
 
         #login {
@@ -45,7 +45,7 @@
         #menubar ul {
             margin: 0;
             padding: 3;
-            width: 567px;
+            width: 95%;
         }
 
         #menubar ul li {
@@ -65,6 +65,12 @@
             color: rgb(242, 146, 72)
         }
 
+        #menubar li.menu_lawyer {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
+        }
+
         #title_ {
             border: 5px;
             width: 100%;
@@ -80,8 +86,13 @@
             margin-left: auto;
             margin-right: auto;
             text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
             font-family: 'Do Hyeon', sans-serif;
             font-size: 30px;
+        }
+
+        #name thead {
             background-color: azure;
         }
 
@@ -90,52 +101,43 @@
             height: 100%;
             margin-left: auto;
             margin-right: auto;
-            text-align: center;
-            font-size: 30px;
+            font-size: 20px;
             font-family: 'Do Hyeon', sans-serif;
         }
 
         .msg {
-            border:1px solid;
-            padding:10px;
+            border: 1px solid;
+            padding: 10px;
             width: 60%;
             height: 100%;
             margin-left: auto;
-            margin-right: auto; }
-
+            margin-right: auto;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <div>
-            <a id="logo" href="home.html"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
-            <table id="login">
-                <tbody>
-                    <tr>
-                        <!-- 로그인 버튼 -->
-                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
-                        <td><a href="user_login.html">로그인</a></td>
-
-
-                        <!-- 변호사 로그인 버튼 -->
-                        <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
-                        <td><a href="lawyer_login.html">변호사 로그인</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <a id="logo" onclick="move1()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
         </div>
         <br><br><br>
 
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="lawyer_search.html">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="#none" onclick="move2()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
                 <li><a href="cyber_qa.html">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
+
+                <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
+                <li class="menu_lawyer"><a onclick="location.reload()">상담신청 게시판</a></li>
+
             </ul>
         </nav>
         <br>
@@ -145,28 +147,40 @@
     <!-- 예약 신청 목록 -->
     <section>
         <table id="name" border="1">
-            <tr>
-                <td id="user_name" width="9px">이름</td>
-                <td id="phone" width="70px">전화번호</td>
-                <td id="day" width="53px">원하는 상담 날짜</td>
-            </tr>
-        </table>
-        <table id="data" class="report data" border="1">
+            <thead>
+                <tr>
+                    <th id="user_name" width="50px">이름</td>
+                    <th id="phone" width="40px">전화번호</td>
+                    <th id="day" width="30px">원하는 상담 날짜</td>
+                </tr>
+            </thead>
+            <tbody id="data" class="report data">
+            </tbody>
         </table>
 
-        <h3 id = "title_"></h3>
+        <h3 id="title_"></h3>
 
         <div class="msg">
-            저 버스 표지판에 적힌 지명들은 이 세상에 존재하지 않는 곳이거나 누구도 갈 수 없는 곳인 양 여겨지고 있다. 저 약재상과 이불 가게의 진열창을 침수시킨 어둠은 내가 항시 보던 어둠과 전혀 달라 어떤 탐미적 이질감마저 느껴지고 있다.
-            
-            상점 안에 보이는 저 상인들조차도 단순히 뭔가를 팔고 있는 것이 아니라, 인생이라는 우울한 사건을 꾸미러 온 정체 불명의 존재들처럼 여겨지고 있다.
-            </div>
+            안녕하세요.<br>
+            <br>
+            초상권 침해 관련하여 억울한 일을 겪어 변호사님과 상담하고 싶습니다.<br>
+            <br>
+            카페 내 활동중 채팅으로 분란이 발생하여 채팅 내용 캡쳐 후 카페 게시글로 게시를 했습니다.<br>
+            채팅 내용 캡쳐본에 상대방의 프로필 사진에 본인의 사진이 게시되어 있어 초상권 침해로 신고한다고 합니다.<br>
+            그 점에 무지했던 저는 여러번 사과 드렸습니다<br>
+            혹시 초상권 침해로 신고를 당하면 벌금이 어느정도 나올까요?<br>
+            <br>
+            글로 표현하는데에 어려움이 있어 간략하게 상황만 설명했습니다.<br>
+            변호사님과 직접 만나 상담을 받고 싶어 해당 날짜에 예약 신청합니다.<br>
+            <br>
+            연락 기다리겠습니다.
+        </div>
     </section>
 
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-     
+
         /* 로그인 정보 가져오기 */
         var getParameter = function (param) {
             var returnValue;
@@ -197,21 +211,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         /* 테이블 구성 */
         function init_user_info(day, name, title) {
             var list = [
@@ -230,6 +229,16 @@
                     + "<td class='day'>" + obj[i].day + "</td></tr>";
             }
             document.getElementById("data").innerHTML = tag;
+        }
+
+
+        function move2() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_search.html?index=" + name;
+        }
+        function move1() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_home.html?index=" + name;
         }
     </script>
 </body>
