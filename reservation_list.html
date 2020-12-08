@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 
+
     <style>
         #logo {
             display: block;
-            margin-left: 700px;
+            margin-left: 400px;
         }
 
         #login {
@@ -74,7 +75,7 @@
         }
 
         #name {
-            width: 60%;
+            width: 70%;
             height: 100%;
             margin-left: auto;
             margin-right: auto;
@@ -84,18 +85,40 @@
             background-color: azure;
         }
 
-        #day {width: 230px;}
-        #writer {width: 108px;}
-        #day {width: 230px;}
-
         #data {
-            width: 60%;
+            width: 70%;
             height: 100%;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
             font-size: 30px;
             font-family: 'Do Hyeon', sans-serif;
+        }
+
+        #page {
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #prev,
+        #two,
+        #three,
+        #four,
+        #next {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        #one {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Do Hyeon', sans-serif;
+            background-color: azure;
         }
     </style>
 </head>
@@ -148,33 +171,103 @@
     <section>
         <table id="name" border="1">
             <tr>
-                <td id="day">신청일</td>
-                <td id="writer">작성자</td>
-                <td id="title">제목</td>
+                <td id="day" width="50px">신청일</td>
+                <td id="writer" width="20px">작성자</td>
+                <td id="title" width="210px">제목</td>
             </tr>
         </table>
         <table id="data" class="report data" border="1">
         </table>
     </section>
 
+    <section id="page">
+        <input id="prev" type="button" value="<" onclick="location.href='./user_sign_up.html'" ;>
+        <input id="one" type="button" value="1" onclick="location.href='./user_sign_up.html'" ;>
+        <input id="two" type="button" value="2" onclick="location.href='./user_sign_up.html'" ;>
+        <input id="three" type="button" value="3" onclick="location.href='./user_sign_up.html'" ;>
+        <input id="four" type="button" value="4" onclick="location.href='./user_sign_up.html'" ;>
+        <input id="next" type="button" value=">" onclick="location.href='./user_sign_up.html'" ;>
+    </section>
 
-    <script>
-        window.onload = function () {
-            init();
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        // /* 로그인 정보 가져오기 */
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            var name = getParameter('index');
+            //이전 페이지로부터 "사용자이름&변호사이름" 받음
+            console.log('val : ' + name);
+
+            window.onload = function () {
+                if (name === "박주민")
+                    init_park();
+
+                if (name === "김한비")
+                    init_kim();
+            }
+        });
+
+        // window.onload = function () {
+        //     init_park();
+        //     // movePage(day, writer, title);
+        // }
+
+
+        /* 테이블 구성 */
+        function init_park() {
+            var list = [
+                { day: "2020-12-08", writer: "김한별", title: "부동상 배액배상건으로 여쭈어봅니다." },
+                { day: "2020-12-08", writer: "이예은", title: "상해죄 기소 너무너무 억울합니다" },
+                { day: "2020-12-08", writer: "이윤아", title: "배상명령신청 집행 관련 문의 드립니다." },
+                { day: "2020-12-06", writer: "홍길동", title: "비법인 사단의 총회 소집시 하자 없는 소집통지 방법" },
+                { day: "2020-12-05", writer: "김변호", title: "초상권 침해 범죄 유무 관련" },
+                { day: "2020-12-03", writer: "이마을", title: "임대사업등록사로서 자진말소한 부동산의 효과적인 처리" },
+                { day: "2020-12-03", writer: "김선호", title: "주식 리딩사기" },
+                { day: "2020-12-01", writer: "김지영", title: "12대 중과실 교통사고 형사 합의금" },
+                { day: "2020-11-29", writer: "이두환", title: "주택임차등기의 효력 유무" },
+                { day: "2020-11-29", writer: "박재영", title: "전세집 변기누수" }
+            ];
+
+            tagParsing(list, true);
+
+            //click Evt
+            $(".title").click(function () {
+                var titleName = this.id;
+                if (titleName === "day") {
+                    tagParsing(list, false);
+                } else if (titleName === "writer") {
+                    tagParsing(list, false);
+                } else if (titleName === "title") {
+                    tagParsing(list, false);
+                }
+            })
         }
 
-        function init() {
+        function init_kim() {
             var list = [
-            { day: "2020-12-03", writer: "김한비", title: "본인 동의 없이 전입이 되었습니다"},
-                { day: "2020-12-01", writer: "이예은", title: "택시업무방해로 인한 약식명령"},
-                { day: "2020-12-01", writer: "이윤아", title: "윗집누수" },
-                { day: "2020-12-01", writer: "홍길동", title: "전세 연장 청구권과 집 매도"},
-                { day: "2020-11-27", writer: "김변호", title: "소프트웨어 저작권침해에 대한 형사고소 및 민사소송"},
-                { day: "2020-11-25", writer: "이마을", title: "전세보증금 지연에 따른 피해보상 관련"},
-                { day: "2020-11-20", writer: "김선호", title: "친정어머님의 유언장 작성에 관하여 상담합니다."},
-                { day: "2020-11-20", writer: "김지영", title: "상담부탁드립니다. 초보사업자밀린대금못받았을때"},
-                { day: "2020-11-19", writer: "이두환", title: "보증금 반환해야 하나요?"},
-                { day: "2020-11-18", writer: "박재영", title: "부모 소유 부동산 문제"}
+                { day: "2020-12-07", writer: "이서웅", title: "개인정보보호법 위반" },
+                { day: "2020-12-07", writer: "이예건", title: "피트니스 시설 중도해지 부분." },
+                { day: "2020-12-07", writer: "김아준", title: "해방공탁금취하방법" },
+                { day: "2020-12-06", writer: "이승헌", title: "종중 전/답/임야/주택 명의이전관련 문의드립니다." },
+                { day: "2020-12-05", writer: "김예오", title: "대리기사 차량손괴 보험처리건" },
+                { day: "2020-12-02", writer: "최신동", title: "형사 재판 기록을 민사재판부에 제공하는 행위" },
+                { day: "2020-12-02", writer: "이찬원", title: "월세 임대에 보증금 관련해서 문의 드립니다." },
+                { day: "2020-12-01", writer: "장민호", title: "소비자 분쟁조정위원회에 따른 결정에 대한 문의" },
+                { day: "2020-11-26", writer: "김성주", title: "판매자 분쟁" },
+                { day: "2020-11-25", writer: "박세라", title: "빌라 수리비용 허위청구시 대응방안" }
             ];
 
             tagParsing(list, true);
@@ -198,9 +291,17 @@
             for (i = 0; i < obj.length; i++) {
                 tag += "<tr><td class='day'>" + obj[i].day + "</td>"
                     + "<td class='writer'>" + obj[i].writer + "</td>"
-                    + "<td class='title'>" + obj[i].title + "</td></tr>";
+                    + "<td class='title'>" + obj[i].title + "</td></tr>"
+
+                console.log('day : ' + obj[i].day);
+                console.log('writer : ' + obj[i].writer);
+                console.log('title : ' + obj[i].title);
             }
             document.getElementById("data").innerHTML = tag;
+        }
+
+        function movePage(day, writer, title) {
+            window.location.href = "check_user_reservation.html?day=" + day + "&writer=" + writer + "&title=" + title;
         }
     </script>
 </body>
