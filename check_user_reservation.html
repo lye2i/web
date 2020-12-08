@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="#">
-    
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script>
-        function setChildValue(index) {
-            // window.location.href = "lawyer_home.html?index=" + index;
-            window.location.href = "reservation_list.html?index=" + index;
-        }
-    </script>
-
     <title>우리 마을 변호사</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
@@ -22,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 
+
     <style>
         #logo {
             display: block;
-            margin-left: 400px;
+            margin-left: 700px;
         }
 
         #login {
@@ -62,7 +51,7 @@
         #menubar ul li {
             display: inline-block;
             list-style-type: none;
-            padding: 3px 20px;
+            padding: 6px 20px;
         }
 
         #menubar ul li a {
@@ -76,43 +65,48 @@
             color: rgb(242, 146, 72)
         }
 
-        .section {
+        #title {
             border: 5px;
             width: 100%;
             height: 100%;
+            font-size: 30px;
             text-align: center;
             font-family: 'Do Hyeon', sans-serif;
         }
 
-        #login_form {
-            margin: auto;
-            margin-bottom: 20px;
-            border: 1px solid;
+        #name {
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            background-color: azure;
+        }
+
+        #data {
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 30px;
             font-family: 'Do Hyeon', sans-serif;
         }
 
-        th,
-        td {
-            padding: 10px;
-            font-family: 'Do Hyeon', sans-serif;
-        }
+        .msg {
+            border:1px solid;
+            padding:10px;
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto; }
 
-        .section input[type="submit"] {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 125%;
-        }
-        .section button[type="button"] {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 100%;
-        }
-
-        
     </style>
 </head>
 
-
 <body>
-    
     <header>
         <div>
             <a id="logo" href="home.html"><img src="img/main_logo.png" width="600" height="200"></a>
@@ -147,43 +141,68 @@
         </nav>
         <br>
     </header>
-    <section class="section">
-        <h2>변호사 로그인</h2>
-        <form name="login" >
-            <table id="login_form">
-                <tr>
-                    <td colspan="1">변호사ID : <input type="text" size="25" value="" id="lawyer_id"></td>
-                    <td rowspan="2"><button id = "submit" type="button" value="변호사 로그인"
-                            style="width:100px; height:70px; padding:5px; background-color: azure;">변호사 로그인</td>
-                </tr>
-                <tr>
-                    <td colspan="1">비밀번호 : <input type="password" size="25" value="" id="lawyer_password"></td>
-                </tr>
-            </table>
-        </form>
+
+
+    <!-- 예약 신청 목록 -->
+    <section>
+        <table id="name" border="1">
+            <tr>
+                <td id="user_name" width="9px">이름</td>
+                <td id="phone" width="70px">전화번호</td>
+                <td id="day" width="53px">원하는 상담 날짜</td>
+            </tr>
+        </table>
+        <table id="data" class="report data" border="1">
+        </table>
+
+        <h3 id = "title">[ 부동상 배액배상건으로 여쭈어봅니다. ]</h3>
+
+        <div class="msg">
+            저 버스 표지판에 적힌 지명들은 이 세상에 존재하지 않는 곳이거나 누구도 갈 수 없는 곳인 양 여겨지고 있다. 저 약재상과 이불 가게의 진열창을 침수시킨 어둠은 내가 항시 보던 어둠과 전혀 달라 어떤 탐미적 이질감마저 느껴지고 있다.
+            
+            상점 안에 보이는 저 상인들조차도 단순히 뭔가를 팔고 있는 것이 아니라, 인생이라는 우울한 사건을 꾸미러 온 정체 불명의 존재들처럼 여겨지고 있다.
+            </div>
     </section>
-    <script> //Js
-        document.getElementById("submit").onclick = function () {
-            var ID = document.getElementById("lawyer_id").value;
-            var pass = document.getElementById("lawyer_password").value;
-            var user;
-            if (ID === "lawyer_park" && pass === "1111") {
-                user = "박주민";
-                //alert(user + " 로그인 성공!");
-                 //location.href = "home.html";  
-                 setChildValue(user);    
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            init_user_info();
+        }
+
+        /* 테이블 구성 */
+        function init_user_info() {
+            var list = [
+                { user_name: "김한별", phone: "010-4332-5778", day: "2020-12-08" },
+            ];
+
+            tagParsing(list, true);
+
+            //click Evt
+            $(".title").click(function () {
+                var titleName = this.id;
+                if (titleName === "user_name") {
+                    tagParsing(list, false);
+                } else if (titleName === "phone") {
+                    tagParsing(list, false);
+                } else if (titleName === "day") {
+                    tagParsing(list, false);
+                }
+            })
+        }
+
+        function tagParsing(obj, init) {
+            var len = obj.length;
+            var tag = '';
+            for (i = 0; i < obj.length; i++) {
+                tag += "<tr><td class='user_name'>" + obj[i].user_name + "</td>"
+                    + "<td class='phone'>" + obj[i].phone + "</td>"
+                    + "<td class='day'>" + obj[i].day + "</td></tr>";
             }
-            else if(ID === "lawyer_kim" && pass ==="2222"){
-                user = "김한비";
-                setChildValue(user);
-            }
-            else {
-                alert("로그인 실패!");
-            }  
-        };
-     // location.href = "home.html";      
+            document.getElementById("data").innerHTML = tag;
+        }
     </script>
-    
 </body>
 
 </html>
