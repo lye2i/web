@@ -123,8 +123,8 @@
     <section id="writing">
 
         <div>
-            <label for="writer_name">상담자 이름: </label>
-            <input type="text" id="writer_name" name="writer_name" autofocus />
+            상담자 이름 :  
+            <p id="writer_name" name="writer_name" ></p>
         </div>
         <br>
         <div>
@@ -145,6 +145,12 @@
     </section>
 
     <script>
+        function change_name(name) {
+                var user = document.getElementById("user_name");
+                user.innerText = name + " 님";
+            }   
+            
+
         var today = document.getElementById("today");
         var date_today = new Date().toISOString().slice(0, 10);
         today.innerText = "신청 날짜 : " + date_today;
@@ -161,8 +167,7 @@
 
             number++; //현재 데이터 번호
             var num = number;
-            var names = document.getElementById('writer_name').value;
-            var name = names[0] + "**";
+            var name = getParameter('index');
             var title = document.getElementById('title').value;
             var msg = document.getElementById('msg').value;
             var ans = "답변대기";
@@ -206,6 +211,27 @@
             var name = getParameter('index');
             window.location.href = "user_home.html?index=" + name;
         }
+
+        var getParameter = function (param) {
+                var returnValue;
+                var url = location.href;
+                var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+                for (var i = 0; i < parameters.length; i++) {
+                    var varName = parameters[i].split('=')[0];
+                    if (varName.toUpperCase() == param.toUpperCase()) {
+                        returnValue = parameters[i].split('=')[1];
+                        return decodeURIComponent(returnValue);
+                    }
+                }
+            };
+        $(document).ready(function () {
+             var name = getParameter('index');
+            console.log(name);
+            if (name != undefuned) {
+                change_name(name);
+                document.getElementById('writer_name').innerText = name;
+             }
+        });
 
     </script>
 

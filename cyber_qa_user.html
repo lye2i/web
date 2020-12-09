@@ -121,6 +121,7 @@
         <h3 id="form_name">
             사이버 상담 목록
         </h3>
+        <button onclick="move_cyber_write()"> 상담 글 쓰기</button>
     </section>
     <table id="list" border="1">
         <thead>
@@ -157,9 +158,15 @@
         };
         $(document).ready(function () {
             window.onload = function () {
+                var name = getParameter('index');
+                console.log('val : ' + name);
+                change_name(name);
+                
                 tagParsing(true);
 
                 $("#data tr").click(function () {
+
+
                     var str = ""
                     var tdArr = new Array();	// 배열 선언
 
@@ -178,27 +185,43 @@
                     // console.log("배열에 담긴 값 : " + tdArr);
 
                     // td.eq(index)를 통해 값을 가져올 수도 있다.
+                    
                     var num = td.eq(0).text();
+                    var writer = localStorage.getItem("name"+num);
+                    var me = getParameter('index');
+                    
+                    if(writer === me )
+                    {
+                        movePage(num);
+                    }
+                    else{
+                        alert("접근 권한이 없습니다!");
+                        
+                    }
 
-                    str += " * 클릭된 Row의 td값 = num : <font color='red'>" + num + "</font>";
+                   // str += " * 클릭된 Row의 td값 = num : <font color='red'>" + num + "</font>";
 
-                    movePage(num);
+                   
                 });
             }
         });
 
         function tagParsing(init) {
             var num = localStorage.getItem('count');
+            console.log("num:"+num);
             var tag = '';
 
-            for (i = 1; i < num + 1; i++) {
+            for (var i = 1; i <=num; i++) {
                 var str_date = "date" + i;
                 var str_name = "name" + i;
                 var str_title = "title" + i;
                 var str_ans = "ans" + i;
 
                 var date = localStorage.getItem(str_date);
-                var name = localStorage.getItem(str_name);
+                var names = localStorage.getItem(str_name);
+                var name = names[0]+"**";
+                console.log(name);
+                
                 var title = localStorage.getItem(str_title);
                 var ans = localStorage.getItem(str_ans);
 
@@ -214,7 +237,7 @@
 
         function movePage(num) {
             var name = getParameter('index');
-            window.location.href = "cyber_user_read_writing.html" + name + "&num=" + num;
+            window.location.href = "cyber_user_read_writing.html?index=" + name + "&num=" + num;
         }
         function move_search() {
                 var name = getParameter('index');
@@ -228,6 +251,14 @@
             var name = getParameter('index');
             window.location.href = "user_home.html?index="+name;
         }
+        function move_cyber_write() {
+                var name = getParameter('index');
+                window.location.href = "cyber_user_write.html?index=" + name;
+            }
+        
+
+
+            
 
     </script>
 
