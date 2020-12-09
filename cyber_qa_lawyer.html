@@ -154,6 +154,8 @@
         };
         $(document).ready(function () {
             window.onload = function () {
+                var name = getParameter('index');
+                change_name(name);
                 tagParsing(true);
 
                 $("#data tr").click(function () {
@@ -188,14 +190,17 @@
             var num = localStorage.getItem('count');
             var tag = '';
 
-            for (i = 1; i < num + 1; i++) {
+            for (i = 1; i <=num ; i++) {
                 var str_date = "date" + i;
                 var str_name = "name" + i;
                 var str_title = "title" + i;
                 var str_ans = "ans" + i;
 
                 var date = localStorage.getItem(str_date);
-                var name = localStorage.getItem(str_name);
+                var names = localStorage.getItem(str_name);
+                var name = names[0]+"**";
+                console.log(name);
+                
                 var title = localStorage.getItem(str_title);
                 var ans = localStorage.getItem(str_ans);
 

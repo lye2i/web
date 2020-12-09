@@ -147,10 +147,15 @@
             background-color: azure;
             border: 2px solid;
             border-radius: 20px;
-
             transition: 0.3s;
             text-align: center;
 
+        }
+
+        #menubar li.menu_lawyer {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
         }
     </style>
 </head>
@@ -342,7 +347,7 @@
 
             var user = document.getElementById("lawyer_name");
             if (name != undefined) {
-                user.innerText = name + " 님";
+                user.innerText = name + " 변호사";
             }
 
         }

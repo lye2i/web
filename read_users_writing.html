@@ -102,6 +102,12 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        #menubar li.user {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
+        }
     </style>
 </head>
 
@@ -186,8 +192,6 @@
             }
         });
 
-
-
         /* 테이블 구성 */
         function init_user_info(day, name, title, phone) {
             var list = [
@@ -213,27 +217,27 @@
             window.location.href = "check_user_reservation.html?day=" + day + "&writer=" + writer + "&title=" + title;
         }
         function move_search() {
-            var name = getParameter('index');
+            var name = getParameter('writer_name');
             window.location.href = "lawyer_search.html?index=" + name;
         }
         function move_cyber() {
-            var name = getParameter('index');
+            var name = getParameter('writer_name');
             window.location.href = "cyber_qa_user.html?index=" + name;
         }
         function move_home() {
-            var name = getParameter('index');
+            var name = getParameter('writer_name');
             window.location.href = "user_home.html?index=" + name;
         }
         function move_blog() {
-            var name = getParameter('index');
+            var name = getParameter('writer_name');
             window.location.href = "blog_user.html?index=" + name;
         }
         function move_howtouse() {
-            var name = getParameter('index');
+            var name = getParameter('writer_name');
             window.location.href = "howtouse_user.html?index=" + name;
         }
         function move_qna() {
-            var name = getParameter('index');
+            var name = getParameter('writer_name');
             window.location.href = "qna_user.html?index=" + name;
         }
         function change_name(name) {
