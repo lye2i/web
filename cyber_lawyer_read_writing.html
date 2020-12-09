@@ -289,8 +289,8 @@
                 change_name(name);
                 var num = getParameter('num');
                 number = num;
-                getItems(1);
-                number = 1;
+                getItems(num);
+                
             }
         });
         function lawyer_btn() {
@@ -328,7 +328,7 @@
 
         function change_name(name) {
 
-            var user = document.getElementById("user_name");
+            var user = document.getElementById("lawyer_name");
             if (name != undefined) {
                 user.innerText = name + " 님";
             }
