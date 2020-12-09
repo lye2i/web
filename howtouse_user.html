@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="#">
+    <title>우리 마을 변호사</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <style>
+        #logo {
+            align-items: center;
+            display: block;
+
+        }
+
+        a:link {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        #menubar {
+            background: rgb(163, 213, 201);
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 3;
+            width: 95%;
+        }
+
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 6px 20px;
+        }
+
+        #menubar ul li a,
+        span {
+            color: rgb(68, 68, 68);
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 125%;
+        }
+
+        #menubar ul li a:hover {
+            color: rgb(242, 146, 72)
+        }
+
+        div {
+            font-family: 'Do Hyeon', sans-serif;
+            padding-left: 50px;
+            padding-right: 20px;
+            padding-top: 100px;
+            font-size: 20px;
+        }
+
+        button {
+            display: block;
+            font-family: 'Do Hyeon', sans-serif;
+            width: 120px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 79, 255, 0.3);
+            transition: 0.3s;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #visit {
+            font-family: 'Do Hyeon', sans-serif;
+            margin-bottom: 50px;
+        }
+
+        #menubar li.user {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+
+        <a id="logo" href="#none" onclick="move_home()">
+            <center><img src="img/main_logo.png" width="600" height="200"></center>
+        </a>
+
+        <br><br><br>
+
+        <nav id="menubar">
+            <ul>
+                <!-- 변호사 검색 버튼 -->
+                <li><a href="#none" onclick="move_search()">변호사 검색 & 상담 예약 신청</a></li>
+                <!-- 사이버법률상담 버튼 -->
+                <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
+                <!-- 이용 안내 버튼 -->
+                <li><a href="#none" onclick="move_howtouse()">이용 안내</a></li>
+                <li><a href="#none" onclick="move_blog()">마을변호사 소식</a></li>
+                <li><a href="#none" onclick="move_qna()">자주묻는 질문</a></li>
+                <li class="user"><a href="./home.html">로그아웃</a></li>
+                <li class="user"><a id="user_name">땡땡땡</a></li>
+            </ul>
+        </nav>
+        <br>
+    </header>
+
+    <div>
+        변호사와 직접 상담을 희망하시는 분은 <span>"변호사 검색&상담 예약 신청"</span> 메뉴에서 상담 예약을
+        신청하시고 운영중인 시민법률상담실을 방문하여 상담 받으실 수 있습니다.
+        <br>
+        <h2>[ 상담예약 후 예약 상담 ]</h2>
+        - 예약신청은 위측 메뉴(변호사 검색 & 상담 예약 신청) 에서 하실 수 있습니다. <br>
+        - 인권상담 접수문의는 서울시 인권센터(전화 2133-6378~9)로 해주시면 됩니다. <br>
+        - 상담신청자는 법률상담기록카드(별첨 양식)를 작성후 예약된
+        방문상담일에 상담실을 방문하여 안내직원에게 제출하시고, 상담을 받으시면 됩니다.<br>
+        <br>
+        <p style="color:blue;">※ 2020년 2월 10일부터 코로나19 확산방지를 위하여 예약시간에 변호사가 전화를 드리는 전화상담으로만 운영하오니,
+            이용에 유의하여 주시기 바랍니다. (대면상담 불가)></p><br>
+
+        <br>
+        <h2>[ 구비서류 ]</h2>
+        - 상담신청자의 신분을 증명할 수 있는 주민등록증 등 신분증만 있으면 상담이 가능하며,
+        상담에 필요한 서류를 준비하고 상담에 임하면 보다 더 효율적인 상담을 받으실 수 있습니다. <br>
+        - 국민기초생활보장수급자 등 저소득층에 대해서는 대한법률구조공단을 통한 소송대리 등
+        적극적인 법률구조를 받을 수 있도록 자세히 안내해 드립니다.
+        <br>
+        <img src="img/res.gif" width="500" height="200">
+        <br>
+        <h2>[ 상담 예약 없이 방문 상담 ]</h2>
+        예약신청 및 상담실시 상담신청자는 법률상담실을 방문하여 안내센터에 비치된 법률상담기록카드를 작성하여 상담안내 직원에게 제출하시고, 법률상담이 가능한 시간대를 안내 받은후에 법률상담을 받으시면 됩니다.
+        <br>단, 예약없이 방문하시면 상담이 지연될 수도 있습니다. 상담신청자의 구비서류는 예약방문시와 같습니다.
+        <br>※ 시청 법률상담실을 방문하시기 어려운 분들은 사이버 법률상담을 이용하시면 편리하게 상담 받으실 수 있습 니다. 단,
+        법률상담실을 방문하여 변호사와 직접 상담하시는 것이 가장 효율적인 상담방법입니다.
+    </div>
+    <div>
+        <button id="btn" onclick="map_show()"> 시민 법률 상담실 찾아오기</button>
+        <br>
+        <img id="visitmap" style="display:none;" src="img/visit_map.gif" width="50%" height="50%">
+        <br><br>
+        <table id="visit" style="display: none;">
+            <thead id="t_head">
+                <tr>
+                    <th>구분</th>
+                    <th>이용노선</th>
+                    <th>이용방법</th>
+                </tr>
+            </thead>
+            <tbody id="t_body">
+                <tr>
+                    <td rowspan=2>지하철</td>
+                    <td>1호선</td>
+                    <td>시청역 1번 출구 (서울시청서소문별관 방면)</td>
+                </tr>
+                <tr>
+                    <td>2호선</td>
+                    <td>시청역 11번 출구나 12번 출구</td>
+                </tr>
+                <tr>
+                    <td rowspan=6> 버스 </td>
+                    <td> 파란(간선)버스 </td>
+                    <td> 109,150,162,172,401,402,406,472,501,506,600,602,603,703,706,707 </td>
+                </tr>
+                <tr>
+                    <td> 초록(지선)버스 </td>
+                    <td> 0014,0015,1711,4012,7016,7017,7021,7022 </td>
+                </tr>
+                <tr>
+                    <td> 초록(지선마을)버스 </td>
+                    <td> 종로09인왕아파트~시청 종로11삼청동~서울역 </td>
+                </tr>
+                <tr>
+                    <td> 빨간(광역)버스 </td>
+                    <td> 9000,9041,9600,9702,9703,9704,9706,9708,9709,9713 </td>
+                </tr>
+                <tr>
+                    <td> 경기버스 </td>
+                    <td> 1000,1005-1,1200,5005,5500,5500-1,5500-2,9000,9001,9301 </td>
+                </tr>
+                <tr>
+                    <td> 공항버스 </td>
+                    <td> 601,605 </td>
+                </tr>
+                <tr>
+                    <td rowspan=2> 자가용 </td>
+                    <td> 광화문쪽에서 오실 때 </td>
+                    <td> 덕수궁 정문에서 우측의 샛길로 우회전) </td>
+                </tr>
+                <tr>
+                    <td> 남대문쪽에서 오실때 </td>
+                    <td> 광화문까지 직진하여 광화문 앞에서 U턴 후 덕수궁 정문에서 우측의
+                        샛길로 우회전 </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+
+        function map_show() {
+            var con = document.getElementById("visit");
+            if (con.style.display == 'none') {
+                con.style.display = 'table';
+                con.style.textAlign = 'center';
+                con.style.marginLeft = 'auto';
+                con.style.marginRight = 'auto';
+                con.style.border = '1px solid black';
+                var head = document.getElementById("t_head");
+                head.style.backgroundColor = 'azure';
+                head.style.textAlign = 'center';
+                var body = document.getElementById("t_body");
+                body.style.color = 'black';
+                body.style.backgroundColor = '#f1f1f1';
+            }
+            else {
+                con.style.display = 'none';
+            }
+
+            var map = document.getElementById("visitmap");
+            if (map.style.display == 'none') {
+                map.style.display = 'block';
+                map.style.textAlign = 'center';
+                map.style.margin = '0px auto';
+                map.style.marginBottom = '20px';
+            }
+            else {
+                map.style.display = 'none';
+            }
+        }
+    </script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        function change_name(name) {
+            var user = document.getElementById("user_name");
+            user.innerText = name + " 님";
+        }
+
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            var name = getParameter('index');
+            console.log('val : ' + name);
+            if (name != undefined) {
+                change_name(name);
+            }
+        });
+        function move_search() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_search.html?index=" + name;
+        }
+        function move_cyber() {
+            var name = getParameter('index');
+            window.location.href = "cyber_qa_user.html?index=" + name;
+        }
+        function move_home() {
+            var name = getParameter('index');
+            window.location.href = "user_home.html?index=" + name;
+        }
+        function move_blog() {
+            var name = getParameter('index');
+            window.location.href = "blog_user.html?index=" + name;
+        }
+        function move_howtouse() {
+            var name = getParameter('index');
+            window.location.href = "howtouse_user.html?index=" + name;
+        }
+        function move_qna() {
+            var name = getParameter('index');
+            window.location.href = "qna_user.html?index=" + name;
+        }
+    </script>
+
+</body>
+
+</html>

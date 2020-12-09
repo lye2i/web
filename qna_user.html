@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="#">
+    <title>우리 마을 변호사</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <style>
+        #logo {
+            align-items: center;
+            display: block;
+
+        }
+
+        a:link {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        #menubar {
+            background: rgb(163, 213, 201);
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 3;
+            width: 95%;
+        }
+
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 6px 20px;
+        }
+
+        #menubar ul li a {
+            color: rgb(68, 68, 68);
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 125%;
+        }
+
+        #menubar ul li a:hover {
+            color: rgb(242, 146, 72)
+        }
+
+        #box_qna {
+            text-align: center;
+        }
+
+        #box_qna ul li {
+            list-style-type: none;
+            line-height: 100px;
+        }
+
+        #qna {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .qna_list {
+            width: 79%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+            border: 1px solid rgb(163, 213, 201);
+        }
+
+        .answer {
+            display: none;
+            font-size: 20px;
+            font-family: 'Do Hyeon', sans-serif;
+            text-align: left;
+        }
+
+        .question {
+            background-color: azure;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 30px;
+        }
+
+        span {
+            color: rgb(68, 68, 68);
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 125%;
+        }
+
+        #menubar li.user {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div>
+            <a id="logo" href="#none" onclick="move_home()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
+        </div>
+        <br><br><br>
+
+        <nav id="menubar">
+            <ul>
+                <!-- 변호사 검색 버튼 -->
+                <li><a href="#none" onclick="move_search()">변호사 검색 & 상담 예약 신청</a></li>
+                <!-- 사이버법률상담 버튼 -->
+                <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
+                <!-- 이용 안내 버튼 -->
+                <li><a href="#none" onclick="move_howtouse()">이용 안내</a></li>
+                <li><a href="#none" onclick="move_blog()">마을변호사 소식</a></li>
+                <li><a href="#none" onclick="move_qna()">자주묻는 질문</a></li>
+                <li class="user"><a href="./home.html">로그아웃</a></li>
+                <li class="user"><a id="user_name">땡땡땡</a></li>
+            </ul>
+        </nav>
+        <br>
+    </header>
+
+    <div id="box_qna">
+        <h1 id="qna">
+            <자주 묻는 질문>
+                </h3>
+                <ul class="qna_list">
+                    <li class="question">Q. 소송이 필요한 경우 마을변호사가 직접 소송까지 진행하나요?</li>
+                    <li class="answer"><span>A. </span>마을변호사는 법률상담 서비스를 제공하는 제도이므로 소송 서비스는 제공하지 않습니다.<br>
+                        소송 서비스가 필요한 경우에는 대한변호사협회 법률구조재단 및 법률구조공단 이용방법 등을 안내해 드리고 있습니다.
+                    </li>
+                </ul>
+                <ul class="qna_list">
+                    <li class="question">Q. 마을변호사를 언제 어디서든 만날 수 있는 건가요?</li>
+                    <li class="answer"><span>A. </span>변호사를 접하기 어려운 읍,면,동 지역 위주로 마을변호사가 배정되어 있으나, 마을변호사가 배정지역에 상주하는 것은
+                        아닙니다.<br>
+                        따라서 전화 팩스 이메일 등 원격상담을 원칙으로 하며, 대면상담을 원하실 경우 담당 마을변호사와 일정조율과정을 거쳐야 합니다.
+                    </li>
+                </ul>
+                <ul class="qna_list">
+                    <li class="question">Q. 마을변호사와 법률홈닥터의 차이는 무엇인가요?</li>
+                    <li class="answer"><span>A. </span>마을변호사는 개업 변호사가 공익적 활동(재능기부)의 일환으로, 변호사가 상주하지 않는 무변촌 또는 변호사를 접하기
+                        어려운 읍,면,동 마을 주민들에게 법률상담 서비스를 제공하는 제도입니다.<br>
+                        반면, 법률홈닥터는 법무부가 고용한 변호사가 시,군,구에 거주하는 사회적,경제적 취약계층에게 법률상담 서비스를 제공하는 제도입니다.
+                    </li>
+                </ul>
+                <ul class="qna_list">
+                    <li class="question">Q. 외국인도 마을변호사를 만날 수 있나요?</li>
+                    <li class="answer"><span>A. </span>국적과 관계없이 읍,면,동에 거주하는 주민이라면 누구나 만날 수 있습니다. <br>다만, 외국어로 상담을 진행하지는
+                        않습니다.</li>
+                </ul>
+    </div>
+
+    <br><br><br><br><br><br>
+
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("li.question").click(function () {
+
+                $(this).next().toggle("fast");
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        function change_name(name) {
+            var user = document.getElementById("user_name");
+            user.innerText = name + " 님";
+        }
+
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            var name = getParameter('index');
+            console.log('val : ' + name);
+            if (name != undefined) {
+                change_name(name);
+            }
+        });
+        function move_search() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_search.html?index=" + name;
+        }
+        function move_cyber() {
+            var name = getParameter('index');
+            window.location.href = "cyber_qa_user.html?index=" + name;
+        }
+        function move_home() {
+            var name = getParameter('index');
+            window.location.href = "user_home.html?index=" + name;
+        }
+        function move_blog() {
+            var name = getParameter('index');
+            window.location.href = "blog_user.html?index=" + name;
+        }
+        function move_howtouse() {
+            var name = getParameter('index');
+            window.location.href = "howtouse_user.html?index=" + name;
+        }
+        function move_qna() {
+            var name = getParameter('index');
+            window.location.href = "qna_user.html?index=" + name;
+        }
+    </script>
+</body>
+
+</html>

@@ -171,9 +171,9 @@
                 <!-- 사이버법률상담 버튼 -->
                 <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
-                <li><a href="howtouse.html">이용 안내</a></li>
-                <li><a href="blog.html">마을변호사 소식</a></li>
-                <li><a href="qna.html">자주묻는 질문</a></li>
+                <li><a href="#none" onclick="move_howtouse()">이용 안내</a></li>
+                <li><a href="#none" onclick="move_blog()">마을변호사 소식</a></li>
+                <li><a href="#none" onclick="move_qna()">자주묻는 질문</a></li>
                 <li class="menu_lawyer"><a href="#none" onclick="move_res()">상담신청 게시판</a></li>
                 <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
                 <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
@@ -324,6 +324,18 @@
         function move_home() {
             var name = getParameter('index');
             window.location.href = "lawyer_home.html?index=" + name;
+        }
+        function move_blog() {
+            var name = getParameter('index');
+            window.location.href = "blog_lawyer.html?index=" + name;
+        }
+        function move_howtouse() {
+            var name = getParameter('index');
+            window.location.href = "howtouse_lawyer.html?index=" + name;
+        }
+        function move_qna() {
+            var name = getParameter('index');
+            window.location.href = "qna_lawyer.html?index=" + name;
         }
 
         function change_name(name) {
