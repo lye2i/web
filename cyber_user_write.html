@@ -135,20 +135,26 @@
             text-align: right;
         }
 
-        input[type="text"],
-        input[type="phone"] {
-            height: 100%;
-            /* 높이 초기화 */
-            line-height: normal;
-            /* line-height 초기화 */
-            width: 20%;
+        
+        #writing{
+            font-family: 'Do Hyeon', sans-serif;
+            /* Just to center the form on the page */
+            margin: 0 auto;
+            width: 100%;
+            height: 30%;
+            /* To see the outline of the form */
+            padding: 1em;
+            text-align: center;
+
+
+        }
+        #btn{
+            background-color: azure;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
             font-size: 20px;
         }
-
-        #date {
-            width: 20%;
-        }
-
+        
         textarea {
             width: 50%;
             height: 300px;
@@ -200,46 +206,60 @@
         <br>
     </header>
     <section id="writing">
-        <form name="user_writing">
+        
             <div>
                 <label for="writer_name">상담자 이름: </label>
                 <input type="text" id="writer_name" name="writer_name" autofocus />
             </div>
+            <br>
             <div>
                 <label for="title">제목: </label>
                 <input type="text" id="title" name="title" autofocus />
             </div>
+            <br>
             <div>
                 <h3>[ 사이버 법률 상담 신청 글 작성 ]</h3>
                 <textarea id="msg" name="msg"></textarea>
             </div>
+            <br>
             <div>
-                <button onclick="save_local();">법률 상담 신청</button>
+                <button id="btn" onclick="save_local()">법률 상담 신청</button>
             </div>
-        </form>
+        
     </section>
 
     <script>
-       
-
+        var number;
+        if(localStorage.getItem('count')==null)
+        {
+            number=0;
+            localStorage.setItem('count',0);
+        }
+        else{
+            number = localStorage.getItem('count');
+        }
+        console.log("number : "+number);
        function save_local()
        {
-           
+
+           number++; //현재 데이터 번호
            var name = document.getElementById('writer_name').value;
-           console.log(name);
-           var title = document.getElementById('title').innerText;
-           var msg = document.getElementById('msg').innerText;
-           console.log(name+ title+ msg);
+           var title = document.getElementById('title').value;
+           var msg = document.getElementById('msg').value;
+           
            //local storage key 값
-        //    var str_name = "name"+number;
-        //    var str_title = "title" + number;
-        //    var str_msg = "msg" + number;
-        //    localStorage.setItem(str_name, name);
-        //    localStorage.setItem(str_title, title);
-        //    localStorage.setItem(str_msg, msg);
-        //    console.log(localStorage.getItem(str_name));
-        //    console.log(localStorage.getItem(str_title));
-        //    console.log(localStorage.getItem(str_msg));
+           var str_name = "name"+number;
+           var str_title = "title" + number;
+           var str_msg = "msg" + number;
+          
+           console.log(str_name +" "+ name);
+           console.log(str_title + " " +  title);
+           console.log(str_msg + " " + msg);
+
+           localStorage.setItem(str_name, name);
+           localStorage.setItem(str_title, title);
+           localStorage.setItem(str_msg, msg);
+            localStorage.setItem('count', number);
 
            
        }
