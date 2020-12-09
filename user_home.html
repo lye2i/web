@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
         function setChildValue(index) {
@@ -24,18 +24,11 @@
     <style>
         #logo {
             display: block;
-            width : auto;
+            width: auto;
             align-items: center;
         }
 
-        #login {
-            float: right;
-            color: darkgray;
-            font-family: 'Jua', sans-serif;
-            font-size: small;
-        }
-
-        #user_name{
+        #user_name {
             color: rgb(242, 146, 72)
         }
 
@@ -143,15 +136,15 @@
             padding-left: 30px;
         }
 
-        #menubar li.user{
-            float:right;
-            margin-left:-1px; z-index:1;
+        #menubar li.user {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
         }
 
-        #user_name{
+        #user_name {
             color: rgb(242, 146, 72)
         }
-
     </style>
 
 </head>
@@ -160,17 +153,18 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="location.reload()"><center><img id="logo" src="img/main_logo.png" width="600" height="200">
-            </center></a>
+            <a id="logo" href="#none" onclick="move_home()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
         </div>
         <br><br><br>
 
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a onclick="move()">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="#none" onclick="move_search()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a id = "cyber_qa" href="cyber_qa.html">사이버법률상담</a></li>
+                <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
@@ -220,7 +214,7 @@
     <!-- 이용방법 -->
     <section id="use_method">
         <table>
-            <tbody> 
+            <tbody>
                 <tr>
                     <td><img src="img/use_method.png" width="250" height="150"></td>
                     <td id="use_text">
@@ -252,7 +246,7 @@
     <br><br><br><br><br><br>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-     function setChildValue(index) {
+        function setChildValue(index) {
             window.location.href = "user_reservation.html?index=" + index;
         }
 
@@ -261,11 +255,6 @@
             var user = document.getElementById("user_name");
             user.innerText = name + " 님";
 
-        }
-
-        function move(){
-            var name = getParameter('index');
-            window.location.href = "lawyer_search.html?index=" + name;
         }
 
         var getParameter = function (param) {
@@ -288,9 +277,22 @@
             if (name != undefined) {
                 alert(name + "님 환영합니다");
                 change_name(name);
-                
+
             }
         });
+
+        function move_search() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_search.html?index=" + name;
+        }
+        function move_cyber() {
+            var name = getParameter('index');
+            window.location.href = "cyber_qa_user.html?index=" + name;
+        }
+        function move_home() {
+            var name = getParameter('index');
+            window.location.href = "user_home.html?index=" + name;
+        }
 
 
     </script>

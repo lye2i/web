@@ -14,18 +14,6 @@
     <style>
         #logo {
             display: block;
-            
-        }
-
-        #login {
-            float: right;
-            color: darkgray;
-            font-family: 'Jua', sans-serif;
-            font-size: small;
-        }
-
-        #login td {
-            padding-right: 10px;
         }
 
         a:link {
@@ -65,69 +53,7 @@
             color: rgb(242, 146, 72)
         }
 
-        #intro_video {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #introduction {
-            margin-left: 100px;
-        }
-
-        #intro_text {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 125%;
-            padding-left: 40px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #operation_method {
-            margin-left: 700px;
-        }
-
-        #operate_text {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 125%;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #use_method {
-            margin-left: 100px;
-        }
-
-        #use_text {
-            font-family: 'Do Hyeon', sans-serif;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #alpha_info {
-            list-style-type: none;
-        }
-
-        #support {
-            float: right;
-            margin-right: 50px;
-        }
-
-        #support tbody tr td {
-            padding-left: 30px;
-        }
-
+        
         #menubar li.user {
             float: right;
             margin-left: -1px;
@@ -196,16 +122,18 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="move1()"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
+            <a id="logo" href="#none" onclick="move_home()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
         </div>
         <br><br><br>
 
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="lawyer_search.html">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="#none" onclick="move_search()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="cyber_qa.html">사이버법률상담</a></li>
+                <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
@@ -487,10 +415,18 @@
                 change_name(name);
             }
         });
-         function move1() {
+        function move_search() {
                 var name = getParameter('index');
-                window.location.href = "user_home.html?index=" + name;
-            }
+                window.location.href = "lawyer_search.html?index=" + name;
+        }
+        function move_cyber() {
+                var name = getParameter('index');
+                window.location.href = "cyber_qa_user.html?index=" + name;
+        }
+        function move_home(){
+            var name = getParameter('index');
+            window.location.href = "user_home.html?index="+name;
+        }
     </script>
 </body>
 

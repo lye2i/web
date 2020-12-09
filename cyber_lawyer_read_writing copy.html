@@ -17,17 +17,6 @@
 
         }
 
-        #login {
-            float: right;
-            color: darkgray;
-            font-family: 'Jua', sans-serif;
-            font-size: small;
-        }
-
-        #login td {
-            padding-right: 10px;
-        }
-
         a:link {
             color: darkgray;
             text-decoration: none;
@@ -80,7 +69,7 @@
             font-family: 'Do Hyeon', sans-serif;
         }
 
-        #name{
+        #name {
             width: 60%;
             height: 100%;
             margin-left: auto;
@@ -116,7 +105,7 @@
         }
 
         #answer_ {
-           
+
             padding: 10px;
             width: 100%;
             height: 100%;
@@ -124,22 +113,22 @@
             margin-right: auto;
             font-size: 20px;
             font-family: 'Do Hyeon', sans-serif;
-            
+
 
         }
-        #blk
-        {
-           
+
+        #blk {
+
             padding: 10px;
             width: 60%;
             height: 100%;
             margin-left: auto;
             margin-right: auto;
-            
+
         }
-        #lawyer_answer
-        {
-            
+
+        #lawyer_answer {
+
             border: 1px solid;
             padding: 10px;
             width: 50%;
@@ -148,19 +137,20 @@
             margin-right: auto;
             font-size: 20px;
             font-family: 'Do Hyeon', sans-serif;
-            background-color:whitesmoke;
+            background-color: whitesmoke;
         }
-        button{
-            
+
+        button {
+
             font-size: 20px;
             font-family: 'Do Hyeon', sans-serif;
             background-color: azure;
-            border:2px solid;
+            border: 2px solid;
             border-radius: 20px;
-           
+
             transition: 0.3s;
             text-align: center;
-            
+
         }
     </style>
 </head>
@@ -168,7 +158,7 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="move1()">
+            <a id="logo" href="#none" onclick="move_home()">
                 <center><img src="img/main_logo.png" width="600" height="200"></center>
             </a>
         </div>
@@ -177,16 +167,16 @@
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="" onclick="move2()">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="#none" onclick="move_search()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="cyber_qa.html">사이버법률상담</a></li>
+                <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
                 <li><a href="qna.html">자주묻는 질문</a></li>
-                <li class="menu_user"><a href="./home.html">로그아웃</a></li>
-                <li class="menu_user"><a id="user_name">땡땡땡</a></li>
-
+                <li class="menu_lawyer"><a href="#none" onclick="move_res()">상담신청 게시판</a></li>
+                <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
+                <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
             </ul>
         </nav>
         <br>
@@ -219,19 +209,19 @@
         <h3 id="title_"></h3>
 
         <div id="msg_"></div>
-        
+
         <div id="blk">
             <div style="display: inline;">
                 답변 :
             </div>
-            <div id="answer_"style="display: inline;">
+            <div id="answer_" style="display: inline;">
             </div>
         </div>
-        <div id ="answer_write">
-           
+        <div id="answer_write">
+
             <center><input type="text" id="lawyer_answer" autofocus /><button id="btn" onclick="lawyer_btn()">
-            답변 달기
-            </button></center>
+                    답변 달기
+                </button></center>
         </div>
     </section>
 
@@ -300,33 +290,39 @@
                 var num = getParameter('num');
                 number = num;
                 getItems(1);
-                number=1;
+                number = 1;
             }
         });
-        function lawyer_btn()
-        {
+        function lawyer_btn() {
             var input = document.getElementById('lawyer_answer');
-            if(input != null)
-            {
-                console.log("number:"+number);
-                var answer_str = "answer"+number;
+            if (input != null) {
+                console.log("number:" + number);
+                var answer_str = "answer" + number;
                 var ans_str = "ans" + number;
                 var data = input.value;
-                console.log("data:"+data);
-                localStorage.setItem(answer_str,data);
-                localStorage.setItem(ans_str,"답변완료");
+                console.log("data:" + data);
+                localStorage.setItem(answer_str, data);
+                localStorage.setItem(ans_str, "답변완료");
                 document.getElementById('answer_').innerText = data;
                 input.value = " ";
-                
+
             }
         }
 
-        function move2() {
-            var name = getParameter('writer_name');
-            window.location.href = "lawyer_search.html?index=" + name;
+        function move_res() {
+            var name = getParameter('index');
+            window.location.href = "reservation_list.html?index=" + name;
         }
-        function move1() {
-            var name = getParameter('writer_name');
+        function move_search() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_search_lawyer.html?index=" + name;
+        }
+        function move_cyber() {
+            var name = getParameter('index');
+            window.location.href = "cyber_qa_lawyer.html?index=" + name;
+        }
+        function move_home() {
+            var name = getParameter('index');
             window.location.href = "lawyer_home.html?index=" + name;
         }
 

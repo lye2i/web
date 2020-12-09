@@ -17,17 +17,6 @@
 
         }
 
-        #login {
-            float: right;
-            color: darkgray;
-            font-family: 'Jua', sans-serif;
-            font-size: small;
-        }
-
-        #login td {
-            padding-right: 10px;
-        }
-
         a:link {
             color: darkgray;
             text-decoration: none;
@@ -113,11 +102,11 @@
             margin-left: auto;
             margin-right: auto;
         }
-        #answer_
-        {
+
+        #answer_ {
             border: 1px solid;
             padding: 10px;
-             width: 60%;
+            width: 60%;
             height: 100%;
             margin-left: auto;
             margin-right: auto;
@@ -132,7 +121,7 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="move1()">
+            <a id="logo" href="#none" onclick="move_home()">
                 <center><img src="img/main_logo.png" width="600" height="200"></center>
             </a>
         </div>
@@ -141,16 +130,15 @@
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="" onclick="move2()">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="#none" onclick="move_search()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="cyber_qa.html">사이버법률상담</a></li>
+                <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
                 <li><a href="qna.html">자주묻는 질문</a></li>
-                <li class="menu_user"><a href="./home.html">로그아웃</a></li>
-                <li class="menu_user"><a id="user_name">땡땡땡</a></li>
-
+                <li class="user"><a href="./home.html">로그아웃</a></li>
+                <li class="user"><a id="user_name">땡땡땡</a></li>
             </ul>
         </nav>
         <br>
@@ -162,17 +150,21 @@
         <table id="name" border="1">
             <thead>
                 <tr>
-                    <th  width="50px">글번호</td>
-                    <th  width="50px">이름</td>
-                    <th  width="50px">날짜</td>
-                    <th  width="50px">답변 상태</td>
+                    <th width="50px">글번호</td>
+                    <th width="50px">이름</td>
+                    <th width="50px">날짜</td>
+                    <th width="50px">답변 상태</td>
                 </tr>
             </thead>
             <tbody id="data" class="report data">
-                <th id="num_" width="50px"></td>
-                <th id="name_" width="50px"></td>
-                <th id="date_" width="50px"></td>
-                <th id="ans_" width="50px"></td>
+                <th id="num_" width="50px">
+                    </td>
+                <th id="name_" width="50px">
+                    </td>
+                <th id="date_" width="50px">
+                    </td>
+                <th id="ans_" width="50px">
+                    </td>
             </tbody>
         </table>
 
@@ -185,14 +177,14 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-    function getItems(count) {
+        function getItems(count) {
             var name_str = "name" + count;
             var title_str = "title" + count;
             var msg_str = "msg" + count;
             var ans_str = "ans" + count;
             var date_str = "date" + count;
             var num_str = "num" + count;
-            var answer_str = "answer"+count;
+            var answer_str = "answer" + count;
 
             var name = localStorage.getItem(name_str);
             var title = localStorage.getItem(title_str);
@@ -202,8 +194,7 @@
             var num = localStorage.getItem(num_str);
 
             var answer = localStorage.getItem(answer_str);
-            if(answer != null)
-            {
+            if (answer != null) {
                 document.getElementById('answer_').innerText = answer;
             }
 
@@ -222,7 +213,7 @@
             document.getElementById('ans_').innerText = ans;
             document.getElementById('date_').innerText = date;
             document.getElementById('num_').innerText = num;
-          
+
 
         }
 
@@ -240,21 +231,25 @@
         };
         $(document).ready(function () {
             window.onload = function () {
-              //이전 페이지에서 받아온 정보 가져오기
-              var name = getParameter('index');
-              console.log('val : ' + name);
-              change_name(name);
-              var num = getParameter('num');
-              getItems(1);
+                //이전 페이지에서 받아온 정보 가져오기
+                var name = getParameter('index');
+                console.log('val : ' + name);
+                change_name(name);
+                var num = getParameter('num');
+                getItems(1);
             }
         });
 
-        function move2() {
-            var name = getParameter('writer_name');
+        function move_search() {
+            var name = getParameter('index');
             window.location.href = "lawyer_search.html?index=" + name;
         }
-        function move1() {
-            var name = getParameter('writer_name');
+        function move_cyber() {
+            var name = getParameter('index');
+            window.location.href = "cyber_qa_user.html?index=" + name;
+        }
+        function move_home() {
+            var name = getParameter('index');
             window.location.href = "user_home.html?index=" + name;
         }
 

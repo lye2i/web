@@ -14,7 +14,7 @@
     <style>
         #logo {
             display: block;
-           
+
         }
 
         #login {
@@ -63,69 +63,6 @@
 
         #menubar ul li a:hover {
             color: rgb(242, 146, 72)
-        }
-
-        #intro_video {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #introduction {
-            margin-left: 100px;
-        }
-
-        #intro_text {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 125%;
-            padding-left: 40px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #operation_method {
-            margin-left: 700px;
-        }
-
-        #operate_text {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 125%;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #use_method {
-            margin-left: 100px;
-        }
-
-        #use_text {
-            font-family: 'Do Hyeon', sans-serif;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #alpha_info {
-            list-style-type: none;
-        }
-
-        #support {
-            float: right;
-            margin-right: 50px;
-        }
-
-        #support tbody tr td {
-            padding-left: 30px;
         }
 
         #form_name {
@@ -190,7 +127,9 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="move1()"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
+            <a id="logo" onclick="move1()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
             <table id="login">
                 <tbody>
                     <tr>
@@ -198,7 +137,7 @@
                         <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
                         <td><a href="user_login.html">로그인</a></td>
 
-                        
+
                         <!-- 변호사 로그인 버튼 -->
                         <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
                         <td><a href="lawyer_login.html">변호사 로그인</a></td>
@@ -206,9 +145,9 @@
                 </tbody>
             </table>
         </div>
-        
+
         <br><br><br>
-        
+
 
         <nav id="menubar">
             <ul>
@@ -233,30 +172,30 @@
 
     <!-- 예약 신청 목록 -->
     <section>
-        <div  id="location">
-        시도:
-        <select id="sido" onchange="categoryChange(this)">
-            <option value="0">선택</option>
-            <option value="서울특별시">서울특별시</option>
-            <option value="인천광역시">인천광역시</option>
-            <option value="부산광역시">부산광역시</option>
-            <option value="울산광역시">울산광역시</option>
-            <option value="광주광역시">광주광역시</option>
-            <option value="경기도">경기도</option>
-            <option value="강원도">강원도</option>
-            <option value="경상북도">경상북도</option>
-            <option value="경상남도">경상남도</option>
-            <option value="충청남도">충청남도</option>
-            <option value="충청북도">충청북도</option>
-            <option value="전라남도">전라남도</option>
-            <option value="전라북도">전라북도</option>
-        </select>
-        시군구: <select id="sigungu">
-            <option value="선택">선택</option>;
-        </select>
-        <input type="button" id="search" onclick="search();" value="검색" style="padding:5px; width:100px">
-    </div>
-        
+        <div id="location">
+            시도:
+            <select id="sido" onchange="categoryChange(this)">
+                <option value="0">선택</option>
+                <option value="서울특별시">서울특별시</option>
+                <option value="인천광역시">인천광역시</option>
+                <option value="부산광역시">부산광역시</option>
+                <option value="울산광역시">울산광역시</option>
+                <option value="광주광역시">광주광역시</option>
+                <option value="경기도">경기도</option>
+                <option value="강원도">강원도</option>
+                <option value="경상북도">경상북도</option>
+                <option value="경상남도">경상남도</option>
+                <option value="충청남도">충청남도</option>
+                <option value="충청북도">충청북도</option>
+                <option value="전라남도">전라남도</option>
+                <option value="전라북도">전라북도</option>
+            </select>
+            시군구: <select id="sigungu">
+                <option value="선택">선택</option>;
+            </select>
+            <input type="button" id="search" onclick="search();" value="검색" style="padding:5px; width:100px">
+        </div>
+
         <table id="name" border="1">
             <thead>
                 <tr>
@@ -356,7 +295,7 @@
 
             target.options.length = 0;
 
-            for(x in list){
+            for (x in list) {
                 var opt = document.createElement("option");
                 opt.value = list[x];
                 opt.innerHTML = list[x];
@@ -458,9 +397,9 @@
             }
         });
         function move1() {
-                var name = getParameter('index');
-                window.location.href = "lawyer_home.html?index=" + name;
-            }
+            var name = getParameter('index');
+            window.location.href = "lawyer_home.html?index=" + name;
+        }
 
 
     </script>

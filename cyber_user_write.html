@@ -18,17 +18,6 @@
 
         }
 
-        #login {
-            float: right;
-            color: darkgray;
-            font-family: 'Jua', sans-serif;
-            font-size: small;
-        }
-
-        #login td {
-            padding-right: 10px;
-        }
-
         a:link {
             color: darkgray;
             text-decoration: none;
@@ -66,77 +55,15 @@
             color: rgb(242, 146, 72)
         }
 
-        #intro_video {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #introduction {
-            margin-left: 100px;
-        }
-
-        #intro_text {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 125%;
-            padding-left: 40px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #operation_method {
-            margin-left: 700px;
-        }
-
-        #operate_text {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 125%;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #use_method {
-            margin-left: 100px;
-        }
-
-        #use_text {
-            font-family: 'Do Hyeon', sans-serif;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #alpha_info {
-            list-style-type: none;
-        }
-
-        #support {
-            float: right;
-            margin-right: 50px;
-        }
-
-        #support tbody tr td {
-            padding-left: 30px;
-        }
-         label {
+        label {
             /* To make sure that all label have the same size and are properly align */
             display: inline-block;
             width: 100px;
             text-align: right;
         }
 
-        
-        #writing{
+
+        #writing {
             font-family: 'Do Hyeon', sans-serif;
             /* Just to center the form on the page */
             margin: 0 auto;
@@ -146,15 +73,15 @@
             padding: 1em;
             text-align: center;
 
-
         }
-        #btn{
+
+        #btn {
             background-color: azure;
             text-align: center;
             font-family: 'Do Hyeon', sans-serif;
             font-size: 20px;
         }
-        
+
         textarea {
             width: 50%;
             height: 300px;
@@ -164,7 +91,6 @@
             /* 여백 설정 */
 
         }
-
     </style>
 </head>
 
@@ -172,117 +98,115 @@
 <body>
     <header>
         <div>
-            <a id="logo" href="home.html">
+            <a id="logo" href="#none" onclick="move_home()">
                 <center><img src="img/main_logo.png" width="600" height="200"></center>
             </a>
-            <table id="login">
-                <tbody>
-                    <tr>
-                        <!-- 로그인 버튼 -->
-                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
-                        <td><a href="user_login.html">로그인</a></td>
-
-
-                        <!-- 변호사 로그인 버튼 -->
-                        <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
-                        <td><a href="lawyer_login.html">변호사 로그인</a></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
         <br><br><br>
 
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="lawyer_search_origin.html">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="#none" onclick="move_search()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="cyber_qa.html">사이버법률상담</a></li>
+                <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
+                <li><a href="qna.html">자주묻는 질문</a></li>
+                <li class="user"><a href="./home.html">로그아웃</a></li>
+                <li class="user"><a id="user_name">땡땡땡</a></li>
             </ul>
         </nav>
         <br>
     </header>
     <section id="writing">
-        
-            <div>
-                <label for="writer_name">상담자 이름: </label>
-                <input type="text" id="writer_name" name="writer_name" autofocus />
-            </div>
-            <br>
-            <div>
-                <label for="title">제목: </label>
-                <input type="text" id="title" name="title" autofocus />
-            </div>
-            <br>
-            <div>
-                <h3>[ 사이버 법률 상담 신청 글 작성 ]</h3>
-                <h3 id="today">현재 날짜</h3>
-                <textarea id="msg" name="msg"></textarea>
-            </div>
-            <br>
-            <div>
-                <button id="btn" onclick="save_local()">법률 상담 신청</button>
-            </div>
-        
+
+        <div>
+            <label for="writer_name">상담자 이름: </label>
+            <input type="text" id="writer_name" name="writer_name" autofocus />
+        </div>
+        <br>
+        <div>
+            <label for="title">제목: </label>
+            <input type="text" id="title" name="title" autofocus />
+        </div>
+        <br>
+        <div>
+            <h3>[ 사이버 법률 상담 신청 글 작성 ]</h3>
+            <h3 id="today">현재 날짜</h3>
+            <textarea id="msg" name="msg"></textarea>
+        </div>
+        <br>
+        <div>
+            <button id="btn" onclick="save_local()">법률 상담 신청</button>
+        </div>
+
     </section>
 
     <script>
         var today = document.getElementById("today");
         var date_today = new Date().toISOString().slice(0, 10);
-        today.innerText ="신청 날짜 : " + date_today;
+        today.innerText = "신청 날짜 : " + date_today;
         var number;
-        if(localStorage.getItem('count')==null)
-        {
-            number=0;
-            localStorage.setItem('count',0);
+        if (localStorage.getItem('count') == null) {
+            number = 0;
+            localStorage.setItem('count', 0);
         }
-        else{
+        else {
             number = localStorage.getItem('count');
         }
-        console.log("number : "+number);
-       function save_local()
-       {
+        console.log("number : " + number);
+        function save_local() {
 
-           number++; //현재 데이터 번호
-           var num = number;
-           var names = document.getElementById('writer_name').value;
-           var name = names[0]+"**";
-           var title = document.getElementById('title').value;
-           var msg = document.getElementById('msg').value;
-           var ans = "답변대기";
-           var date = date_today;
-           
-           //local storage key 값
-           var str_num = "num"+number;
-           var str_name = "name"+number;
-           var str_title = "title" + number;
-           var str_msg = "msg" + number;
-           var str_ans = "ans"+number;
-           var str_date = "date"+number;
-        
-          
-           console.log(str_name +" "+ name);
-           console.log(str_title + " " +  title);
-           console.log(str_msg + " " + msg);
+            number++; //현재 데이터 번호
+            var num = number;
+            var names = document.getElementById('writer_name').value;
+            var name = names[0] + "**";
+            var title = document.getElementById('title').value;
+            var msg = document.getElementById('msg').value;
+            var ans = "답변대기";
+            var date = date_today;
 
-           localStorage.setItem(str_num, num);
-           localStorage.setItem(str_ans, ans);
-           localStorage.setItem(str_name, name);
-           localStorage.setItem(str_title, title);
-           localStorage.setItem(str_msg, msg);
-           localStorage.setItem(str_date, date);
+            //local storage key 값
+            var str_num = "num" + number;
+            var str_name = "name" + number;
+            var str_title = "title" + number;
+            var str_msg = "msg" + number;
+            var str_ans = "ans" + number;
+            var str_date = "date" + number;
+
+
+            console.log(str_name + " " + name);
+            console.log(str_title + " " + title);
+            console.log(str_msg + " " + msg);
+
+            localStorage.setItem(str_num, num);
+            localStorage.setItem(str_ans, ans);
+            localStorage.setItem(str_name, name);
+            localStorage.setItem(str_title, title);
+            localStorage.setItem(str_msg, msg);
+            localStorage.setItem(str_date, date);
 
             localStorage.setItem('count', number);
-           // location.href="local_test.html";
-           alert("사이버 상담 신청 완료!");
-           
+            // location.href="local_test.html";
+            alert("사이버 상담 신청 완료!");
 
-       }
 
-   
+        }
+        function move_search() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_search.html?index=" + name;
+        }
+        function move_cyber() {
+            var name = getParameter('index');
+            window.location.href = "cyber_qa_user.html?index=" + name;
+        }
+        function move_home() {
+            var name = getParameter('index');
+            window.location.href = "user_home.html?index=" + name;
+        }
+
     </script>
 
 </body>

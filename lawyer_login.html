@@ -5,14 +5,14 @@
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="#">
-    
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
         function setChildValue(index) {
-             window.location.href = "lawyer_home.html?index=" + index;
-           // window.location.href = "reservation_list.html?index=" + index;
+            window.location.href = "lawyer_home.html?index=" + index;
+            // window.location.href = "reservation_list.html?index=" + index;
         }
-        
+
     </script>
 
     <title>우리 마을 변호사</title>
@@ -26,7 +26,7 @@
     <style>
         #logo {
             display: block;
-            
+
         }
 
         #login {
@@ -102,21 +102,22 @@
             font-family: 'Do Hyeon', sans-serif;
             font-size: 125%;
         }
+
         .section button[type="button"] {
             font-family: 'Do Hyeon', sans-serif;
             font-size: 100%;
         }
-
-        
     </style>
 </head>
 
 
 <body>
-    
+
     <header>
         <div>
-            <a id="logo"  href="home.html"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
+            <a id="logo" href="home.html">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
             <table id="login">
                 <tbody>
                     <tr>
@@ -150,11 +151,11 @@
     </header>
     <section class="section">
         <h2>변호사 로그인</h2>
-        <form name="login" >
+        <form name="login">
             <table id="login_form">
                 <tr>
                     <td colspan="1">변호사ID : <input type="text" size="25" value="" id="lawyer_id"></td>
-                    <td rowspan="2"><button id = "submit" type="button" value="변호사 로그인"
+                    <td rowspan="2"><button id="submit" type="button" value="변호사 로그인"
                             style="width:100px; height:70px; padding:5px; background-color: azure;">변호사 로그인</td>
                 </tr>
                 <tr>
@@ -169,29 +170,29 @@
             var pass = document.getElementById("lawyer_password").value;
             var user;
 
-            if(ID=="" || pass ==""){
+            if (ID == "" || pass == "") {
                 alert("아이디와 비밀번호를 모두 입력해주세요");
             }
 
             else if (ID === "lawyer_park" && pass === "1111") {
                 user = "박주민";
                 alert(user + " 로그인 성공!");
-                 //location.href = "home.html";  
-                 setChildValue(user);    
+                //location.href = "home.html";  
+                setChildValue(user);
             }
-            
-            else if(ID === "lawyer_kim" && pass ==="2222"){
+
+            else if (ID === "lawyer_kim" && pass === "2222") {
                 user = "김한비";
                 setChildValue(user);
             }
             else {
                 alert("로그인 실패!");
-            }  
+            }
         };
-     // location.href = "home.html";    
-       
+     // location.href = "home.html";
+
     </script>
-    
+
 </body>
 
 </html>
