@@ -216,7 +216,9 @@
             window.onload = function () {
 
                 var exist = localStorage.getItem('web_exist');
-                if (exist == "true") {
+                var choose_lawyer_name = localStorage.getItem('web_lawyer_name');
+                console.log('choose_lawyer_name : ' + choose_lawyer_name);
+                if (exist == "true" && name === choose_lawyer_name) {
                     append_row();
                 }
 

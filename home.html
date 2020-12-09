@@ -15,7 +15,7 @@
         #logo {
             align-items: center;
             display: block;
-
+           
         }
 
         #login {
@@ -88,7 +88,7 @@
         }
 
         #operation_method {
-            margin-left: 700px;
+            margin-left: 300px;
         }
 
         #operate_text {
@@ -135,9 +135,7 @@
 <body>
     <header>
         <div>
-            <a id="logo" href="home.html">
-                <center><img src="img/main_logo.png" width="600" height="200"></center>
-            </a>
+            <a id="logo" href="home.html"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
             <table id="login">
                 <tbody>
                     <tr>
@@ -145,7 +143,7 @@
                         <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
                         <td><a href="user_login.html">로그인</a></td>
 
-
+                        
                         <!-- 변호사 로그인 버튼 -->
                         <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
                         <td><a href="lawyer_login.html">변호사 로그인</a></td>
@@ -164,14 +162,13 @@
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
-                <li><a href="qna.html">자주묻는 질문</a></li>
             </ul>
         </nav>
         <br>
 
         <!-- 소개 영상 -->
         <div>
-            <video id="intro_video" width="500" height="400" controls autoplay muted>
+            <video id="intro_video" width="500" height="400" controls autoplay>
                 <source src="intro_30sec.mp4" type="video/mp4">
             </video>
         </div>
@@ -197,7 +194,7 @@
         <table>
             <tbody>
                 <tr>
-                    <td id="operate_text">공익활동에 관심 있는 변호사와 마을(洞)을 1:1로 연결합니다.</td>
+                    <td id="operate_text" width=1000px>공익활동에 관심 있는 변호사와 마을(洞)을 1:1로 연결합니다.</td>
                     <td><img src="img/operation_method.png" width="250" height="150"></td>
                 </tr>
             </tbody>
@@ -240,7 +237,7 @@
     <br><br><br><br><br><br>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-
+    
         var getParameter = function (param) {
             var returnValue;
             var url = location.href;
@@ -254,14 +251,14 @@
             }
         };
         $(document).ready(function () {
-            var name = getParameter('index');
+            var name= getParameter('index');
             name2 = name;
             console.log('val : ' + name);
-            if (name != undefined)
-                alert(name + "님 환영합니다");
-
+            if(name != undefined)
+               alert(name+"님 환영합니다");
+            
         });
-
+        
 
     </script>
 </body>
