@@ -102,6 +102,7 @@
             margin-left: auto;
             margin-right: auto;
             background-color: whitesmoke;
+            margin-bottom: 20px;
         }
 
         #answer_ {
@@ -119,11 +120,13 @@
 
         #blk {
 
-            padding: 10px;
+            padding: 5px;
             width: 60%;
             height: 100%;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 30px;
+            font-family: 'Do Hyeon', sans-serif;
 
         }
 
@@ -214,14 +217,16 @@
         <h3 id="title_"></h3>
 
         <div id="msg_"></div>
+        <hr width="60%">
 
         <div id="blk">
-            <div style="display: inline;">
-                답변 :
+            <div id="answer_lawyer" style="display: inline; font-size: 25px; background-color: azure;">
             </div>
             <div id="answer_" style="display: inline;">
+                
             </div>
         </div>
+        <hr width="60%">
         <div id="answer_write">
 
             <center><input type="text" id="lawyer_answer" autofocus /><button id="btn" onclick="lawyer_btn()">
@@ -242,6 +247,7 @@
             var date_str = "date" + count;
             var num_str = "num" + count;
             var answer_str = "answer" + count;
+            var lawyer_str = "lawyer" + count;
 
             var name = localStorage.getItem(name_str);
             var title = localStorage.getItem(title_str);
@@ -251,8 +257,11 @@
             var num = localStorage.getItem(num_str);
 
             var answer = localStorage.getItem(answer_str);
+            var lawyer = localStorage.getItem(lawyer_str);
+
             if (answer != null) {
                 document.getElementById('answer_').innerText = answer;
+                document.getElementById('answer_lawyer').innerText = lawyer;
             }
 
             console.log(name);
@@ -300,17 +309,25 @@
         });
         function lawyer_btn() {
             var input = document.getElementById('lawyer_answer');
+            var answer_lawyer_name = document.getElementById("lawyer_name").innerText;
+            
             if (input != null) {
                 console.log("number:" + number);
+                console.log("lawyer:" +answer_lawyer_name);
                 var answer_str = "answer" + number;
                 var ans_str = "ans" + number;
+                var lawyer_str = "lawyer" + number;
+
                 var data = input.value;
+
                 console.log("data:" + data);
                 localStorage.setItem(answer_str, data);
                 localStorage.setItem(ans_str, "답변완료");
+                localStorage.setItem(lawyer_str, answer_lawyer_name);
+                
                 document.getElementById('answer_').innerText = data;
+                document.getElementById('answer_lawyer').innerText = answer_lawyer_name;
                 input.value = " ";
-
             }
         }
 
