@@ -201,12 +201,12 @@
     <script>
 
         var list = [
-            { td_do: "서울특별시", td_si: "강남구", td_name: "김강남", td_number: "02-904-1437", td_email: "kkkki5@gmail.com" },
+            { td_do: "서울특별시", td_si: "강남구", td_name: "박주민", td_number: "02-904-1437", td_email: "kkkki5@gmail.com" },
             { td_do: "서울특별시", td_si: "강남구", td_name: "김강북", td_number: "02-999-2883", td_email: "k778@naver.com" },
             { td_do: "서울특별시", td_si: "강남구", td_name: "김강중", td_number: "02-407-3247", td_email: "kkoo95@gmail.com" },
             { td_do: "서울특별시", td_si: "마포구", td_name: "이홍대", td_number: "02-653-7726", td_email: "honghong@naver.com" },
             { td_do: "서울특별시", td_si: "동작구", td_name: "김숭실", td_number: "02-820-6288", td_email: "soongs5@gmail.com" },
-            { td_do: "인천광역시", td_si: "서구", td_name: "이예지", td_number: "032-123-1456", td_email: "yezi@gmail.com" },
+            { td_do: "인천광역시", td_si: "서구", td_name: "김한비", td_number: "032-123-1456", td_email: "yezi@gmail.com" },
             { td_do: "인천광역시", td_si: "남구", td_name: "이예진", td_number: "032-122-3356", td_email: "yezin@naver.com" },
             { td_do: "인천광역시", td_si: "동구", td_name: "이예동", td_number: "032-596-1364", td_email: "ydong@naver.com" },
             { td_do: "인천광역시", td_si: "중구", td_name: "이예중", td_number: "032-831-8729", td_email: "yjong@naver.com" },
@@ -376,6 +376,8 @@
                     console.log("number : " + number);
                     console.log("email : " + email);
 
+    
+                    localStorage.setItem('web_lawyer_name', name);
                     move_reservation(sido, sigungu, name, number, email);
                 });
             }
