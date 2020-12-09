@@ -18,6 +18,17 @@
 
         }
 
+        #login {
+            float: right;
+            color: darkgray;
+            font-family: 'Jua', sans-serif;
+            font-size: small;
+        }
+
+        #login td {
+            padding-right: 10px;
+        }
+
         a:link {
             color: darkgray;
             text-decoration: none;
@@ -86,10 +97,23 @@
 
 <body>
     <header>
-        <div>
-            <a id="logo" href="home.html">
-                <center><img src="img/main_logo.png" width="600" height="200"></center>
-            </a>
+        <a id="logo" href="home.html">
+            <center><img src="img/main_logo.png" width="600" height="200"></center>
+        </a>
+        <table id="login">
+            <tbody>
+                <tr>
+                    <!-- 로그인 버튼 -->
+                    <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
+                    <td><a href="user_login.html">로그인</a></td>
+
+
+                    <!-- 변호사 로그인 버튼 -->
+                    <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
+                    <td><a href="lawyer_login.html">변호사 로그인</a></td>
+                </tr>
+            </tbody>
+        </table>
         </div>
         <br><br><br>
 
@@ -98,9 +122,9 @@
                 <!-- 변호사 검색 버튼 -->
                 <li><a href="lawyer_search_origin.html">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="cyber_qa.html">사이버법률상담</a></li>
+                <li><a href="#none" onclick="move_no()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
-                <li><a onclick="location.reload()">이용 안내</a></li>
+                <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
                 <li><a href="qna.html">자주묻는 질문</a></li>
             </ul>
@@ -230,6 +254,10 @@
             else {
                 map.style.display = 'none';
             }
+        }
+
+        function move_no(){
+            alert("로그인이 필요한 서비스 입니다.");
         }
     </script>
 
