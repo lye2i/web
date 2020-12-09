@@ -95,6 +95,15 @@
             background-color: azure;
         }
 
+        #new_data {
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
         #data {
             width: 60%;
             height: 100%;
@@ -177,8 +186,8 @@
                     <th id="title" width="30px">제목</td>
                 </tr>
             </thead>
-            <tbody id="data" class="report data">
-            </tbody>
+            <tbody id="new_data" class="report data"></tbody>
+            <tbody id="data" class="report data"></tbody>
         </table>
     </section>
 
@@ -211,12 +220,25 @@
         $(document).ready(function () {
             var name = getParameter('index');
             //이전 페이지로부터 "사용자이름&변호사이름" 받음
-            console.log('val : ' + name);
+            // console.log('val : ' + name);
             change_name(name);
 
             window.onload = function () {
-                if (name === "박주민")
+
+                var exist = localStorage.getItem('web_exist');
+                if (exist == "true") {
+                    append_row();
+                }
+
+
+                if (name === "박주민") {
                     init_park();
+                }
+
+                if (name === "김한비") {
+                    init_kim();
+                }
+
 
                 $("#data tr").click(function () {
                     var str = ""
@@ -250,10 +272,8 @@
                     movePage(day, writer, title);
                 });
 
-                if (name === "김한비")
-                    init_kim();
 
-                $("#data tr").click(function () {
+                $("#new_data tr").click(function () {
                     var str = ""
                     var tdArr = new Array();	// 배열 선언
 
@@ -282,10 +302,19 @@
                         ", title : <font color='red'>" + title + "</font>";
 
 
-                    movePage(day, writer, title);
+                    var new_day = localStorage.getItem('web_date');
+                    var new_name = localStorage.getItem('web_writer_name');
+                    var new_title = localStorage.getItem('web_title');
+                    var new_phone = localStorage.getItem('web_phone');
+                    var new_msg = localStorage.getItem('web_msg');
+
+                    new_movePage(new_day, new_name,new_title, new_phone, new_msg);
                 });
             }
         });
+
+
+
 
 
         /* 테이블 구성 */
@@ -339,9 +368,13 @@
 
 
         function movePage(day, writer, title) {
-            var name=getParameter('index');
-            window.location.href = "check_user_reservation.html?index=" +name+ "&day="+day + "&writer=" + writer + "&title=" + title;
+            var name = getParameter('index');
+            window.location.href = "check_user_reservation.html?index=" + name + "&day=" + day + "&writer=" + writer + "&title=" + title;
         }
+        function new_movePage(new_day, new_name,new_title, new_phone, new_msg) {
+            var name = getParameter('index');
+            window.location.href = "read_users_writing.html?index=" + name + "&writer_name=" + new_name + "&title=" + new_title + "&phone=" + new_phone + "&date=" + new_day + "&msg=" + new_msg;
+        } 
         function move2() {
             var name = getParameter('index');
             window.location.href = "lawyer_search_lawyer.html?index=" + name;
@@ -372,6 +405,27 @@
             if (name != undefined) {
                 user.innerText = name + " 변호사";
             }
+        }
+
+
+        function append_row() {
+            var new_day = localStorage.getItem('web_date');
+            var new_name = localStorage.getItem('web_writer_name');
+            var new_title = localStorage.getItem('web_title');
+
+            // console.log('day : ' + new_day);
+            // console.log('name : ' + new_name);
+            // console.log('title : ' + new_title);
+
+            /* 동적 table 생성 */
+            var tag = '';
+
+            tag += "<tr > <td class='day'>" + new_day + "</td>"
+                + "<td class='writer'>" + new_name + "</td>"
+                + "<td class='title'>" + new_title + "</td></tr>";
+
+            // console.log('tag : ' + tag);
+            document.getElementById("new_data").innerHTML = tag;
         }
     </script>
 </body>

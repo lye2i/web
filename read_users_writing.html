@@ -190,7 +190,7 @@
                 // console.log(phone_writed);
                 // console.log(msg_writed);
 
-                init_user_info(date_writed, writer_name_writed, title_writed);
+                init_user_info(date_writed, writer_name_writed, title_writed, phone_writed);
                 change_name(writer_name_writed);
                 document.getElementById('title_').innerText = '[ ' + title_writed + ' ]';
                 document.getElementById('msg_').innerText = msg_writed;
@@ -200,9 +200,9 @@
 
 
         /* 테이블 구성 */
-        function init_user_info(day, name, title) {
+        function init_user_info(day, name, title, phone) {
             var list = [
-                { user_name: name, phone: "010-4332-5778", day: day },
+                { user_name: name, phone: phone, day: day },
             ];
 
             tagParsing(list, true);

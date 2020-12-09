@@ -14,7 +14,7 @@
     <style>
         #logo {
             display: block;
-           
+
         }
 
         #login {
@@ -205,8 +205,10 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="move1()"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
-            
+            <a id="logo" onclick="move1()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
+
             <table id="login">
                 <tbody>
                     <tr>
@@ -242,48 +244,48 @@
         <br>
 
 
-        </header>
-        <section id="writing">
-            <form name="user_writing" method="get" action="./read_users_writing.html" onsubmit="return check()">
-                <div>
-                    <label for="writer_name">상담자 이름: </label>
-                    <input type="text" id="writer_name" name="writer_name" autofocus />
-                </div>
-                <div>
-                    <label for="title">제목:  </label>
-                    <input type="text" id="title" name="title" autofocus />
-                </div>
-                <div>
-                    <label for="phone">연락 가능한 <br>전화번호:  </label>
-                    <input type="phone" id="phone"name="phone" />
-                </div>
-                <div>
-                    <label for="date">상담 원하는<br>날짜 선택: </label>
-                    <input type="date" id="date" name="date" />
-                </div>
-                <div>
-                    <h3 id="lawyer_name"></h3>
-                    <h3>[ 상담 신청 글 작성 ]</h3>
-                    <textarea id="msg" name="msg"></textarea>
-                </div>
-                <div >
-                    <input type="submit" id="waitbtn"value="상담 신청 하기" >
-                </div>
-            </form>
-        </section>
+    </header>
+    <section id="writing">
+        <form name="user_writing" method="get" action="./read_users_writing.html" onsubmit="return check()">
+            <div>
+                <label for="writer_name">상담자 이름: </label>
+                <input type="text" id="writer_name" name="writer_name" autofocus />
+            </div>
+            <div>
+                <label for="title">제목: </label>
+                <input type="text" id="title" name="title" autofocus />
+            </div>
+            <div>
+                <label for="phone">연락 가능한 <br>전화번호: </label>
+                <input type="phone" id="phone" name="phone" />
+            </div>
+            <div>
+                <label for="date">상담 원하는<br>날짜 선택: </label>
+                <input type="date" id="date" name="date" />
+            </div>
+            <div>
+                <h3 id="lawyer_name"></h3>
+                <h3>[ 상담 신청 글 작성 ]</h3>
+                <textarea id="msg" name="msg"></textarea>
+            </div>
+            <div>
+                <input type="submit" id="waitbtn" value="상담 신청 하기" onclick="store()">
+            </div>
+        </form>
+    </section>
 
     <br><br><br><br><br><br>
     <script>
 
         function check() {
-            
-            if (user_writing.writer_name.value == "" || user_writing.title.value=="" ||user_writing.phone.value==""||user_writing.date.value==""||user_writing.msg.value=="") {
+
+            if (user_writing.writer_name.value == "" || user_writing.title.value == "" || user_writing.phone.value == "" || user_writing.date.value == "" || user_writing.msg.value == "") {
                 alert("모든 항목을 입력해주세요.");
                 return false;
             }
 
-            else 
-            return true;
+            else
+                return true;
         }
 
     </script>
@@ -327,13 +329,33 @@
         });
 
         function move1() {
-                var name = getParameter('index');
-                window.location.href = "user_home.html?index=" + name;
-            }
+            var name = getParameter('index');
+            window.location.href = "user_home.html?index=" + name;
+        }
 
-        function move2(){
+        function move2() {
             var name = getParameter('index');
             window.location.href = "lawyer_search.html?index=" + name;
+        }
+
+        function store() {
+            var date = document.getElementById("date").value;
+            var writer_name = document.getElementById("writer_name").value;
+            var title = document.getElementById("title").value;
+            var phone = document.getElementById("phone").value;
+            var msg = document.getElementById("msg").value;
+
+            localStorage.setItem('web_exist', 'true');
+            localStorage.setItem('web_date', date);
+            localStorage.setItem('web_writer_name', writer_name);
+            localStorage.setItem('web_title', title);
+            localStorage.setItem('web_phone', phone);
+            localStorage.setItem('web_msg', msg);
+
+            // console.log(localStorage.getItem('web_exist'));
+            // console.log(localStorage.getItem('web_date'));
+            // console.log(localStorage.getItem('web_writer_name'));
+            // console.log(localStorage.getItem('web_title'));
         }
 
     </script>
