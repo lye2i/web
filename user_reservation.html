@@ -65,12 +65,6 @@
             color: rgb(242, 146, 72)
         }
 
-        #intro_video {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         #introduction {
             margin-left: 100px;
         }
@@ -197,10 +191,9 @@
 
         h3 {
             font-size: 30px;
-
         }
 
-        #menubar li.menu_user {
+        #menubar li.menu_lawyer {
             float: right;
             margin-left: -1px;
             z-index: 1;
@@ -252,7 +245,7 @@
 
         </header>
         <section id="writing">
-            <form name="user_writing" method="get" action="./read_users_writing.html">
+            <form name="user_writing" method="get" action="./read_users_writing.html" onsubmit="return check()">
                 <div>
                     <label for="writer_name">상담자 이름: </label>
                     <input type="text" id="writer_name" name="writer_name" autofocus />
@@ -281,6 +274,21 @@
         </section>
 
     <br><br><br><br><br><br>
+    <script>
+
+        function check() {
+            
+            if (user_writing.writer_name.value == "" || user_writing.title.value=="" ||user_writing.phone.value==""||user_writing.date.value==""||user_writing.msg.value=="") {
+                alert("모든 항목을 입력해주세요.");
+                return false;
+            }
+
+            else 
+            return true;
+        }
+
+    </script>
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
 
