@@ -113,6 +113,19 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        #answer_ {
+            border: 1px solid;
+            padding: 10px;
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+            font-family: 'Do Hyeon', sans-serif;
+            background-color: lavenderblush;
+
+        }
     </style>
 </head>
 
@@ -135,8 +148,8 @@
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
                 <li><a href="qna.html">자주묻는 질문</a></li>
-                <!-- <li class="menu_user"><a href="./home.html">로그아웃</a></li>
-                <li class="menu_user"><a id="user_name">땡땡땡</a></li> -->
+                <li class="menu_user"><a href="./home.html">로그아웃</a></li>
+                <li class="menu_user"><a id="user_name">땡땡땡</a></li>
 
             </ul>
         </nav>
@@ -149,21 +162,75 @@
         <table id="name" border="1">
             <thead>
                 <tr>
-                    <th id="user_name" width="50px">이름</td>
+                    <th width="50px">글번호</td>
+                    <th width="50px">이름</td>
+                    <th width="50px">날짜</td>
+                    <th width="50px">답변 상태</td>
                 </tr>
             </thead>
             <tbody id="data" class="report data">
+                <th id="num_" width="50px">
+                    </td>
+                <th id="name_" width="50px">
+                    </td>
+                <th id="date_" width="50px">
+                    </td>
+                <th id="ans_" width="50px">
+                    </td>
             </tbody>
         </table>
 
         <h3 id="title_"></h3>
 
         <div id="msg_"></div>
+        <div id="answer_"></div>
+        <div id ="answer_write">
+            <input type="text" id="lawyer_answer" autofocus />
+        </div>
     </section>
 
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
+        function getItems(count) {
+            var name_str = "name" + count;
+            var title_str = "title" + count;
+            var msg_str = "msg" + count;
+            var ans_str = "ans" + count;
+            var date_str = "date" + count;
+            var num_str = "num" + count;
+            var answer_str = "answer" + count;
+
+            var name = localStorage.getItem(name_str);
+            var title = localStorage.getItem(title_str);
+            var msg = localStorage.getItem(msg_str);
+            var ans = localStorage.getItem(ans_str);
+            var date = localStorage.getItem(date_str);
+            var num = localStorage.getItem(num_str);
+
+            var answer = localStorage.getItem(answer_str);
+            if (answer != null) {
+                document.getElementById('answer_').innerText = answer;
+            }
+
+            console.log(name);
+            console.log(title);
+            console.log(msg);
+            console.log(ans);
+            console.log(date);
+            console.log(num);
+
+
+            //리스트에 붙임.
+            document.getElementById('name_').innerText = name;
+            document.getElementById('title_').innerText = title;
+            document.getElementById('msg_').innerText = msg;
+            document.getElementById('ans_').innerText = ans;
+            document.getElementById('date_').innerText = date;
+            document.getElementById('num_').innerText = num;
+
+
+        }
 
         var getParameter = function (param) {
             var returnValue;
@@ -179,46 +246,32 @@
         };
         $(document).ready(function () {
             window.onload = function () {
-
-              //이전 페이지에서 받아온 정보 가져오기
-
+                //이전 페이지에서 받아온 정보 가져오기
+                var name = getParameter('index');
+                console.log('val : ' + name);
+                change_name(name);
+                var num = getParameter('num');
+                getItems(1);
             }
         });
 
-
-
-        /* 테이블 구성 */
-
-        function tagParsing(obj, init) {
-            var len = obj.length;
-            var tag = '';
-            for (i = 0; i < obj.length; i++) {
-                tag += "<tr><td class='user_name'>" + obj[i].user_name + "</td>";
-            }
-            document.getElementById("data").innerHTML = tag;
-        }
-
-
-        function movePage(day, writer, title) {
-            window.location.href = "check_user_reservation.html?day=" + day + "&writer=" + writer + "&title=" + title;
-        }
         function move2() {
             var name = getParameter('writer_name');
             window.location.href = "lawyer_search.html?index=" + name;
         }
         function move1() {
             var name = getParameter('writer_name');
-            window.location.href = "user_home.html?index=" + name;
+            window.location.href = "lawyer_home.html?index=" + name;
         }
 
-        // function change_name(name) {
+        function change_name(name) {
 
-        //     var user = document.getElementById("user_name");
-        //     if (name != undefined) {
-        //         user.innerText = name + " 님";
-        //     }
+            var user = document.getElementById("user_name");
+            if (name != undefined) {
+                user.innerText = name + " 님";
+            }
 
-        // }
+        }
     </script>
 </body>
 
