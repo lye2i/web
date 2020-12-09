@@ -219,6 +219,7 @@
             <br>
             <div>
                 <h3>[ 사이버 법률 상담 신청 글 작성 ]</h3>
+                <h3 id="today">현재 날짜</h3>
                 <textarea id="msg" name="msg"></textarea>
             </div>
             <br>
@@ -229,6 +230,9 @@
     </section>
 
     <script>
+        var today = document.getElementById("today");
+        var date_today = new Date().toISOString().slice(0, 10);
+        today.innerText ="신청 날짜 : " + date_today;
         var number;
         if(localStorage.getItem('count')==null)
         {
@@ -243,25 +247,37 @@
        {
 
            number++; //현재 데이터 번호
-           var name = document.getElementById('writer_name').value;
+           var num = number;
+           var names = document.getElementById('writer_name').value;
+           var name = names[0]+"**";
            var title = document.getElementById('title').value;
            var msg = document.getElementById('msg').value;
+           var ans = "답변대기";
+           var date = date_today;
            
            //local storage key 값
+           var str_num = "num"+number;
            var str_name = "name"+number;
            var str_title = "title" + number;
            var str_msg = "msg" + number;
+           var str_ans = "ans"+number;
+           var str_date = "date"+number;
+        
           
            console.log(str_name +" "+ name);
            console.log(str_title + " " +  title);
            console.log(str_msg + " " + msg);
 
+           localStorage.setItem(str_num, num);
+           localStorage.setItem(str_ans, ans);
            localStorage.setItem(str_name, name);
            localStorage.setItem(str_title, title);
            localStorage.setItem(str_msg, msg);
-            localStorage.setItem('count', number);
+           localStorage.setItem(str_date, date);
 
-           
+            localStorage.setItem('count', number);
+            location.href="local_test.html";
+
        }
 
    

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>우리 마을 변호사</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+
+    <style>
+        #logo {
+            display: block;
+
+        }
+
+        #login {
+            float: right;
+            color: darkgray;
+            font-family: 'Jua', sans-serif;
+            font-size: small;
+        }
+
+        #login td {
+            padding-right: 10px;
+        }
+
+        a:link {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        #menubar {
+            background: rgb(163, 213, 201);
+        }
+
+        #menubar ul {
+            margin: 0;
+            padding: 3;
+            width: 95%;
+        }
+
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 6px 20px;
+        }
+
+        #menubar ul li a {
+            color: rgb(68, 68, 68);
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 125%;
+        }
+
+        #menubar ul li a:hover {
+            color: rgb(242, 146, 72)
+        }
+
+        #menubar li.menu_user {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
+        }
+
+        #title_ {
+            border: 5px;
+            width: 100%;
+            height: 100%;
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        #name {
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+        }
+
+        #name thead {
+            background-color: azure;
+        }
+
+        #data {
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        #msg_ {
+            border: 1px solid;
+            padding: 10px;
+            width: 60%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <a id="logo" onclick="move1()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
+        </div>
+        <br><br><br>
+
+        <nav id="menubar">
+            <ul>
+                <!-- 변호사 검색 버튼 -->
+                <li><a href="" onclick="move2()">변호사 검색 & 상담 예약 신청</a></li>
+                <!-- 사이버법률상담 버튼 -->
+                <li><a href="cyber_qa.html">사이버법률상담</a></li>
+                <!-- 이용 안내 버튼 -->
+                <li><a href="howtouse.html">이용 안내</a></li>
+                <li><a href="blog.html">마을변호사 소식</a></li>
+                <li><a href="qna.html">자주묻는 질문</a></li>
+                <!-- <li class="menu_user"><a href="./home.html">로그아웃</a></li>
+                <li class="menu_user"><a id="user_name">땡땡땡</a></li> -->
+
+            </ul>
+        </nav>
+        <br>
+    </header>
+
+
+    <!-- 예약 신청 목록 -->
+    <section>
+        <table id="name" border="1">
+            <thead>
+                <tr>
+                    <th id="user_name" width="50px">이름</td>
+                </tr>
+            </thead>
+            <tbody id="data" class="report data">
+            </tbody>
+        </table>
+
+        <h3 id="title_"></h3>
+
+        <div id="msg_"></div>
+    </section>
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var getParameter = function (param) {
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
+                }
+            }
+        };
+        $(document).ready(function () {
+            window.onload = function () {
+
+              //이전 페이지에서 받아온 정보 가져오기
+
+            }
+        });
+
+
+
+        /* 테이블 구성 */
+
+        function tagParsing(obj, init) {
+            var len = obj.length;
+            var tag = '';
+            for (i = 0; i < obj.length; i++) {
+                tag += "<tr><td class='user_name'>" + obj[i].user_name + "</td>";
+            }
+            document.getElementById("data").innerHTML = tag;
+        }
+
+
+        function movePage(day, writer, title) {
+            window.location.href = "check_user_reservation.html?day=" + day + "&writer=" + writer + "&title=" + title;
+        }
+        function move2() {
+            var name = getParameter('writer_name');
+            window.location.href = "lawyer_search.html?index=" + name;
+        }
+        function move1() {
+            var name = getParameter('writer_name');
+            window.location.href = "user_home.html?index=" + name;
+        }
+
+        // function change_name(name) {
+
+        //     var user = document.getElementById("user_name");
+        //     if (name != undefined) {
+        //         user.innerText = name + " 님";
+        //     }
+
+        // }
+    </script>
+</body>
+
+</html>

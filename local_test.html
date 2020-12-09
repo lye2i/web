@@ -4,13 +4,50 @@
 
     </head>
     <body>
+        <input id="in">
+        <button onclick = "getItems()">btn</button>
         <h3 id=name></h3>
         <h3 id=title></h3>
         <h3 id=msg></h3>
+        <h3 id=ans></h3>
+        <h3 id=date></h3>
+        <h3 id=num></h3>
+
     </body>
     <script>
-        localStorage.getItem('count');
-        console.log(localStorage.getItem(count));
-    
+       
+        
+        function getItems()
+        {
+            var number = document.getElementById('in').value;
+            var count = number;
+            var number = count;
+            var name_str = "name"+count;
+            var title_str = "title"+count;
+            var msg_str = "msg"+count;
+            var str_ans = "ans" + count;
+            var str_date = "date" + count;
+            var str_num = "num" + count;
+
+            var name = localStorage.getItem(name_str);
+            var title = localStorage.getItem(title_str);
+            var msg = localStorage.getItem(msg_str);
+            var ans = localStorage.getItem(str_ans);
+            var date = localStorage.getItem(str_date);
+            var num = localStorage.getItem(str_num);
+
+            console.log(name);
+            console.log(title);
+            console.log(msg);
+            console.log(ans);
+            console.log(date);
+            console.log(num);
+
+            //리스트에 붙임.
+        }
+        
+
+
+
     </script>
 </html>
