@@ -92,6 +92,20 @@
 
         }
     </style>
+    <script>
+        var getParameter = function (param) {
+                var returnValue;
+                var url = location.href;
+                var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+                for (var i = 0; i < parameters.length; i++) {
+                    var varName = parameters[i].split('=')[0];
+                    if (varName.toUpperCase() == param.toUpperCase()) {
+                        returnValue = parameters[i].split('=')[1];
+                        return decodeURIComponent(returnValue);
+                    }
+                }
+            }
+    </script>
 </head>
 
 
@@ -124,7 +138,7 @@
 
         <div>
             상담자 이름 :  
-            <p id="writer_name" name="writer_name" ></p>
+            <a id="writer_name" name="writer_name" ></a>
         </div>
         <br>
         <div>
@@ -148,8 +162,13 @@
         function change_name(name) {
                 var user = document.getElementById("user_name");
                 user.innerText = name + " 님";
+                var user2 = document.getElementById("writer_name");
+            user2.innerText = name ;
             }   
-            
+            var name = getParameter('index');
+            console.log(name);
+
+            change_name(name);
 
         var today = document.getElementById("today");
         var date_today = new Date().toISOString().slice(0, 10);
@@ -212,26 +231,7 @@
             window.location.href = "user_home.html?index=" + name;
         }
 
-        var getParameter = function (param) {
-                var returnValue;
-                var url = location.href;
-                var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
-                for (var i = 0; i < parameters.length; i++) {
-                    var varName = parameters[i].split('=')[0];
-                    if (varName.toUpperCase() == param.toUpperCase()) {
-                        returnValue = parameters[i].split('=')[1];
-                        return decodeURIComponent(returnValue);
-                    }
-                }
-            };
-        $(document).ready(function () {
-             var name = getParameter('index');
-            console.log(name);
-            if (name != undefuned) {
-                change_name(name);
-                document.getElementById('writer_name').innerText = name;
-             }
-        });
+        
 
     </script>
 
