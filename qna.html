@@ -15,18 +15,7 @@
         #logo {
             align-items: center;
             display: block;
-           
-        }
 
-        #login {
-            float: right;
-            color: darkgray;
-            font-family: 'Jua', sans-serif;
-            font-size: small;
-        }
-
-        #login td {
-            padding-right: 10px;
         }
 
         a:link {
@@ -66,68 +55,38 @@
             color: rgb(242, 146, 72)
         }
 
-        #intro_video {
-            display: block;
+        #box_qna {
+            text-align: center;
+        }
+
+        #box_qna ul li {list-style-type: none; line-height: 100px;}
+
+        .qna_list{
+            width:80%;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 50px;
+            border:1px solid rgb(163, 213, 201);
         }
 
-        #introduction {
-            margin-left: 100px;
+        .answer {
+            display: none;
+            font-size:20px;
         }
 
-        #intro_text {
-            font-family: 'Do Hyeon', sans-serif;
+        .question {
+            background-color: azure;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 30px;
+        }
+
+        span {
+            color: rgb(68, 68, 68);
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
             font-size: 125%;
-            padding-left: 40px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
         }
 
-        #operation_method {
-            margin-left: 700px;
-        }
-
-        #operate_text {
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 125%;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #use_method {
-            margin-left: 100px;
-        }
-
-        #use_text {
-            font-family: 'Do Hyeon', sans-serif;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 100px;
-            border-bottom-width: 8px;
-            border-bottom-color: rgb(242, 146, 72);
-            border-bottom-style: solid;
-        }
-
-        #alpha_info {
-            list-style-type: none;
-        }
-
-        #support {
-            float: right;
-            margin-right: 50px;
-        }
-
-        #support tbody tr td {
-            padding-left: 30px;
-        }
     </style>
 </head>
 
@@ -135,21 +94,9 @@
 <body>
     <header>
         <div>
-            <a id="logo" href="home.html"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
-            <table id="login">
-                <tbody>
-                    <tr>
-                        <!-- 로그인 버튼 -->
-                        <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
-                        <td><a href="user_login.html">로그인</a></td>
-
-                        
-                        <!-- 변호사 로그인 버튼 -->
-                        <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
-                        <td><a href="lawyer_login.html">변호사 로그인</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <a id="logo" href="home.html">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
         </div>
         <br><br><br>
 
@@ -162,15 +109,42 @@
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
+                <li><a href="qna.html">자주묻는 질문</a></li>
             </ul>
         </nav>
         <br>
     </header>
 
+    <div id="box_qna">
+        <h1><자주 묻는 질문></h3>
+        <ul class="qna_list">
+            <li class="question">Q. 소송이 필요한 경우 마을변호사가 직접 소송까지 진행하나요?</li>
+            <li class="answer"><span>A. </span>마을변호사는 법률상담 서비스를 제공하는 제도이므로 소송 서비스는 제공하지 않습니다.<br>
+                소송 서비스가 필요한 경우에는 대한변호사협회 법률구조재단 및 법률구조공단 이용방법 등을 안내해 드리고 있습니다.
+            </li>
+        </ul>
+        <ul class="qna_list">
+            <li class="question">Q. 마을변호사를 언제 어디서든 만날 수 있는 건가요?</li>
+            <li class="answer"><span>A. </span>변호사를 접하기 어려운 읍,면,동 지역 위주로 마을변호사가 배정되어 있으나, 마을변호사가 배정지역에 상주하는 것은 아닙니다.<br>
+                따라서 전화 팩스 이메일 등 원격상담을 원칙으로 하며, 대면상담을 원하실 경우 담당 마을변호사와 일정조율과정을 거쳐야 합니다.
+            </li>
+        </ul>
+        <ul class="qna_list"> 
+            <li class="question">Q. 마을변호사와 법률홈닥터의 차이는 무엇인가요?</li>
+            <li class="answer"><span>A. </span>마을변호사는 개업 변호사가 공익적 활동(재능기부)의 일환으로, 변호사가 상주하지 않는 무변촌 또는 변호사를 접하기 어려운 읍,면,동 마을 주민들에게 법률상담 서비스를 제공하는 제도입니다.<br>
+                반면, 법률홈닥터는 법무부가 고용한 변호사가 시,군,구에 거주하는 사회적,경제적 취약계층에게 법률상담 서비스를 제공하는 제도입니다.
+            </li>
+        </ul>
+        <ul class="qna_list">
+            <li class="question">Q. 외국인도 마을변호사를 만날 수 있나요?</li>
+            <li class="answer"><span>A. </span>국적과 관계없이 읍,면,동에 거주하는 주민이라면 누구나 만날 수 있습니다. <br>다만, 외국어로 상담을 진행하지는 않습니다.</li>
+        </ul>
+    </div>
+
     <br><br><br><br><br><br>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-    
+
         var getParameter = function (param) {
             var returnValue;
             var url = location.href;
@@ -184,14 +158,29 @@
             }
         };
         $(document).ready(function () {
-            var name= getParameter('index');
+            var name = getParameter('index');
             name2 = name;
             console.log('val : ' + name);
-            if(name != undefined)
-               alert(name+"님 환영합니다");
-            
+            if (name != undefined)
+                alert(name + "님 환영합니다");
+
         });
-        
+
+
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("li.question").click(function () {
+
+                $(this).next().toggle("fast");
+
+            });
+
+        });
 
     </script>
 </body>

@@ -15,7 +15,7 @@
         #logo {
             align-items: center;
             display: block;
-           
+
         }
 
         #login {
@@ -128,6 +128,43 @@
         #support tbody tr td {
             padding-left: 30px;
         }
+         label {
+            /* To make sure that all label have the same size and are properly align */
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+
+        
+        #writing{
+            font-family: 'Do Hyeon', sans-serif;
+            /* Just to center the form on the page */
+            margin: 0 auto;
+            width: 100%;
+            height: 30%;
+            /* To see the outline of the form */
+            padding: 1em;
+            text-align: center;
+
+
+        }
+        #btn{
+            background-color: azure;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 20px;
+        }
+        
+        textarea {
+            width: 50%;
+            height: 300px;
+            line-height: normal;
+            /* line-height 초기화 */
+            padding: .8em .5em;
+            /* 여백 설정 */
+
+        }
+
     </style>
 </head>
 
@@ -135,7 +172,9 @@
 <body>
     <header>
         <div>
-            <a id="logo" href="home.html"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
+            <a id="logo" href="home.html">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
             <table id="login">
                 <tbody>
                     <tr>
@@ -143,7 +182,7 @@
                         <td><a href="user_login.html"><img src="img/user_login.png" width="40" height="40"></a></td>
                         <td><a href="user_login.html">로그인</a></td>
 
-                        
+
                         <!-- 변호사 로그인 버튼 -->
                         <td><a href="lawyer_login.html"><img src="img/lawyer_login.png" width="40" height="40"></a></td>
                         <td><a href="lawyer_login.html">변호사 로그인</a></td>
@@ -162,106 +201,90 @@
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
-                <li><a href="qna.html">자주묻는 질문</a></li>
             </ul>
         </nav>
         <br>
-
-        <!-- 소개 영상 -->
-        <div>
-            <video id="intro_video" width="500" height="400" controls autoplay muted>
-                <source src="intro_30sec.mp4" type="video/mp4">
-            </video>
-        </div>
     </header>
-
-
-    <!-- 소개 글 -->
-    <section id="introduction">
-        <table>
-            <tbody>
-                <tr>
-                    <td><img src="img/introduction.png" width="400" height="150"></td>
-                    <td id="intro_text">시민들이 집이나 생활 속에서 접하는 법률문제를 쉽고 편리하게 상의하고,<br>법률적 조언을 받을 수 있도록 마을(洞)마다 연결된 우리 동네
-                        주치의 같은 변호사입니다.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br><br><br><br>
-
-    <!-- 운영방법 -->
-    <section id="operation_method">
-        <table>
-            <tbody>
-                <tr>
-                    <td id="operate_text">공익활동에 관심 있는 변호사와 마을(洞)을 1:1로 연결합니다.</td>
-                    <td><img src="img/operation_method.png" width="250" height="150"></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br>
-
-    <!-- 이용방법 -->
-    <section id="use_method">
-        <table>
-            <tbody>
-                <tr>
-                    <td><img src="img/use_method.png" width="250" height="150"></td>
-                    <td id="use_text">
-                        <ul>
-                            <li><a>변호사 검색 메뉴에서 지역 검색으로 마을 변호사 확인</a></li>
-                            <li><a>변호사 선택 후, 상담 신청 글 작성</a></li>
-                            <li><a>변호사가 상담 글 확인 후, 개별 연락</a></li>
-                            <li id="alpha_info"><a>(간단한 법률 고민 상담은 사이버법률상담 메뉴를 통해 이루어지며 상담 내용은 변호사에게만 공개됩니다.)</a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br><br><br>
-    <hr><br>
-
-    <footer>
-        <table id="support">
-            <tbody>
-                <tr>
-                    <td><img src="img/support_institution1.jpg" width="110" height="60"></td>
-                    <td><img src="img/support_institution2.png" width="60" height="60"></td>
-                    <td><img src="img/support_institution3.png" width="55" height="55"></td>
-                </tr>
-            </tbody>
-        </table>
-    </footer>
-    <br><br><br><br><br><br>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script type="text/javascript">
-    
-        var getParameter = function (param) {
-            var returnValue;
-            var url = location.href;
-            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
-            for (var i = 0; i < parameters.length; i++) {
-                var varName = parameters[i].split('=')[0];
-                if (varName.toUpperCase() == param.toUpperCase()) {
-                    returnValue = parameters[i].split('=')[1];
-                    return decodeURIComponent(returnValue);
-                }
-            }
-        };
-        $(document).ready(function () {
-            var name= getParameter('index');
-            name2 = name;
-            console.log('val : ' + name);
-            if(name != undefined)
-               alert(name+"님 환영합니다");
-            
-        });
+    <section id="writing">
         
+            <div>
+                <label for="writer_name">상담자 이름: </label>
+                <input type="text" id="writer_name" name="writer_name" autofocus />
+            </div>
+            <br>
+            <div>
+                <label for="title">제목: </label>
+                <input type="text" id="title" name="title" autofocus />
+            </div>
+            <br>
+            <div>
+                <h3>[ 사이버 법률 상담 신청 글 작성 ]</h3>
+                <h3 id="today">현재 날짜</h3>
+                <textarea id="msg" name="msg"></textarea>
+            </div>
+            <br>
+            <div>
+                <button id="btn" onclick="save_local()">법률 상담 신청</button>
+            </div>
+        
+    </section>
 
+    <script>
+        var today = document.getElementById("today");
+        var date_today = new Date().toISOString().slice(0, 10);
+        today.innerText ="신청 날짜 : " + date_today;
+        var number;
+        if(localStorage.getItem('count')==null)
+        {
+            number=0;
+            localStorage.setItem('count',0);
+        }
+        else{
+            number = localStorage.getItem('count');
+        }
+        console.log("number : "+number);
+       function save_local()
+       {
+
+           number++; //현재 데이터 번호
+           var num = number;
+           var names = document.getElementById('writer_name').value;
+           var name = names[0]+"**";
+           var title = document.getElementById('title').value;
+           var msg = document.getElementById('msg').value;
+           var ans = "답변대기";
+           var date = date_today;
+           
+           //local storage key 값
+           var str_num = "num"+number;
+           var str_name = "name"+number;
+           var str_title = "title" + number;
+           var str_msg = "msg" + number;
+           var str_ans = "ans"+number;
+           var str_date = "date"+number;
+        
+          
+           console.log(str_name +" "+ name);
+           console.log(str_title + " " +  title);
+           console.log(str_msg + " " + msg);
+
+           localStorage.setItem(str_num, num);
+           localStorage.setItem(str_ans, ans);
+           localStorage.setItem(str_name, name);
+           localStorage.setItem(str_title, title);
+           localStorage.setItem(str_msg, msg);
+           localStorage.setItem(str_date, date);
+
+            localStorage.setItem('count', number);
+           // location.href="local_test.html";
+           alert("사이버 상담 신청 완료!");
+           
+
+       }
+
+   
     </script>
+
 </body>
 
 </html>
