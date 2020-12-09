@@ -134,9 +134,9 @@
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
-
+                <li class="menu_lawyer"><a onclick="move3()">상담신청 게시판</a></li>
                 <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
-                <li class="menu_lawyer"><a onclick="location.reload()">상담신청 게시판</a></li>
+                <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
 
             </ul>
         </nav>
@@ -198,6 +198,8 @@
             var day = getParameter('day');
             var name = getParameter('writer');
             var title = getParameter('title');
+            var lawyer_name = getParameter('index');
+            change_name(lawyer_name);
             //이전 페이지로부터 "day, name, title" 받음
             console.log('day : ' + day);
             console.log('name : ' + name);
@@ -208,8 +210,6 @@
                 document.getElementById('title_').innerText = '[ ' + title + ' ]';
             }
         });
-
-
 
         /* 테이블 구성 */
         function init_user_info(day, name, title) {
@@ -231,7 +231,6 @@
             document.getElementById("data").innerHTML = tag;
         }
 
-
         function move2() {
             var name = getParameter('index');
             window.location.href = "lawyer_search.html?index=" + name;
@@ -239,6 +238,16 @@
         function move1() {
             var name = getParameter('index');
             window.location.href = "lawyer_home.html?index=" + name;
+        }
+        function move3(){
+            var name= getParameter('index');
+            window.location.href = "reservation_list.html?index=" + name;
+        }
+        function change_name(name) {
+            var user = document.getElementById("lawyer_name");
+            if (name != undefined) {
+                user.innerText = name + " 변호사";
+            }
         }
     </script>
 </body>

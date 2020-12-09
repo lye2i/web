@@ -150,9 +150,9 @@
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
-
-                <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
                 <li class="menu_lawyer"><a onclick="location.reload()">상담신청 게시판</a></li>
+                <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
+                <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
 
             </ul>
         </nav>
@@ -212,6 +212,7 @@
             var name = getParameter('index');
             //이전 페이지로부터 "사용자이름&변호사이름" 받음
             console.log('val : ' + name);
+            change_name(name);
 
             window.onload = function () {
                 if (name === "박주민")
@@ -335,14 +336,14 @@
             document.getElementById("data").innerHTML = tag;
             // console.log(document.getElementById("data").innerHTML);
         }
-
-
         function movePage(day, writer, title) {
-            window.location.href = "check_user_reservation.html?day=" + day + "&writer=" + writer + "&title=" + title;
+            var name=getParameter('index');
+            window.location.href = "check_user_reservation.html?index=" +name+ "&day="+day + "&writer=" + writer + "&title=" + title;
         }
+
         function move2() {
             var name = getParameter('index');
-            window.location.href = "lawyer_search.html?index=" + name;
+            window.location.href = "lawyer_search_lawyer.html?index=" + name;
         }
         function move1() {
             var name = getParameter('index');
@@ -363,6 +364,12 @@
         function move_page_4() {
             var name = getParameter('index');
             window.location.href = "reservation_list4.html?index=" + name;
+        }
+        function change_name(name) {
+            var user = document.getElementById("lawyer_name");
+            if (name != undefined) {
+                user.innerText = name + " 변호사";
+            }
         }
     </script>
 </body>

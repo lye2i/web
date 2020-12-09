@@ -455,7 +455,8 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>
         function move_reservation(sido, sigungu, name, number, email) {
-            window.location.href = "user_reservation.html?sido=" + sido + "&sigungu=" + sigungu + "&name=" + name + "&number=" + number + "&email=" + email;
+            var user_name = getParameter('index');
+            window.location.href = "user_reservation.html?index="+user_name+"&sido=" + sido + "&sigungu=" + sigungu + "&name=" + name + "&number=" + number + "&email=" + email;
         }
     </script>
 

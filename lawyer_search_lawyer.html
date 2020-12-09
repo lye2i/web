@@ -14,7 +14,7 @@
     <style>
         #logo {
             display: block;
-            
+
         }
 
         #login {
@@ -128,7 +128,7 @@
             padding-left: 30px;
         }
 
-        #menubar li.user {
+        #menubar li.menu_lawyer {
             float: right;
             margin-left: -1px;
             z-index: 1;
@@ -196,7 +196,9 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="move1()"><center><img src="img/main_logo.png" width="600" height="200"></center></a>
+            <a id="logo" onclick="move1()">
+                <center><img src="img/main_logo.png" width="600" height="200"></center>
+            </a>
         </div>
         <br><br><br>
 
@@ -209,8 +211,9 @@
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
-                <li class="user"><a href="./home.html">로그아웃</a></li>
-                <li class="user"><a id="user_name">땡땡땡</a></li>
+                <li class="menu_lawyer"><a onclick="move2()">상담신청 게시판</a></li>
+                <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
+                <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
             </ul>
         </nav>
         <br>
@@ -224,30 +227,30 @@
 
     <!-- 예약 신청 목록 -->
     <section>
-        <div  id="location">
-        시도:
-        <select id="sido" onchange="categoryChange(this)">
-            <option value="0">선택</option>
-            <option value="서울특별시">서울특별시</option>
-            <option value="인천광역시">인천광역시</option>
-            <option value="부산광역시">부산광역시</option>
-            <option value="울산광역시">울산광역시</option>
-            <option value="광주광역시">광주광역시</option>
-            <option value="경기도">경기도</option>
-            <option value="강원도">강원도</option>
-            <option value="경상북도">경상북도</option>
-            <option value="경상남도">경상남도</option>
-            <option value="충청남도">충청남도</option>
-            <option value="충청북도">충청북도</option>
-            <option value="전라남도">전라남도</option>
-            <option value="전라북도">전라북도</option>
-        </select>
-        시군구: <select id="sigungu">
-            <option value="선택">선택</option>;
-        </select>
-        <input type="button" id="search" onclick="search();" value="검색" style="padding:5px; width:100px">
-    </div>
-        
+        <div id="location">
+            시도:
+            <select id="sido" onchange="categoryChange(this)">
+                <option value="0">선택</option>
+                <option value="서울특별시">서울특별시</option>
+                <option value="인천광역시">인천광역시</option>
+                <option value="부산광역시">부산광역시</option>
+                <option value="울산광역시">울산광역시</option>
+                <option value="광주광역시">광주광역시</option>
+                <option value="경기도">경기도</option>
+                <option value="강원도">강원도</option>
+                <option value="경상북도">경상북도</option>
+                <option value="경상남도">경상남도</option>
+                <option value="충청남도">충청남도</option>
+                <option value="충청북도">충청북도</option>
+                <option value="전라남도">전라남도</option>
+                <option value="전라북도">전라북도</option>
+            </select>
+            시군구: <select id="sigungu">
+                <option value="선택">선택</option>;
+            </select>
+            <input type="button" id="search" onclick="search();" value="검색" style="padding:5px; width:100px">
+        </div>
+
         <table id="name" border="1">
             <thead>
                 <tr>
@@ -269,7 +272,7 @@
     </section>
 
     <script>
-        
+
         var list = [
             { td_do: "서울특별시", td_si: "강남구", td_name: "김강남", td_number: "02-904-1437", td_email: "kkkki5@gmail.com" },
             { td_do: "서울특별시", td_si: "강남구", td_name: "김강북", td_number: "02-999-2883", td_email: "k778@naver.com" },
@@ -348,7 +351,7 @@
 
             target.options.length = 0;
 
-            for(x in list){
+            for (x in list) {
                 var opt = document.createElement("option");
                 opt.value = list[x];
                 opt.innerHTML = list[x];
@@ -462,8 +465,8 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
         function change_name(name) {
-            var user = document.getElementById("user_name");
-            user.innerText = name + " 님";
+            var user = document.getElementById("lawyer_name");
+            user.innerText = name + " 변호사";
         }
 
         var getParameter = function (param) {
@@ -485,10 +488,14 @@
                 change_name(name);
             }
         });
-         function move1() {
-                var name = getParameter('index');
-                window.location.href = "lawyer_home.html?index=" + name;
-            }
+        function move1() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_home.html?index=" + name;
+        }
+        function move2() {
+            var name = getParameter('index');
+            window.location.href = "reservation_list.html?index=" + name;
+        }
     </script>
 </body>
 

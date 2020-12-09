@@ -229,13 +229,12 @@
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="lawyer_search.html">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="#none" onclick="move2()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
                 <li><a href="cyber_qa.html">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
-                <li class="menu_lawyer"><a href="./reservation_list">상담신청 게시판</a></li>
                 <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
                 <li class="menu_lawyer"><a id="user_name">땡땡땡</a></li>
             </ul>
@@ -311,7 +310,7 @@
         };
         $(document).ready(function () {
             var name = getParameter('index');
-            var namecp = name;
+            var namecp = getParameter('name');
 
             var username;
             var lawyername;
@@ -322,18 +321,20 @@
             username = Names;
             lawyername = namecp.split('_').reverse()[0];
             change_name(username);
-            alert("user:" + username);
-            alert("lawyer:" + lawyername);
 
             document.getElementById("lawyer_name").innerText = lawyername + "  변호사님 에게";
 
         });
 
-         function move1() {
+        function move1() {
                 var name = getParameter('index');
                 window.location.href = "user_home.html?index=" + name;
             }
 
+        function move2(){
+            var name = getParameter('index');
+            window.location.href = "lawyer_search.html?index=" + name;
+        }
 
     </script>
 </body>
