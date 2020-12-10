@@ -54,7 +54,7 @@
             color: rgb(242, 146, 72)
         }
 
-        #menubar li.menu_lawyer {
+        #menubar li.menu_user {
             float: right;
             margin-left: -1px;
             z-index: 1;
@@ -94,13 +94,19 @@
             font-family: 'Do Hyeon', sans-serif;
         }
 
-        .msg {
+        #msg_ {
             border: 1px solid;
             padding: 10px;
             width: 60%;
             height: 100%;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        #menubar li.user {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
         }
     </style>
 </head>
@@ -115,24 +121,24 @@
         <br><br><br>
 
         <nav id="menubar">
-            <ul>    
+            <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="#none" onclick="move_search()" style="color: rgb(242, 146, 72);">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="" onclick="move_search()"style="color: rgb(242, 146, 72);">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
+                <li><a href="" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
-                <li><a href="#none" onclick="move_howtouse()">이용 안내</a></li>
-                <li><a href="#none" onclick="move_blog()">마을변호사 소식</a></li>
-                <li><a href="#none" onclick="move_qna()">자주묻는 질문</a></li>
-                <li class="menu_lawyer"><a href="#none" onclick="move_res()">상담신청 게시판</a></li>
-                <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
-                <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
+                <li><a href="" onclick="move_howtouse()">이용 안내</a></li>
+                <li><a href="" onclick="move_blog()">마을변호사 소식</a></li>
+                <li><a href="" onclick="move_qna()">자주묻는 질문</a></li>
+
+                <li class="user"><a href="" onclick="move_res()">상담신청 게시판</a></li>
+                <li class="user"><a href="./home.html">로그아웃</a></li>
+                <li class="user"><a id="user_name">땡땡땡</a></li>
+                
             </ul>
         </nav>
         <br>
-        <br>
     </header>
-
 
     <!-- 예약 신청 목록 -->
     <section>
@@ -150,28 +156,13 @@
 
         <h3 id="title_"></h3>
 
-        <div class="msg">
-            안녕하세요.<br>
-            <br>
-            초상권 침해 관련하여 억울한 일을 겪어 변호사님과 상담하고 싶습니다.<br>
-            <br>
-            카페 내 활동중 채팅으로 분란이 발생하여 채팅 내용 캡쳐 후 카페 게시글로 게시를 했습니다.<br>
-            채팅 내용 캡쳐본에 상대방의 프로필 사진에 본인의 사진이 게시되어 있어 초상권 침해로 신고한다고 합니다.<br>
-            그 점에 무지했던 저는 여러번 사과 드렸습니다<br>
-            혹시 초상권 침해로 신고를 당하면 벌금이 어느정도 나올까요?<br>
-            <br>
-            글로 표현하는데에 어려움이 있어 간략하게 상황만 설명했습니다.<br>
-            변호사님과 직접 만나 상담을 받고 싶어 해당 날짜에 예약 신청합니다.<br>
-            <br>
-            연락 기다리겠습니다.
-        </div>
+        <div id="msg_"></div>
     </section>
 
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
 
-        /* 로그인 정보 가져오기 */
         var getParameter = function (param) {
             var returnValue;
             var url = location.href;
@@ -185,26 +176,33 @@
             }
         };
         $(document).ready(function () {
-            var day = getParameter('day');
-            var name = getParameter('writer');
-            var title = getParameter('title');
-            var lawyer_name = getParameter('index');
-            change_name(lawyer_name);
-            //이전 페이지로부터 "day, name, title" 받음
-            console.log('day : ' + day);
-            console.log('name : ' + name);
-            console.log('title : ' + title);
-
             window.onload = function () {
-                init_user_info(day, name, title);
-                document.getElementById('title_').innerText = '[ ' + title + ' ]';
+
+                var name = getParameter('index');
+                change_name(name);
+                var writer_name_writed = getParameter('writer_name');
+                var title_writed = getParameter('title');
+                var phone_writed = getParameter('phone');
+                var msg_writed = getParameter('msg');
+                
+                var date_writed = getParameter('date');
+                // console.log(title_writed);
+                // console.log(phone_writed);
+                // console.log(msg_writed);
+
+                init_user_info(date_writed, writer_name_writed, title_writed, phone_writed);
+                
+                document.getElementById('title_').innerText = '[ ' + title_writed + ' ]';
+                document.getElementById('msg_').innerText = msg_writed;
+
+                
             }
         });
 
         /* 테이블 구성 */
-        function init_user_info(day, name, title) {
+        function init_user_info(day, name, title, phone) {
             var list = [
-                { user_name: name, phone: "010-4332-5778", day: day },
+                { user_name: name, phone: phone, day: day },
             ];
 
             tagParsing(list, true);
@@ -220,29 +218,26 @@
             }
             document.getElementById("data").innerHTML = tag;
         }
-        
-        function change_name(name) {
-            var user = document.getElementById("lawyer_name");
-            if (name != undefined) {
-                user.innerText = name + " 변호사";
-            }
-        }
-        function move_res()
-        {
-            var name= getParameter('index');
+
+
+        function move_res() {
+            var name = getParameter('index');
             window.location.href = "reservation_list.html?index=" + name;
         }
+        function movePage(day, writer, title) {
+            window.location.href = "check_user_reservation.html?day=" + day + "&writer=" + writer + "&title=" + title;
+        }
         function move_search() {
-                var name = getParameter('index');
-                window.location.href = "lawyer_search_lawyer.html?index=" + name;
+            var name = getParameter('index');
+            window.location.href = "lawyer_search_lawyer.html?index=" + name;
         }
         function move_cyber() {
-                var name = getParameter('index');
-                window.location.href = "cyber_qa_lawyer.html?index=" + name;
-        }
-        function move_home(){
             var name = getParameter('index');
-            window.location.href = "lawyer_home.html?index="+name;
+            window.location.href = "cyber_qa_user.html?index=" + name;
+        }
+        function move_home() {
+            var name = getParameter('index');
+            window.location.href = "lawyer_home.html?index=" + name;
         }
         function move_blog() {
             var name = getParameter('index');
@@ -256,6 +251,16 @@
             var name = getParameter('index');
             window.location.href = "qna_lawyer.html?index=" + name;
         }
+        function change_name(name) {
+
+            var user = document.getElementById("user_name");
+            if (name != undefined) {
+                user.innerText = name + " 변호사";
+            }
+
+        }
+
+        
     </script>
 </body>
 
