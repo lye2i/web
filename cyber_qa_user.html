@@ -86,6 +86,16 @@
         #user_name{
             color: rgb(242, 146, 72)
         }
+        #cyber_write_btn
+        {
+            border-radius: 5px;
+            background-color: azure;
+            font-size: 20px;
+            text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+            
+
+        }
 
     </style>
 </head>
@@ -121,7 +131,9 @@
         <h3 id="form_name">
             사이버 상담 목록
         </h3>
-        <button onclick="move_cyber_write()"> 상담 글 쓰기</button>
+        <center><button id="cyber_write_btn" onclick="move_cyber_write()"> 상담 글 쓰기</button></center>
+        <br>
+        <br><br>>
     </section>
     <table id="list" border="1">
         <thead>
