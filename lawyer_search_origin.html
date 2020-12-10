@@ -328,9 +328,9 @@
 
         function tagParsing(obj, init) {
             var sido = document.getElementById("sido").value;
-            console.log(sido);
+            console.log('시도 : ' + sido);
             var sigungu = document.getElementById("sigungu").value;
-            console.log(sigungu);
+            console.log('시군주 : ' + sigungu);
             var len = obj.length;
             var tag = '';
             var num = 0;
@@ -394,7 +394,7 @@
         };
         $(document).ready(function () {
             var name = getParameter('index');
-            console.log('val : ' + name);
+            console.log('name : ' + name);
             if (name != undefined) {
                 alert(name + "님 환영합니다");
                 change_name(name);

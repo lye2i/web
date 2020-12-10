@@ -117,15 +117,15 @@
             var pass = document.getElementById("user_password").value;
             var paramid = getParameter('id');
             var parampassword = getParameter('password');
-            console.log(paramid);
-            console.log(parampassword);
+            console.log('ID : ' + paramid);
+            console.log('password : ' + parampassword);
             
             if(ID=="" || pass ==""){
                 alert("아이디와 비밀번호를 모두 입력해주세요");
             }
             else if (ID === paramid && pass === parampassword) {
                 var user = getParameter('name');
-                console.log(user);
+                console.log('name : ' + user);
                 setChildValue(user);
             }
 
@@ -145,13 +145,13 @@
             }
 
             else if(ID === "yeeun" && pass ==="3333"){
-                user = "이예은";
+                user = "박예은";
                 setChildValue(user);
                 alert(user + " 님 환영합니다!");
             }
 
             else if(ID === "yekun" && pass ==="4444"){
-                user = "이예건";
+                user = "최예건";
                 setChildValue(user);
                 alert(user + " 님 환영합니다!");
             }

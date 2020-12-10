@@ -310,9 +310,9 @@
 
         function tagParsing(obj, init) {
             var sido = document.getElementById("sido").value;
-            console.log(sido);
+            console.log('시도 : ' + sido);
             var sigungu = document.getElementById("sigungu").value;
-            console.log(sigungu);
+            console.log('시군주 : ' + sigungu);
             var len = obj.length;
             var tag = '';
             var num = 0;
@@ -369,8 +369,8 @@
                     var number = td.eq(3).text();
                     var email = td.eq(4).text();
 
-                    console.log("sido : " + sido);
-                    console.log("sigungu : " + sigungu);
+                    console.log("시도 : " + sido);
+                    console.log("시군주 : " + sigungu);
                     console.log("name : " + name);
                     console.log("number : " + number);
                     console.log("email : " + email);
@@ -411,7 +411,7 @@
         };
         $(document).ready(function () {
             var name = getParameter('index');
-            console.log('val : ' + name);
+            console.log('name : ' + name);
             if (name != undefined) {
                 change_name(name);
             }

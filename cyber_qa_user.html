@@ -171,7 +171,7 @@
         $(document).ready(function () {
             window.onload = function () {
                 var name = getParameter('index');
-                console.log('val : ' + name);
+                console.log('name : ' + name);
                 change_name(name);
                 
                 tagParsing(true);
@@ -220,7 +220,7 @@
 
         function tagParsing(init) {
             var num = localStorage.getItem('count');
-            console.log("num:"+num);
+            console.log("num: "+num);
             var tag = '';
 
             for (var i = 1; i <=num; i++) {
@@ -232,7 +232,7 @@
                 var date = localStorage.getItem(str_date);
                 var names = localStorage.getItem(str_name);
                 var name = names[0]+"**";
-                console.log(name);
+                console.log('name : ' + name);
                 
                 var title = localStorage.getItem(str_title);
                 var ans = localStorage.getItem(str_ans);

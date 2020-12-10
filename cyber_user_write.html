@@ -91,6 +91,7 @@
             /* 여백 설정 */
 
         }
+
         #menubar li.user {
             float: right;
             margin-left: -1px;
@@ -99,17 +100,17 @@
     </style>
     <script>
         var getParameter = function (param) {
-                var returnValue;
-                var url = location.href;
-                var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
-                for (var i = 0; i < parameters.length; i++) {
-                    var varName = parameters[i].split('=')[0];
-                    if (varName.toUpperCase() == param.toUpperCase()) {
-                        returnValue = parameters[i].split('=')[1];
-                        return decodeURIComponent(returnValue);
-                    }
+            var returnValue;
+            var url = location.href;
+            var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+            for (var i = 0; i < parameters.length; i++) {
+                var varName = parameters[i].split('=')[0];
+                if (varName.toUpperCase() == param.toUpperCase()) {
+                    returnValue = parameters[i].split('=')[1];
+                    return decodeURIComponent(returnValue);
                 }
             }
+        }
     </script>
 </head>
 
@@ -128,7 +129,7 @@
                 <!-- 변호사 검색 버튼 -->
                 <li><a href="#none" onclick="move_search()">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="#none" onclick="move_cyber()"style="color: rgb(242, 146, 72);">사이버법률상담</a></li>
+                <li><a href="#none" onclick="move_cyber()" style="color: rgb(242, 146, 72);">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="#none" onclick="move_howtouse()">이용 안내</a></li>
                 <li><a href="#none" onclick="move_blog()">마을변호사 소식</a></li>
@@ -142,8 +143,8 @@
     <section id="writing">
 
         <div>
-            상담자 이름 :  
-            <a id="writer_name" name="writer_name" ></a>
+            상담자 이름 :
+            <a id="writer_name" name="writer_name"></a>
         </div>
         <br>
         <div>
@@ -165,18 +166,21 @@
 
     <script>
         function change_name(name) {
-                var user = document.getElementById("user_name");
-                user.innerText = name + " 님";
-                var user2 = document.getElementById("writer_name");
-            user2.innerText = name ;
-            }   
-            var name = getParameter('index');
-            console.log(name);
+            var user = document.getElementById("user_name");
+            user.innerText = name + " 님";
+            var user2 = document.getElementById("writer_name");
+            user2.innerText = name;
+        }
+        var name = getParameter('index');
+        console.log('name : ' + name);
 
-            change_name(name);
+        change_name(name);
 
         var today = document.getElementById("today");
-        var date_today = new Date().toISOString().slice(0, 10);
+        var offset = new Date().getTimezoneOffset() * 60000;
+        var date_today = new Date(Date.now() - offset).toISOString().slice(0, 10);
+
+        console.log('today : ' + date_today);
         today.innerText = "신청 날짜 : " + date_today;
         var number;
         if (localStorage.getItem('count') == null) {
@@ -186,7 +190,7 @@
         else {
             number = localStorage.getItem('count');
         }
-        console.log("number : " + number);
+        // console.log("number : " + number);
         function save_local() {
 
             number++; //현재 데이터 번호
@@ -249,7 +253,7 @@
             window.location.href = "qna_user.html?index=" + name;
         }
 
-        
+
 
     </script>
 

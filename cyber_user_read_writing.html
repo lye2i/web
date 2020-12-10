@@ -204,12 +204,12 @@
                 document.getElementById('answer_').innerText = answer;
             }
 
-            console.log(name);
-            console.log(title);
-            console.log(msg);
-            console.log(ans);
-            console.log(date);
-            console.log(num);
+            console.log('name : ' + name);
+            console.log('title : ' + title);
+            console.log('msg : ' + msg);
+            console.log('ans : ' + ans);
+            console.log('date : ' + date);
+            console.log('num : ' + num);
 
 
             //리스트에 붙임.
@@ -239,7 +239,7 @@
             window.onload = function () {
                 //이전 페이지에서 받아온 정보 가져오기
                 var name = getParameter('index');
-                console.log('val : ' + name);
+                console.log('name : ' + name);
                 change_name(name);
                 var num = getParameter('num');
                 getItems(num);
