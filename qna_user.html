@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="shortcut icon" href="#">
     <title>우리 마을 변호사</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
@@ -10,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 
-
     <style>
         #logo {
+            align-items: center;
             display: block;
 
         }
@@ -54,66 +55,42 @@
             color: rgb(242, 146, 72)
         }
 
-        #menubar li.menu_user {
-            float: right;
-            margin-left: -1px;
-            z-index: 1;
-        }
-
-        #title_ {
-            border: 5px;
-            width: 100%;
-            height: 100%;
-            font-size: 30px;
+        #box_qna {
             text-align: center;
-            font-family: 'Do Hyeon', sans-serif;
         }
 
-        #name {
-            width: 60%;
-            height: 100%;
+        #box_qna ul li {list-style-type: none;}
+
+        #qna { font-family: 'Do Hyeon', sans-serif; }
+        
+        .qna_list{
+            width:79%;
             margin-left: auto;
             margin-right: auto;
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 30px;
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 30px;
+            margin-bottom: 50px;
+            border:1px solid rgb(163, 213, 201);
         }
 
-        #name thead {
+        .answer {
+            display: none;
+            font-size:20px;
+            font-family: 'Do Hyeon', sans-serif;
+            text-align:left;
+            line-height: 40px;
+        }
+
+        .question {
             background-color: azure;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 30px;
+            line-height: 100px;
         }
 
-        #data {
-            width: 60%;
-            height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 20px;
-            font-family: 'Do Hyeon', sans-serif;
-        }
-
-        #msg_ {
-            border: 1px solid;
-            padding: 10px;
-            width: 60%;
-            height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #answer_ {
-            border: 1px solid;
-            padding: 10px;
-            width: 60%;
-            height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 20px;
-            font-family: 'Do Hyeon', sans-serif;
-            background-color: lavenderblush;
-
+        span {
+            color: rgb(68, 68, 68);
+            text-decoration: none;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 125%;
         }
 
         #menubar li.user {
@@ -123,6 +100,7 @@
         }
     </style>
 </head>
+
 
 <body>
     <header>
@@ -150,77 +128,55 @@
         <br>
     </header>
 
+    <div id="box_qna">
+        <h1 id="qna">
+            <자주 묻는 질문>
+                </h3>
+                <ul class="qna_list">
+                    <li class="question">Q. 소송이 필요한 경우 마을변호사가 직접 소송까지 진행하나요?</li>
+                    <li class="answer"><span>A. </span>마을변호사는 법률상담 서비스를 제공하는 제도이므로 소송 서비스는 제공하지 않습니다.<br>
+                        소송 서비스가 필요한 경우에는 대한변호사협회 법률구조재단 및 법률구조공단 이용방법 등을 안내해 드리고 있습니다.
+                    </li>
+                </ul>
+                <ul class="qna_list">
+                    <li class="question">Q. 마을변호사를 언제 어디서든 만날 수 있는 건가요?</li>
+                    <li class="answer"><span>A. </span>변호사를 접하기 어려운 읍,면,동 지역 위주로 마을변호사가 배정되어 있으나, 마을변호사가 배정지역에 상주하는 것은
+                        아닙니다.<br>
+                        따라서 전화 팩스 이메일 등 원격상담을 원칙으로 하며, 대면상담을 원하실 경우 담당 마을변호사와 일정조율과정을 거쳐야 합니다.
+                    </li>
+                </ul>
+                <ul class="qna_list">
+                    <li class="question">Q. 마을변호사와 법률홈닥터의 차이는 무엇인가요?</li>
+                    <li class="answer"><span>A. </span>마을변호사는 개업 변호사가 공익적 활동(재능기부)의 일환으로, 변호사가 상주하지 않는 무변촌 또는 변호사를 접하기
+                        어려운 읍,면,동 마을 주민들에게 법률상담 서비스를 제공하는 제도입니다.<br>
+                        반면, 법률홈닥터는 법무부가 고용한 변호사가 시,군,구에 거주하는 사회적,경제적 취약계층에게 법률상담 서비스를 제공하는 제도입니다.
+                    </li>
+                </ul>
+                <ul class="qna_list">
+                    <li class="question">Q. 외국인도 마을변호사를 만날 수 있나요?</li>
+                    <li class="answer"><span>A. </span>국적과 관계없이 읍,면,동에 거주하는 주민이라면 누구나 만날 수 있습니다. <br>다만, 외국어로 상담을 진행하지는
+                        않습니다.</li>
+                </ul>
+    </div>
 
-    <!-- 예약 신청 목록 -->
-    <section>
-        <table id="name" border="1">
-            <thead>
-                <tr>
-                    <th width="50px">글번호</td>
-                    <th width="50px">이름</td>
-                    <th width="50px">날짜</td>
-                    <th width="50px">답변 상태</td>
-                </tr>
-            </thead>
-            <tbody id="data" class="report data">
-                <th id="num_" width="50px">
-                    </td>
-                <th id="name_" width="50px">
-                    </td>
-                <th id="date_" width="50px">
-                    </td>
-                <th id="ans_" width="50px">
-                    </td>
-            </tbody>
-        </table>
+    <br><br><br><br><br><br>
 
-        <h3 id="title_"></h3>
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("li.question").click(function () {
 
-        <div id="msg_"></div>
-        <div id="answer_"></div>
-    </section>
-
+                $(this).next().toggle("fast");
+            });
+        });
+    </script>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
-        function getItems(count) {
-            var name_str = "name" + count;
-            var title_str = "title" + count;
-            var msg_str = "msg" + count;
-            var ans_str = "ans" + count;
-            var date_str = "date" + count;
-            var num_str = "num" + count;
-            var answer_str = "answer" + count;
-
-            var name = localStorage.getItem(name_str);
-            var title = localStorage.getItem(title_str);
-            var msg = localStorage.getItem(msg_str);
-            var ans = localStorage.getItem(ans_str);
-            var date = localStorage.getItem(date_str);
-            var num = localStorage.getItem(num_str);
-
-            var answer = localStorage.getItem(answer_str);
-            if (answer != null) {
-                document.getElementById('answer_').innerText = answer;
-            }
-
-            console.log(name);
-            console.log(title);
-            console.log(msg);
-            console.log(ans);
-            console.log(date);
-            console.log(num);
-
-
-            //리스트에 붙임.
-            document.getElementById('name_').innerText = name;
-            document.getElementById('title_').innerText = title;
-            document.getElementById('msg_').innerText = msg;
-            document.getElementById('ans_').innerText = ans;
-            document.getElementById('date_').innerText = date;
-            document.getElementById('num_').innerText = num;
-
-
+        function change_name(name) {
+            var user = document.getElementById("user_name");
+            user.innerText = name + " 님";
         }
 
         var getParameter = function (param) {
@@ -236,16 +192,12 @@
             }
         };
         $(document).ready(function () {
-            window.onload = function () {
-                //이전 페이지에서 받아온 정보 가져오기
-                var name = getParameter('index');
-                console.log('val : ' + name);
+            var name = getParameter('index');
+            console.log('val : ' + name);
+            if (name != undefined) {
                 change_name(name);
-                var num = getParameter('num');
-                getItems(num);
             }
         });
-
         function move_search() {
             var name = getParameter('index');
             window.location.href = "lawyer_search.html?index=" + name;
@@ -269,15 +221,6 @@
         function move_qna() {
             var name = getParameter('index');
             window.location.href = "qna_user.html?index=" + name;
-        }
-
-        function change_name(name) {
-
-            var user = document.getElementById("user_name");
-            if (name != undefined) {
-                user.innerText = name + " 님";
-            }
-
         }
     </script>
 </body>

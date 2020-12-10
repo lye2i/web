@@ -150,9 +150,9 @@
                 <!-- 사이버법률상담 버튼 -->
                 <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
-                <li><a href="howtouse.html">이용 안내</a></li>
-                <li><a href="blog.html">마을변호사 소식</a></li>
-                <li><a href="qna.html">자주묻는 질문</a></li>
+                <li><a href="#none" onclick="move_howtouse()">이용 안내</a></li>
+                <li><a href="#none" onclick="move_blog()">마을변호사 소식</a></li>
+                <li><a href="#none" onclick="move_qna()">자주묻는 질문</a></li>
                 <li class="user"><a href="./home.html">로그아웃</a></li>
                 <li class="user"><a id="user_name">땡땡땡</a></li>
             </ul>
@@ -255,7 +255,18 @@
             var name = getParameter('index');
             window.location.href = "user_home.html?index=" + name;
         }
-
+        function move_blog() {
+            var name = getParameter('index');
+            window.location.href = "blog_user.html?index=" + name;
+        }
+        function move_howtouse() {
+            var name = getParameter('index');
+            window.location.href = "howtouse_user.html?index=" + name;
+        }
+        function move_qna() {
+            var name = getParameter('index');
+            window.location.href = "qna_user.html?index=" + name;
+        }
         function store() {
             var date = document.getElementById("date").value;
             var writer_name = document.getElementById("writer_name").value;

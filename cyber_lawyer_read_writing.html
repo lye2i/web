@@ -102,6 +102,7 @@
             margin-left: auto;
             margin-right: auto;
             background-color: whitesmoke;
+            margin-bottom: 20px;
         }
 
         #answer_ {
@@ -119,11 +120,13 @@
 
         #blk {
 
-            padding: 10px;
+            padding: 5px;
             width: 60%;
             height: 100%;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 30px;
+            font-family: 'Do Hyeon', sans-serif;
 
         }
 
@@ -147,10 +150,15 @@
             background-color: azure;
             border: 2px solid;
             border-radius: 20px;
-
             transition: 0.3s;
             text-align: center;
 
+        }
+
+        #menubar li.menu_lawyer {
+            float: right;
+            margin-left: -1px;
+            z-index: 1;
         }
     </style>
 </head>
@@ -171,9 +179,9 @@
                 <!-- 사이버법률상담 버튼 -->
                 <li><a href="#none" onclick="move_cyber()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
-                <li><a href="howtouse.html">이용 안내</a></li>
-                <li><a href="blog.html">마을변호사 소식</a></li>
-                <li><a href="qna.html">자주묻는 질문</a></li>
+                <li><a href="#none" onclick="move_howtouse()">이용 안내</a></li>
+                <li><a href="#none" onclick="move_blog()">마을변호사 소식</a></li>
+                <li><a href="#none" onclick="move_qna()">자주묻는 질문</a></li>
                 <li class="menu_lawyer"><a href="#none" onclick="move_res()">상담신청 게시판</a></li>
                 <li class="menu_lawyer"><a href="./home.html">로그아웃</a></li>
                 <li class="menu_lawyer"><a id="lawyer_name">땡땡땡</a></li>
@@ -209,14 +217,16 @@
         <h3 id="title_"></h3>
 
         <div id="msg_"></div>
+        <hr width="60%">
 
         <div id="blk">
-            <div style="display: inline;">
-                답변 :
+            <div id="answer_lawyer" style="display: inline; font-size: 25px; background-color: azure;">
             </div>
             <div id="answer_" style="display: inline;">
+                
             </div>
         </div>
+        <hr width="60%">
         <div id="answer_write">
 
             <center><input type="text" id="lawyer_answer" autofocus /><button id="btn" onclick="lawyer_btn()">
@@ -237,6 +247,7 @@
             var date_str = "date" + count;
             var num_str = "num" + count;
             var answer_str = "answer" + count;
+            var lawyer_str = "lawyer" + count;
 
             var name = localStorage.getItem(name_str);
             var title = localStorage.getItem(title_str);
@@ -246,8 +257,11 @@
             var num = localStorage.getItem(num_str);
 
             var answer = localStorage.getItem(answer_str);
+            var lawyer = localStorage.getItem(lawyer_str);
+
             if (answer != null) {
                 document.getElementById('answer_').innerText = answer;
+                document.getElementById('answer_lawyer').innerText = lawyer;
             }
 
             console.log(name);
@@ -295,17 +309,25 @@
         });
         function lawyer_btn() {
             var input = document.getElementById('lawyer_answer');
+            var answer_lawyer_name = document.getElementById("lawyer_name").innerText;
+            
             if (input != null) {
                 console.log("number:" + number);
+                console.log("lawyer:" +answer_lawyer_name);
                 var answer_str = "answer" + number;
                 var ans_str = "ans" + number;
+                var lawyer_str = "lawyer" + number;
+
                 var data = input.value;
+
                 console.log("data:" + data);
                 localStorage.setItem(answer_str, data);
                 localStorage.setItem(ans_str, "답변완료");
+                localStorage.setItem(lawyer_str, answer_lawyer_name);
+                
                 document.getElementById('answer_').innerText = data;
+                document.getElementById('answer_lawyer').innerText = answer_lawyer_name;
                 input.value = " ";
-
             }
         }
 
@@ -325,12 +347,24 @@
             var name = getParameter('index');
             window.location.href = "lawyer_home.html?index=" + name;
         }
+        function move_blog() {
+            var name = getParameter('index');
+            window.location.href = "blog_lawyer.html?index=" + name;
+        }
+        function move_howtouse() {
+            var name = getParameter('index');
+            window.location.href = "howtouse_lawyer.html?index=" + name;
+        }
+        function move_qna() {
+            var name = getParameter('index');
+            window.location.href = "qna_lawyer.html?index=" + name;
+        }
 
         function change_name(name) {
 
             var user = document.getElementById("lawyer_name");
             if (name != undefined) {
-                user.innerText = name + " 님";
+                user.innerText = name + " 변호사";
             }
 
         }

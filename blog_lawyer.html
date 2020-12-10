@@ -15,6 +15,7 @@
         #logo {
             align-items: center;
             display: block;
+
         }
 
         a:link {
@@ -34,7 +35,7 @@
         #menubar ul {
             margin: 0;
             padding: 3;
-            width: 95%;
+            width: 95%
         }
 
         #menubar ul li {
@@ -58,30 +59,6 @@
             float: right;
             margin-left: -1px;
             z-index: 1;
-        }
-
-        #form_name {
-            border: 5px;
-            width: 100%;
-            height: 100%;
-            font-size: 30px;
-            text-align: center;
-            font-family: 'Do Hyeon', sans-serif;
-        }
-
-        #list {
-            width: 60%;
-            height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            margin-bottom: 30px;
-            font-family: 'Do Hyeon', sans-serif;
-            font-size: 30px;
-        }
-
-        #list thead {
-            background-color: azure;
         }
     </style>
 </head>
@@ -114,24 +91,8 @@
         <br>
     </header>
 
-    <section>
-        <h3 id="form_name">
-            사이버 상담 목록
-        </h3>
-    </section>
-    <table id="list" border="1">
-        <thead>
-            <tr>
-                <th id="num" width="20px">No</td>
-                <th id="date" width="50px">신청일</td>
-                <th id="writer" width="40px">작성자</td>
-                <th id="title" width="120px">제목</td>
-                <th id="response" width="30px">답변 현황</td>
-            </tr>
-        </thead>
-        <tbody id="data" class="report data">
-        </tbody>
-    </table>
+    <center><iframe style="display:block; width:100vw; height: 100vh" src="http://blog.naver.com/mabyun"> i레임</iframe>
+    </center>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -153,71 +114,12 @@
             }
         };
         $(document).ready(function () {
-            window.onload = function () {
-                var name = getParameter('index');
+            var name = getParameter('index');
+            console.log('val : ' + name);
+            if (name != undefined) {
                 change_name(name);
-                tagParsing(true);
-
-                $("#data tr").click(function () {
-                    var str = ""
-                    var tdArr = new Array();	// 배열 선언
-
-                    // 현재 클릭된 Row(<tr>)
-                    var tr = $(this);
-                    var td = tr.children();
-
-                    // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
-                    // console.log("클릭한 Row의 모든 데이터 : " + tr.text());
-
-                    // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
-                    td.each(function (i) {
-                        tdArr.push(td.eq(i).text());
-                    });
-
-                    // console.log("배열에 담긴 값 : " + tdArr);
-
-                    // td.eq(index)를 통해 값을 가져올 수도 있다.
-                    var num = td.eq(0).text();
-
-                    str += " * 클릭된 Row의 td값 = num : <font color='red'>" + num + "</font>";
-
-                    movePage(num);
-                });
             }
         });
-
-        function tagParsing(init) {
-            var num = localStorage.getItem('count');
-            var tag = '';
-
-            for (i = 1; i <=num ; i++) {
-                var str_date = "date" + i;
-                var str_name = "name" + i;
-                var str_title = "title" + i;
-                var str_ans = "ans" + i;
-
-                var date = localStorage.getItem(str_date);
-                var names = localStorage.getItem(str_name);
-                var name = names[0]+"**";
-                console.log(name);
-                
-                var title = localStorage.getItem(str_title);
-                var ans = localStorage.getItem(str_ans);
-
-                tag += "<tr><td class='num'>" + i + "</td>"
-                    + "<td class='date'>" + date + "</td>"
-                    + "<td class='writer'>" + name + "</td>"
-                    + "<td class='title'>" + title + "</td>"
-                    + "<td class='response'>" + ans + "</td></tr>"
-            }
-            document.getElementById("data").innerHTML = tag;
-            // console.log(document.getElementById("data").innerHTML);
-        }
-
-        function movePage(num) {
-            var name = getParameter('index');
-            window.location.href = "cyber_lawyer_read_writing.html?index="+name+ "&num=" + num;
-        }
         function move_res() {
             var name = getParameter('index');
             window.location.href = "reservation_list.html?index=" + name;
@@ -246,7 +148,6 @@
             var name = getParameter('index');
             window.location.href = "qna_lawyer.html?index=" + name;
         }
-
     </script>
 
 </body>

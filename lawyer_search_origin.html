@@ -127,7 +127,7 @@
 <body>
     <header>
         <div>
-            <a id="logo" onclick="move1()">
+            <a id="logo"  href="home.html">
                 <center><img src="img/main_logo.png" width="600" height="200"></center>
             </a>
             <table id="login">
@@ -152,9 +152,9 @@
         <nav id="menubar">
             <ul>
                 <!-- 변호사 검색 버튼 -->
-                <li><a href="lawyer_search.html">변호사 검색 & 상담 예약 신청</a></li>
+                <li><a href="lawyer_search_origin.html">변호사 검색 & 상담 예약 신청</a></li>
                 <!-- 사이버법률상담 버튼 -->
-                <li><a href="cyber_qa.html">사이버법률상담</a></li>
+                <li><a href="#none" onclick="move_no()">사이버법률상담</a></li>
                 <!-- 이용 안내 버튼 -->
                 <li><a href="howtouse.html">이용 안내</a></li>
                 <li><a href="blog.html">마을변호사 소식</a></li>
@@ -360,6 +360,10 @@
         function lawyer_select() {
             alert("로그인이 필요한 서비스입니다.")
         }
+
+        function move_no() {
+            alert("로그인이 필요한 서비스 입니다.");
+        }
     </script>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -396,10 +400,6 @@
                 change_name(name);
             }
         });
-        function move1() {
-            var name = getParameter('index');
-            window.location.href = "lawyer_home.html?index=" + name;
-        }
 
 
     </script>
