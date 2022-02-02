@@ -61,7 +61,7 @@
 
 - **상담 신청 게시판**
    - `Javascript`를 이용하여 테이블 동적 생성
-   - 동적으로 생성한 table에 row 단위로 클릭 리스너가 동작하도록 `jQuery` 이용
+   - 동적으로 생성한 table에 row 단위로 클릭 리스너가 동작하도록 `jquery` 이용
    - `Web Storage`의 localStorage를 이용하여 데이터 저장
 
 - **사이버법률상담**
