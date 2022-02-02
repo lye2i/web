@@ -100,7 +100,7 @@
 ### ✨상담 예약 신청
 ![6 상담 예약 신청](https://user-images.githubusercontent.com/69866091/152217000-81007e75-9d3c-4ed2-a3ec-9b32ecc3c9cc.gif)
 
-### ✨상담신청 게시판
+### ✨상담 신청 게시판
 ![7 상담신청 게시판](https://user-images.githubusercontent.com/69866091/152214836-12ef98ca-91e7-49e6-9bef-a04b5393b090.gif)
 
 ### ✨사이버법률상담 신청
