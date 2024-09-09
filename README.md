@@ -33,7 +33,7 @@
 - 법무부_마을변호사 제도 홍보동영상
 
 ## 팀원 및 역할분담
-|[@rlagksql219](https://github.com/rlagksql219)|[lye2i](https://github.com/lye2i)|[@y78462](https://github.com/y78462)|
+|[@rlagksql219](https://github.com/rlagksql219)|[@lye2i](https://github.com/lye2i)|[@y78462](https://github.com/y78462)|
 |------|----|----|
 |• 메인 페이지 <br> • 상담 신청 게시판 |• 사용자 로그인 </br> • 변호사 검색 </br> • 사이버법률상담 |• 변호사 로그인 </br> • 상담 예약 신청 페이지 </br> • 사이버법률상담
 <br/>
